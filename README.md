@@ -1,4 +1,5 @@
 <h2>Build a quiz using JavaScript and/or JQuery:</h2>
+<p><a href="http://javascriptissexy.com/how-to-learn-javascript-properly/">Inspired by this assignment on 'JavaScript Is Sexy' website.</a></p>
 
 <p><strong>This is a GROUP assignment</strong></p>
 <em>Work with one OR two others.</em>
@@ -34,4 +35,6 @@ var allQuestions = [{question: "Who is Prime Minister of the United Kingdom?", c
     fade in the next question).</li>
     <li>Use setTimeout to create a time limit for each question. If 
     the time expires, they get the question wrong.</li>
+    <li>(more difficult) Implement another question type, such as checkboxes or textboxes instead 
+    of radio buttons</li>
 </ul>
