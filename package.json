@@ -1,0 +1,24 @@
+{
+  "name": "javascript-quiz",
+  "version": "1.0.0",
+  "description": "<h2>Build a quiz using JavaScript and/or JQuery:</h2> <p><a href=\"http://javascriptissexy.com/how-to-learn-javascript-properly/\">Inspired by this assignment on 'JavaScript Is Sexy' website.</a></p>",
+  "main": "index.js",
+  "dependencies": {
+    "browser-sync": "^2.16.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/browser-sync/bin/browser-sync.js start --server . --files ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandiw/javascript-quiz.git"
+  },
+  "author": "brandiw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brandiw/javascript-quiz/issues"
+  },
+  "homepage": "https://github.com/brandiw/javascript-quiz#readme"
+}
