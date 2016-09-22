@@ -1,3 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+body {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #575757;
+}
 .quiz-wrapper {
-	display: none;
+    display: none;
+    background-color: red;
+}
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 20px;
+    color: white;
+}
+div.start {
+    text-align: center;
+}
+button#start-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+button#start-button, button#next-button {
+    padding: 20px 40px;
+    border-radius: 20px;
+    font-size: 1em;
+    background-color: #F7F7F7;
+    border: 2px solid black;
+}
+div.choices {
+    background-image: url(img/2001.jpg);
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    padding: 30px;
+}
+div.input {
+    font-size: 1.5em;
+    line-height: 2.5em;
+}
+div.input p {
+    display: inline;
+    margin-left: 50px;
+    font-weight: bold;
+    color: white;
+}
+div.question div {
+    margin: 40px 0 40px;
+    font-style: italic;
+    font-size: 1.5em;
+    color: white;
+}
+.score {
+	text-align: center;
+	margin-top: 20px;
+}
+.main-image {
+	width: 100%;
+	height: auto;
+	text-align: center;
+	border-radius: 20px;
 }
