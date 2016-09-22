@@ -15,71 +15,84 @@ console.log("JS file is linked up!");
 // ];
 
 
-
-
-
-
+$("#question2").hide();
+$("#question3").hide();
 
 
 //set up variables
 var answered1 = false;
 var answered2 = false;
 var score = 0;
+var answer1;
+var answer2;
+var answer3;
 
 
-	// if (answer1 !== "yes" && answer1 !== "no") {
-	// 	alert("Please pick an answer")
-	// 	return;
-	// };
-	
+
+
 
 //Question 1 click event
 $("#submitButton1").click(function(e){
 	e.preventDefault();
-
-
-	$("#question2").css("display", "inline");
-	$("#question1").css("display", "none");
-	var answer1 = $("input[name=question1]:checked").val();
-	
-	if (answer1 == "yes" && answered1 == false) {
-		score++;
+	answer1 = $("input[name=question1]:checked").val();
+	if (answer1 == null) {
+		alert("Please pick an answer");
+		return;
 	};
-	answered1 = true;
+	$("#question2").fadeIn(1000);
+	$("#question1").hide();
+	console.log(score);
 });
 
 
 //Question 2 click event
+var question2Correct = false;
 $("#submitButton2").click(function(e){
 	e.preventDefault();
-		if (answer2 == null) {
+	answer2 = $("input[name=question2]:checked").val();
+	if (answer2 == null) {
 		alert("Please pick an answer")
 		return;
 	};
-	$("#question2").css("display", "none");
-	$("#question3").css("display", "inline");
-
-	var answer2 = $("input[name=question2]:checked").val();
-	if (answer2 == "simon" && answered2 == false) {
-		score++;
-	};
-	answered2 = true;
+	$("#question2").hide();
+	$("#question3").fadeIn(1000);
+	console.log(score);
 });
 
 
 //Question 3 click event
 $("#submitButton3").click(function(e){
 	e.preventDefault();
-		if (answer3 == null) {
+
+	answer3 = $("input[name=question3]:checked").val();
+	if (answer3 == null) {
 		alert("Please pick an answer")
 		return;
 	};
 	$("#question3").css("display", "none");
-	var answer3 = $("input[name=question3]:checked").val();
+	if (answer1 == "yes") {
+		score++;
+	};
+	if (answer2 == "simon") {
+		score++;
+	};
 	if (answer3 == "darthVader") {
 		score++;
-	}
-	$(".message").text("You got " + score + " questions correct!")
+	};
+
+
+	if (score == 0) {
+	$(".message").text("You got " + score + " questions correct. You suck. How do you not like pizza?!")
+	};
+	if (score == 1) {
+	$(".message").text("You got " + score + " question correct. Good for you (not impressed).")
+	};
+	if (score == 2) {
+	$(".message").text("You got " + score + " questions correct. Congratulations, you're average.")
+	};
+	if (score == 3) {
+	$(".message").text("You got " + score + " questions correct. YOU. ARE. AWESOME.")
+	};
 	console.log(score);
 });
 
@@ -89,6 +102,8 @@ $("#backButton1").click(function(e){
 	e.preventDefault();
 	$("#question1").css("display", "inline");
 	$("#question2").css("display", "none");
+	answered1 = false;
+	console.log(score);
 });
 
 
@@ -97,6 +112,9 @@ $("#backButton2").click(function(e){
 	e.preventDefault();
 	$("#question2").css("display", "inline");
 	$("#question3").css("display", "none");
+	answered2 = false;
+	question2Correct = false;
+	console.log(score);
 });
 
 

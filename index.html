@@ -3,30 +3,57 @@
 <head>
   <title>JavaScript Quiz</title>
   <style>
-  #question2, #question3 {
-  	display:none;
+  body {
+  	background-color:#212121;
+  	background-image:url('img/background.jpg');
+  	background-position:center;
+  	background-size:1750px auto;
+  	background-repeat:no-repeat;
   }
+
 #container {
 	margin: 0 auto;
 	width: 480px;
 	text-align:center;
-	padding-left: 36px;
-	padding-right: 28px;
-	padding-top: 2px;
 	height:100%;
 	margin-top:40px;
-	font-family:sans-serif;
 }
+
+#containerInner {
+	margin: 0 auto;
+	width: 480px;
+	text-align:center;
+	height:100%;
+	margin-top:30px;
+	font-family:sans-serif;
+	background-color:#FF9800;
+	border: 2px solid white;
+	border-radius:8px;
+	box-shadow:3px 3px black;
+}
+
 .button {
 	font-size:18px;
+	padding:5px 10px;
+	border:1px solid white;
+}
+h1 {
+	color:white;
+	font-family:'Sniglet';
+	font-size:55px;
+	text-shadow:3px 3px black;
 }
   </style>
 
-</head>
-<body>
-<div id="container">
-  <h1>Javascript Quiz</h1>
 
+</head>
+<link href="https://fonts.googleapis.com/css?family=Sniglet" rel="stylesheet">
+
+<body>
+
+<div id="container">
+ <h1>Javascript Quiz</h1>
+<div id="containerInner">
   <div id="question1">
 	  <form id="form">
 		  <h2>Do you like pizza?</h2>
@@ -60,7 +87,7 @@
 		  C. Leslie
 		  </label><br><br>
 		  <input type="submit" class="button" id="submitButton2" value="Next">
-		  <input type="button" class="backButton" id="backButton1" value="Back">
+		  <input type="button" class="button" id="backButton1" value="Back">
 	  </form>
 	</div>
 
@@ -81,11 +108,12 @@
 		  C. Darth Vader
 		  </label><br><br>
 		  <input type="submit" class="button" id="submitButton3" value="Submit">
-		  <input type="button" class="backButton" id="backButton2" value="Back">
+		  <input type="button" class="button" id="backButton2" value="Back">
 	  </form>
 	</div>
 
 	<p class="message"></p>
+</div>
 </div>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="js/index.js"></script>
