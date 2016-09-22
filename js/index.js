@@ -27,13 +27,14 @@ $(document).ready(function(){
 
 	startButton.click(function() {
 		startButton.css("display", "none");
+		$(".instructions").empty();
 		//display quiz wrapper
 		$(".quiz-wrapper").css("display", "initial");
 		// Display first quesiton
 		questionEl.prepend("<div>" + allQuestions[questionIndex].question + "</div>");
 		allQuestions[questionIndex].choices.forEach(function(choice){
 			console.log(choiceArea);
-			choiceArea.append("<input type='radio' name='choice' value='" + choice + "'>" + choice);
+			choiceArea.append("<div class='input'>" + "<input type='radio' name='choice' value='" + choice + "'>" + choice + "</div>");
 		});
 
 	});
@@ -67,7 +68,7 @@ $(document).ready(function(){
 		// CHANGE to a function
 		allQuestions[questionIndex].choices.forEach(function(choice){
 			console.log(choiceArea);
-			choiceArea.append("<input type='radio' name='choice' value='" + choice + "'>" + choice);
+			choiceArea.append("<div class='input'>" + "<input type='radio' name='choice' value='" + choice + "'>" + choice + "</div>");
 		});
 		} else {
 			questionEl.append("<div class='score'> You scored " + score + " out of " + allQuestions.length + "</div>");
