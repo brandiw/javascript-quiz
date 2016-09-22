@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JavaScript Quiz</title>
-  <script src="/js/index.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>JavaScript Quiz</title>
 </head>
 <body>
-  <h1>Hello world!</h1>
+	<h1>Movie Quote Quiz</h1>
+	<div>Press start and take the quiz!!!</div>
+	<button type="button" id="start-button" value="start">start</button>
+	<div class="quiz-wrapper">
+		<div class="question"></div>
+		<form class="quiz">
+			<div class="choices">
+			</div>
+			<button type="button" id="next-button" value="next">next</button>
+		</form>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
