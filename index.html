@@ -2,132 +2,75 @@
 <html>
 <head>
   <title>JavaScript Quiz</title>
-  <style>
-  body {
-  	background-color:#212121;
-  	background-image:url('img/background.jpg');
-  	background-position:center;
-  	background-size:1750px auto;
-  	background-repeat:no-repeat;
-  }
-
-#container {
-	margin: 0 auto;
-	width: 560px;
-	text-align:center;
-	height:100%;
-	margin-top:40px;
-}
-
-#containerInner {
-	margin: 0 auto;
-	width: 560px;
-	text-align:center;
-	height:100%;
-	margin-top:30px;
-	font-family:sans-serif;
-	background-color:#FF9800;
-	border: 2px solid white;
-	border-radius:8px;
-	box-shadow:3px 3px black;
-}
-
-.button {
-	font-size:18px;
-	padding:5px 10px;
-	border:none;
-	background-color:#212121;
-	color:white;
-    border-radius:4px;
-}
-h1 {
-	color:white;
-	font-family:'Sniglet';
-	font-size:55px;
-	text-shadow:3px 3px black;
-}
-h2 {
-	margin-bottom:30px;
-
-}
-#form {
-	font-size:22px;
-	margin-bottom:20px;
-}
-  </style>
-
-
-
-
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Baloo|Lato" rel="stylesheet">
 </head>
-<link href="https://fonts.googleapis.com/css?family=Sniglet" rel="stylesheet">
-
 <body>
 
 <div id="container">
- <h1>Javascript Quiz</h1>
-<div id="containerInner">
-  <div id="question1">
-	  <form id="form">
-		  <h2>Do you like pizza?</h2>
-		  
-		  <label>
-		  <input type="radio" name="question1" id="question1True" value="yes">
-		  Yes
-		  </label>
-		  <label>
-		  <input type="radio" name="question1" id="question1False" value="no">
-		  No
-		  </label><br><br>
-		  <input type="submit" class="button" id="submitButton1" value="Next">
-	  </form>
-	</div>
+	<h1>Javascript Quiz</h1>
+	<div id="containerInner">
+	  <div id="question1">
+		  <form id="form">
+			  <h2>Do you like pizza?</h2>
+			  <label>
+			  <input type="radio" name="question1" id="question1True" value="yes">
+			  Yes &nbsp;&nbsp;&nbsp;
+			  </label>
+			  <label>
+			  <input type="radio" name="question1" id="question1False" value="no">
+			  No
+			  </label><br><br>
+			  <input type="submit" class="button" id="submitButton1" value="Next">
+		  </form>
+		</div>
 
-	 <div id="question2">
-	  <form id="form">
-		  <h2>What's the ice king's real name?</h2>
-		  <label>
-		  <input type="radio" name="question2" id="question2A" value="niceKing">
-		  A. Nice King
-		  </label>
-		  <label>
-		  <input type="radio" name="question2" id="question2B" value="simon">
-		  B. Simon
-		  </label>
-		  <label>
-		  <input type="radio" name="question2" id="question2C" value="leslie">
-		  C. Leslie
-		  </label><br><br>
-		  <input type="submit" class="button" id="submitButton2" value="Next">
-		  <input type="button" class="button" id="backButton1" value="Back">
-	  </form>
-	</div>
+		 <div id="question2">
+		  <form id="form">
+			  <h2>What's the ice king's real name?</h2>
+			  <label>
+			  <input type="radio" name="question2" id="question2A" class="question" value="niceKing">
+			  A. Nice King&nbsp;&nbsp;&nbsp;
+			  </label>
+			  <label>
+			  <input type="radio" name="question2" id="question2B"  class="question" value="simon">
+			  B. Simon&nbsp;&nbsp;&nbsp;
+			  </label>
+			  <label>
+			  <input type="radio" name="question2" id="question2C"  class="question" value="leslie">
+			  C. Leslie
+			  </label><br><br>
+			  <input type="submit" class="button" id="submitButton2" value="Next">
+			  <input type="button" class="button" id="backButton1" value="Back">
+		  </form>
+		</div>
 
-	 <div id="question3">
-	  <form id="form">
-		  <h2>Who is the father of Luke Skywalker?</h2>
-		  <label>
-		  <input type="radio" name="question3" id="question3A" value="jarJarBinks">
-		  A. Jar Jar Binks
-		  </label>
-		  <label>
-		  <input type="radio" name="question3" id="question3B" value="darthMaul">
-		  B. Darth Maul
-		  </label>
-		  <label>
-		  <input type="radio" name="question3" id="question3C" value="darthVader">
-		  C. Darth Vader
-		  </label><br><br>
-		  <input type="submit" class="button" id="submitButton3" value="Submit">
-		  <input type="button" class="button" id="backButton2" value="Back">
-	  </form>
-	</div>
+		 <div id="question3">
+		  <form id="form">
+			  <h2>Who is the father of Luke Skywalker?</h2>
+			  <label>
+			  <input type="radio" name="question3" id="question3A" value="jarJarBinks">
+			  A. Jar Jar Binks&nbsp;&nbsp;&nbsp;
+			  </label>
+			  <label>
+			  <input type="radio" name="question3" id="question3B" value="darthMaul">
+			  B. Darth Maul&nbsp;&nbsp;&nbsp;
+			  </label>
+			  <label>
+			  <input type="radio" name="question3" id="question3C" value="darthVader">
+			  C. Darth Vader
+			  </label><br><br>
+			  <input type="submit" class="button" id="submitButton3" value="Submit">
+			  <input type="button" class="button" id="backButton2" value="Back">
+		  </form>
+		</div>
 
-	<p class="message"></p>
+		<p class="message"></p>
+		<input type="button" class="button" id="tryAgain" value="Try Again">
+		<div id="pictures"></div>
+	</div>
 </div>
-</div>
-<div id="pictures"></div>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="js/index.js"></script>
 </body>
 </html>
