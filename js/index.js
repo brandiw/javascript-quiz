@@ -26,21 +26,20 @@ $(document).ready(function(){
 	var questionIndex = 0;
 
 	startButton.click(function() {
-		startButton.css("display", "none");
+		changeElDisplay(startButton, "none")
 		$(".instructions").empty();
 		//display quiz wrapper
-		$(".quiz-wrapper").css("display", "initial");
+		changeElDisplay($(".quiz-wrapper"), "initial");
 		// Display first quesiton
 		questionEl.prepend("<div>" + allQuestions[questionIndex].question + "</div>");
 		allQuestions[questionIndex].choices.forEach(function(choice){
 			console.log(choiceArea);
-			choiceArea.append("<div class='input'>" + "<input type='radio' name='choice' value='" + choice + "'>" + choice + "</div>");
+			choiceArea.append("<div class='input'>" + "<input type='radio' name='choice' value='" + choice + "'><p>" + choice + "</p></div>");
 		});
 
 	});
 
 	nextButton.click(function() {
-		// get value of selected radio button
 		var userInput = $("input[name='choice']:checked").val();
 		var choicesArray = allQuestions[questionIndex].choices;
 		console.log(userInput);
@@ -51,40 +50,46 @@ $(document).ready(function(){
 		//allQuestions[questionIndex].choices[correctAnswerNum] == correctAnswerNum
 		var correctChoicesIndex = allQuestions[questionIndex].correctAnswer;
 		console.log("correct asnwer num " + choicesArray.indexOf(choicesArray[correctAnswerNum]));
-		if (choicesArray.indexOf(choicesArray[userInputIndex]) == correctAnswerNum) {
-		    score++;
-		};
-		//increase index
-		questionIndex++;
-		console.log(score);
-		// empty the choice element
-		choiceArea.empty();
-		//empty the question element
-		questionEl.empty();
 
-		if (questionIndex < allQuestions.length) {
-		//check what quesiton your on if your on a question that's < allQuestions.length then show next quesiton
-		questionEl.prepend("<div>" + allQuestions[questionIndex].question + "</div>");
-		// CHANGE to a function
-		allQuestions[questionIndex].choices.forEach(function(choice){
-			console.log(choiceArea);
-			choiceArea.append("<div class='input'>" + "<input type='radio' name='choice' value='" + choice + "'>" + choice + "</div>");
-		});
+
+		if (userInput) {
+			// get value of selected radio button
+			if (choicesArray.indexOf(choicesArray[userInputIndex]) == correctAnswerNum) {
+			    score++;
+			};
+			//increase index
+			questionIndex++;
+			console.log(score);
+			// empty the choice element
+			choiceArea.empty();
+			//empty the question element
+			questionEl.empty();
+
+			if (questionIndex < allQuestions.length) {
+			//check what quesiton your on if your on a question that's < allQuestions.length then show next quesiton
+			questionEl.prepend("<div>" + allQuestions[questionIndex].question + "</div>");
+			// CHANGE to a function
+			allQuestions[questionIndex].choices.forEach(function(choice){
+				console.log(choiceArea);
+				choiceArea.append("<div class='input'>" + "<input type='radio' name='choice' value='" + choice + "'><p>" + choice + "</p></div>");
+			});
+			} else {
+				questionEl.append("<div class='score'> You scored " + score + " out of " + allQuestions.length + "</div>");
+				changeElDisplay(nextButton, "none");
+			}
+
+			// if statement to see if last question and if so show score if not, do above
+
 		} else {
-			questionEl.append("<div class='score'> You scored " + score + " out of " + allQuestions.length + "</div>");
-			nextButton.css("display", "none");
+			alert("ANSWER THE QUESTION");
 		}
-
-		// if statement to see if last question and if so show score if not, do above
-
 
 	});
 
 
-	// function hideButton (el) {
-	// 	el.css("visibilty", "hidden");
-	// }
-
+	function changeElDisplay (el, noneOrinitial) {
+		el.css("display", noneOrinitial);
+	}
 
 
 
