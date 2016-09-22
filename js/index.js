@@ -100,8 +100,8 @@ $("#submitButton3").click(function(e){
 //Question 1 back button
 $("#backButton1").click(function(e){
 	e.preventDefault();
-	$("#question1").css("display", "inline");
-	$("#question2").css("display", "none");
+	$("#question1").fadeIn(1000);
+	$("#question2").hide();
 	answered1 = false;
 	console.log(score);
 });
@@ -110,8 +110,8 @@ $("#backButton1").click(function(e){
 //Question 2 back button
 $("#backButton2").click(function(e){
 	e.preventDefault();
-	$("#question2").css("display", "inline");
-	$("#question3").css("display", "none");
+	$("#question2").fadeIn(1000);
+	$("#question3").hide();
 	answered2 = false;
 	question2Correct = false;
 	console.log(score);

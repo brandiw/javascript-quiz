@@ -13,7 +13,7 @@
 
 #container {
 	margin: 0 auto;
-	width: 480px;
+	width: 560px;
 	text-align:center;
 	height:100%;
 	margin-top:40px;
@@ -21,7 +21,7 @@
 
 #containerInner {
 	margin: 0 auto;
-	width: 480px;
+	width: 560px;
 	text-align:center;
 	height:100%;
 	margin-top:30px;
@@ -35,7 +35,10 @@
 .button {
 	font-size:18px;
 	padding:5px 10px;
-	border:1px solid white;
+	border:none;
+	background-color:#212121;
+	color:white;
+    border-radius:4px;
 }
 h1 {
 	color:white;
@@ -43,7 +46,17 @@ h1 {
 	font-size:55px;
 	text-shadow:3px 3px black;
 }
+h2 {
+	margin-bottom:30px;
+
+}
+#form {
+	font-size:22px;
+	margin-bottom:20px;
+}
   </style>
+
+
 
 
 </head>
@@ -73,7 +86,6 @@ h1 {
 	 <div id="question2">
 	  <form id="form">
 		  <h2>What's the ice king's real name?</h2>
-		  <br>
 		  <label>
 		  <input type="radio" name="question2" id="question2A" value="niceKing">
 		  A. Nice King
@@ -94,7 +106,6 @@ h1 {
 	 <div id="question3">
 	  <form id="form">
 		  <h2>Who is the father of Luke Skywalker?</h2>
-		  <br>
 		  <label>
 		  <input type="radio" name="question3" id="question3A" value="jarJarBinks">
 		  A. Jar Jar Binks
@@ -115,6 +126,7 @@ h1 {
 	<p class="message"></p>
 </div>
 </div>
+<div id="pictures"></div>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="js/index.js"></script>
 </body>
