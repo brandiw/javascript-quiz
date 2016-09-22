@@ -11,6 +11,7 @@ $(document).ready(function(){
 	var quizArea = $(".quiz");
 	var choiceArea = $(".choices");
 	var questionEl = $(".question");
+	var quizWrapper = $(".quiz-wrapper");
 	var allQuestions = [
 		{question: "Nobody puts Baby in a corner.", choices: ["Dirty Dancing", "Three Men and a Baby", "Pretty Woman"], correctAnswer:0},
 		{question: "I ate his liver with some fava beans and a nice Chianti.", choices: ["Silence of the Lambs", "Psycho", "Friday the 13th"], correctAnswer:0},
@@ -29,14 +30,13 @@ $(document).ready(function(){
 		changeElDisplay(startButton, "none")
 		$(".instructions").empty();
 		//display quiz wrapper
-		changeElDisplay($(".quiz-wrapper"), "initial");
+		changeElDisplay(quizWrapper, "initial");
 		// Display first quesiton
-		questionEl.prepend("<div>" + allQuestions[questionIndex].question + "</div>");
+		questionEl.prepend('<div>"' + allQuestions[questionIndex].question + '"</div>');
 		allQuestions[questionIndex].choices.forEach(function(choice){
 			console.log(choiceArea);
 			choiceArea.append("<div class='input'>" + "<input type='radio' name='choice' value='" + choice + "'><p>" + choice + "</p></div>");
 		});
-
 	});
 
 	nextButton.click(function() {
@@ -67,14 +67,17 @@ $(document).ready(function(){
 
 			if (questionIndex < allQuestions.length) {
 			//check what quesiton your on if your on a question that's < allQuestions.length then show next quesiton
-			questionEl.prepend("<div>" + allQuestions[questionIndex].question + "</div>");
+			var questionDisplay = '<div>"' + allQuestions[questionIndex].question + '"</div>';
+			insertEl(questionEl, "prepend", questionDisplay);
 			// CHANGE to a function
 			allQuestions[questionIndex].choices.forEach(function(choice){
 				console.log(choiceArea);
-				choiceArea.append("<div class='input'>" + "<input type='radio' name='choice' value='" + choice + "'><p>" + choice + "</p></div>");
+				var choiceDisplay = "<div class='input'>" + "<input type='radio' name='choice' value='" + choice + "'><p>" + choice + "</p></div>";
+				insertEl(choiceArea, "append", choiceDisplay)
 			});
 			} else {
-				questionEl.append("<div class='score'> You scored " + score + " out of " + allQuestions.length + "</div>");
+				var textDisplay = "<div class='score'> You scored " + score + " out of " + allQuestions.length + "</div>";
+				insertEl(questionEl, "append", textDisplay);
 				changeElDisplay(nextButton, "none");
 			}
 
@@ -86,6 +89,13 @@ $(document).ready(function(){
 
 	});
 
+	function insertEl(parentEl, appendOrPrepend, newEl) {
+		if (appendOrPrepend == "append") {
+			parentEl.append(newEl);
+		} else {
+			parentEl.prepend(newEl);
+		}
+	}
 
 	function changeElDisplay (el, noneOrinitial) {
 		el.css("display", noneOrinitial);
