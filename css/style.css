@@ -1,0 +1,44 @@
+.wrapper {
+	width: 900px;
+	height: 600px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+/*
+#quiz {
+	 border: 1px solid black;
+	 width: 700px;
+	 height: 400px;
+
+}
+
+#score {
+	border: 1px solid black;
+	width: 500px;
+	height: 300px;
+}
+
+#results {
+
+	border: 1px solid black;
+	width: 400px;
+	height: 300px;
+
+}
+
+#answer {
+
+	border: 1px solid black;
+	width: 300px;
+	height: 200px;
+
+}*/
+
+#img {
+	border: 1px solid black;
+	width: 250px;
+	height: 150px;
+	display: inline-block;
+}
+
