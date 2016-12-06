@@ -1,11 +1,11 @@
 <h2>Build a quiz using JavaScript and/or JQuery:</h2>
 <p><a href="http://javascriptissexy.com/how-to-learn-javascript-properly/">Inspired by this assignment on 'JavaScript Is Sexy' website.</a></p>
 
-<p><strong>This is a GROUP assignment</strong></p>
+<h4><strong>This is a GROUP assignment</strong></h4>
 <em>Work with one OR two others.</em>
 <em>Only one of you is required to submit, but include names of partners</em>
 
-<h3>What is <strong>PAIR PROGRAMMING</strong>?</h3>
+<h3>What is <strong>Pair Programming</strong>?</h3>
 
 <p>
     <em>
