@@ -5,6 +5,16 @@
 <em>Work with one OR two others.</em>
 <em>Only one of you is required to submit, but include names of partners</em>
 
+<h3>What is <strong>PAIR PROGRAMMING</strong>?</h3>
+
+<p>
+    <em>
+        Pair programming is an agile software development technique in which two programmers work together at one workstation. One, the driver, writes code while the other, the observer or navigator, reviews each line of code as it is typed in. The two programmers switch roles frequently.
+    </em>
+</p>
+<p>Each of you should take turns "driving", or being the person who is typing.</p>
+<p>Whoever is not driving, should be performing an over-the-shoulder real-time code review (spotting errors) and giving advice on how to proceed</p>
+
 <hr>
 
 <p><strong>Requirements</strong></p>
