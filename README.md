@@ -32,6 +32,7 @@ var allQuestions = [{question: "Who is Prime Minister of the United Kingdom?", c
     **Alternatively: You could also take this time to practice using ES6 classes. 
     Could you make a class for a question? What properties or methods would be in that class?
 </em>
+<br><br>
 </li>
 <li>Dynamically (with document.getElementById or jQuery) remove the current question and add the next question, when the user clicks the “Next” button. The Next button will be the only button to navigate this version of the quiz.</li>
 <li>Select and implement one one of the BONUS requirements</li>
