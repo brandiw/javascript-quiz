@@ -26,8 +26,12 @@ choices.</li>
 <li>Tally the user’s score and display the final score on the last page. The last page will only show the score. (So you need some way to track how many they got correct)</li>
 <li>Use an array of objects to store all the questions. Each question, along with its choices and correct answer, should be stored in an object. The array of questions should look similar to this (Notice that only one question is in this example array; you will add many questions):
 <br><br>
-var allQuestions = [{question: "Who is Prime Minister of the United Kingdom?", choices: ["David Cameron", "Gordon Brown", "Winston Churchill", "Tony Blair"], correctAnswer:0}];
+var allQuestions = [{question: "Who is Prime Minister of the United Kingdom?", choices: ["David Cameron", "Gordon Brown", "Winston Churchill", "Tony Blair"], correctAnswerIndex:0}];
 <br><br>
+<em>
+    **Alternatively: You could also take this time to practice using ES6 classes. 
+    Could you make a class for a question? What properties or methods would be in that class?
+</em>
 </li>
 <li>Dynamically (with document.getElementById or jQuery) remove the current question and add the next question, when the user clicks the “Next” button. The Next button will be the only button to navigate this version of the quiz.</li>
 <li>Select and implement one one of the BONUS requirements</li>
