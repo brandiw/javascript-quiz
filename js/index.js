@@ -71,7 +71,8 @@ $(document).ready(function(){
       $("#results").html("Sorry, that is wrong.");
       $("#showWrong").text(WRONG);
     }
-    nextQuestion(); // temporary
+    // $("input[type=radio]").attr('disabled', true);
+    nextQuestion();
   }
 
   // change button to next
@@ -93,7 +94,9 @@ $(document).ready(function(){
       $('#answers').html("");
       showQuestion();
     } else {
-      $("#results").html("This quiz is over!");
+      $("#results").html("This quiz is over! ");
+      $("#results").append("You had " + RIGHT + " right ");
+      $("#results").append("And " + WRONG + " wrong.");
     }
   }
 
