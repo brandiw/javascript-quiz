@@ -71,7 +71,7 @@ $(document).ready(function(){
       $("#results").html("Sorry, that is wrong.");
       $("#showWrong").text(WRONG);
     }
-
+    nextQuestion(); // temporary
   }
 
   // change button to next
@@ -85,7 +85,16 @@ $(document).ready(function(){
 
   //go to next question if clicked, show next question
   function nextQuestion() {
-
+    questionNum++;
+    if (questionNum < allQuestions.length) {
+      $('#question').html("");
+      $('#answers').html("");
+      $('#answers').html("");
+      $('#answers').html("");
+      showQuestion();
+    } else {
+      $("#results").html("This quiz is over!");
+    }
   }
 
 });
