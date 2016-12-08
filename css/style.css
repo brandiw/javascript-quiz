@@ -1,0 +1,37 @@
+body {
+  background-image: url(../img/vader.jpg);
+  background-size: cover;
+}
+
+#container {
+  text-align: center;
+  margin: 0 auto;
+}
+#questionBox {
+  font-size: 25pt;
+  font-family: sans-serif;
+  color: white;
+}
+#scoreBox {
+}
+#playerCorrect {
+  color: green;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#answerBox {
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#playerIncorrect {
+  color: red;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+input{
+  margin-top: 35px;
+}

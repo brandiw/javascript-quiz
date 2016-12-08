@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JavaScript Quiz</title>
-  <script src="/js/index.js" type="text/javascript"></script>
+  <title>Star Wars Quiz</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="js/main.js"></script>
 </head>
 <body>
-  <h1>Hello world!</h1>
+  <div id="container">
+    <div id="questionBox"></div>
+    <div id="scoreBox">
+      <div id="playerCorrect"></div>
+      <div id="playerIncorrect"></div>
+    </div>
+    <div id="answerBox">
+      <form name="userSelection">
+        <input id="r1" type="radio" name="questionOption" value="" unchecked/><p id="ans1"></p>
+        <input id="r2" type="radio" name="questionOption" value="" unchecked/><p id="ans2"></p>
+        <input id="r3" type="radio" name="questionOption" value="" unchecked/><p id="ans3"></p>
+        <button id="submit">Submit</button>
+      </form>
+    </div>
+    <div id ="finalScore">You got <span id="playerFinal"></span>answers correct out of 7 total questions!</div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </body>
 </html>
