@@ -3,13 +3,14 @@
 */
 $(document).ready(function(){
   console.log("JS file is linked up!");
+  var RIGHT = 0;
+  var WRONG = 0;
 
   // define the class container
   class question {
-    constructor(question, answer1, answer2, correctAnswer) {
+    constructor(question, choice, correctAnswer) {
       this.question = question;
-      this.answer1 = answer1;
-      this.answer2 = answer2;
+      this.choice = choice;
       this.correctAnswer = correctAnswer;
       }
   };
@@ -17,17 +18,17 @@ $(document).ready(function(){
   // populate the class with the questions & answers
   questionNum = 0;
   var allQuestions = [];
-  allQuestions.push(new question ("3+4?", 7, 1, 7));
-  allQuestions.push(new question ("2+2?", 3, 4, 4));
+  allQuestions.push(new question ("3+4?", [7,1], 0));
+  allQuestions.push(new question ("2+2?", [3,4], 1));
 
 
   // show the questions on the page
   // show as radio buttons
   function showQuestion() {
-    var radioText = ['<input type="radio" name="answers">','<br>']
-    $('#answerContainer').append('<p>'+allQuestions[0].question+'</p>');
-    $('#answerContainer').append(radioText[0] + allQuestions[0].answer1 + radioText[1]);
-    $('#answerContainer').append(radioText[0] + allQuestions[0].answer2 + radioText[1]);
+    var radioText = '<input type="radio" name="answers">'
+    $('#question').append('<p>'+allQuestions[0].question+'</p>');
+    $('#answers').append(radioText + allQuestions[0].choice[0]);
+    $('#answers').append(radioText + allQuestions[0].choice[1]);
   };
 
   showQuestion();
@@ -42,9 +43,11 @@ $(document).ready(function(){
 
   // checks radio button value against answer
   function verifyAnswer() {
-    console.log(answerContainer);
+    var checkedValue = $("input[name=answers]");
+    if (checkedValue[allQuestions[0].correctAnswer].checked) {
+      console.log("correct answer");
+    }
   }
-
 
 
   // display answer wright or wrong to user
@@ -52,7 +55,11 @@ $(document).ready(function(){
 
 
   // if correct increment correct/incorrect results
-
+  if (){
+    RIGHT++
+  } else {
+    WRONG++
+  }
 
 
   //add event lister to next questions,
