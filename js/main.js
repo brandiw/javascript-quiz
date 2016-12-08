@@ -1,13 +1,9 @@
-// /*
-// * Tobias Murphy
-// Donnie Ellstrom
-// Chris Whitaker
-// */
 console.log("JS file is linked up!");
 
 $(document).ready(function(){
 
   //Variable for tracking player score
+  var questionNumber = 1;
   var playerScore = 0;
   var playerWrong = 0;
 
@@ -31,6 +27,7 @@ $(document).ready(function(){
                 [{"Red 3" : "Incorrect", "Walker 5" : "Incorrect", "Red 5" : "Correct"}],
                 [{"Tuskan Raiders" : "Incorrect", "Mynocks" : "Correct", "Banthas" : "Incorrect"}]];
 
+  $('#finalScore').toggle();
 
   var questionPush = $("#questionBox");
   //Set initial questionBox
@@ -42,9 +39,9 @@ $(document).ready(function(){
   $("#ans3").text(Object.keys(answers[0][0])[2]);
 
   //Set initial answer conditions
-  $("#r1").val(Object.values(answers[0][0])[0]);
-  $("#r2").val(Object.values(answers[0][0])[1]);
-  $("#r3").val(Object.values(answers[0][0])[2]);
+  $("#r1").val(Object.values(answers[0][0])[0])
+  $("#r2").val(Object.values(answers[0][0])[1])
+  $("#r3").val(Object.values(answers[0][0])[2])
 
   //Update question field and answers on submit click
   $("#submit").on("click", function() {
@@ -65,29 +62,38 @@ $(document).ready(function(){
     $("#ans1").text(Object.keys(answers[x][0])[0]);
     $("#ans2").text(Object.keys(answers[x][0])[1]);
     $("#ans3").text(Object.keys(answers[x][0])[2]);
-    $("#r1").val(Object.values(answers[x][0])[0]);
-    $("#r2").val(Object.values(answers[x][0])[1]);
-    $("#r3").val(Object.values(answers[x][0])[2]);
+    $("#r1").val(Object.values(answers[x][0])[0])
+    $("#r2").val(Object.values(answers[x][0])[1])
+    $("#r3").val(Object.values(answers[x][0])[2])
     if (x<7){
       x++;
-  }}
+  }};
 
   function correctAnswer() {
-      if ($('input[type=radio]:checked').val() === "Correct") {
-        if (playerScore < 7) {
-          playerScore ++;
-          $('#playerCorrect').text(playerScore);
-          console.log("Correct!", playerScore);
-          $("input:checked").removeAttr("checked");
-        }
-      }
-      else {
-        if (playerWrong < 7) {
-          playerWrong ++;
-          $('#playerIncorrect').text(playerWrong);
-          console.log("WRONG!");
-          $("input:checked").removeAttr("checked");
-        }
+    if ($('input[type=radio]:checked').val() === "Correct") {
+      if (questionNumber <= 7) {
+        questionNumber ++;
+        playerScore ++;
+        $('#playerCorrect').text(playerScore);
+        console.log("Correct!", playerScore);
+        $("input:checked").removeAttr("checked");
       }
     }
-  });
+    else {
+      if (questionNumber <= 7) {
+        playerWrong ++;
+        questionNumber ++;
+        $('#playerIncorrect').text(playerWrong);
+        console.log("WRONG!");
+        $("input:checked").removeAttr("checked");
+      }
+    }
+  }
+    function finalScore() {
+      if (questionNumber > 1) {
+        $('#finalScore').toggle();
+        $('#playerFinal').text(playerScore);
+      }
+    }
+
+});
