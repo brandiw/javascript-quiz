@@ -97,6 +97,7 @@ $(document).ready(function(){
       $("#results").html("This quiz is over! ");
       $("#results").append("You had " + RIGHT + " right ");
       $("#results").append("And " + WRONG + " wrong.");
+      $("#submit").unbind("click");
     }
   }
 
