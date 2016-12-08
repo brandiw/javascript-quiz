@@ -9,6 +9,7 @@ $(document).ready(function(){
 
   //Variable for tracking player score
   var playerScore = 0;
+  var playerWrong = 0;
 
   //Variable for quiz questions
   var quizQuestions = [
@@ -51,8 +52,6 @@ $(document).ready(function(){
     correctAnswer();
     nextQuestion();
     nextAnswers();
-
-
   });
 
   var i = 1;
@@ -71,19 +70,24 @@ $(document).ready(function(){
     $("#r3").val(Object.values(answers[x][0])[2]);
     if (x<7){
       x++;
-  }};
+  }}
 
   function correctAnswer() {
-    if ($('input[type=radio]:checked').val() === "Correct") {
-      playerScore ++;
-      console.log("Correct!", playerScore);
-      $("input:checked").removeAttr("checked");
+      if ($('input[type=radio]:checked').val() === "Correct") {
+        if (playerScore < 7) {
+          playerScore ++;
+          $('#playerCorrect').text(playerScore);
+          console.log("Correct!", playerScore);
+          $("input:checked").removeAttr("checked");
+        }
+      }
+      else {
+        if (playerWrong < 7) {
+          playerWrong ++;
+          $('#playerIncorrect').text(playerWrong);
+          console.log("WRONG!");
+          $("input:checked").removeAttr("checked");
+        }
+      }
     }
-    else {
-      console.log("WRONG!");
-      $("input:checked").removeAttr("checked");
-    }
-  }
-
-
-});
+  });

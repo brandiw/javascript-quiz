@@ -6,6 +6,16 @@
   font-size: 25pt;
   font-family: sans-serif;
 }
+#scoreBox {
+}
+#playerCorrect {
+  color: green;
+}
+
+#playerIncorrect {
+  color: red;
+}
+
 input{
   margin-top: 35px;
 }
