@@ -39,11 +39,6 @@ $(document).ready(function() {
     for (i = 0; i < allQuestions[questionCount].choices.length; i++) {
         $('#' + i).append("<span>" + allQuestions[questionCount].choices[i] + "</span>");
     }
-
-    //add the questions count in scorebox
-    $('#scorebox p').remove();
-    $('#scorebox').append("<p>Question " + (questionCount+1) + " of "+allQuestions.length+"</p>");
-
     //add the button listeners
     $('#submitButton').click(isChecked);
     $('#back').click(goBack);
@@ -59,11 +54,7 @@ console.log("JS file is linked up!");
 function drawQuestion() {
     $('#questiontext p').remove();
     $('#questiontext').append("<p>" + allQuestions[questionCount].question + "</p>");
-
-    //add the questions count in scorebox
     $('#scorebox p').remove();
-    $('#scorebox').append("<p>Question " + (questionCount+1) + " of "+allQuestions.length+"</p>");
-
     for (i = 0; i < allQuestions[questionCount].choices.length; i++) {
         $('#' + i + " span").remove();
         $('#' + i).append("<span>" + allQuestions[questionCount].choices[i] + "</span>");
