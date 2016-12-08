@@ -11,6 +11,7 @@ $(document).ready(function() {
 	$("#title-container").show();
 	$("#questions-container").hide();
 	$("#score-container").hide();
+	$("#1").prop("checked", true)
 
 	$("#start").click(function(event) {
 		$("#title-container").hide();
