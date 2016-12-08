@@ -1,0 +1,11 @@
+#container {
+  text-align: center;
+  margin: 0 auto;
+}
+#questionBox {
+  font-size: 25pt;
+  font-family: sans-serif;
+}
+input{
+  margin-top: 35px;
+}
