@@ -5,6 +5,8 @@ $(document).ready(function(){
   console.log("JS file is linked up!");
   var RIGHT = 0;
   var WRONG = 0;
+  $("#showRight").text(RIGHT);
+  $("#showWrong").text(WRONG);
 
   // define the class container
   class question {
@@ -18,17 +20,18 @@ $(document).ready(function(){
   // populate the class with the questions & answers
   questionNum = 0;
   var allQuestions = [];
-  allQuestions.push(new question ("3+4?", [7,1], 0));
-  allQuestions.push(new question ("2+2?", [3,4], 1));
+  allQuestions.push(new question ("3+4?", [7,1,12], 0));
+  allQuestions.push(new question ("3+2?", [3,5,6], 1));
 
 
   // show the questions on the page
   // show as radio buttons
   function showQuestion() {
-    var radioText = '<input type="radio" name="answers">'
+    var radioText = '<input type="radio" class="radio-inline" name="answers">'
     $('#question').append('<p>'+allQuestions[0].question+'</p>');
     $('#answers').append(radioText + allQuestions[0].choice[0]);
     $('#answers').append(radioText + allQuestions[0].choice[1]);
+    $('#answers').append(radioText + allQuestions[0].choice[2]);
   };
 
   showQuestion();
@@ -55,10 +58,10 @@ $(document).ready(function(){
 
 
   // if correct increment correct/incorrect results
-  if (){
-    RIGHT++
+  if (true){
+    RIGHT++;
   } else {
-    WRONG++
+    WRONG++;
   }
 
 

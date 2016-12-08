@@ -7,11 +7,19 @@
 </head>
 <body>
   <div class="container">
-    <p id="question"></p>
+    <h1 id="question"></h1>
       <div>
         <form id="answers">
         </form>
-        <button id="submit">Submit</button>
+        <br>
+        <button class="btn btn-default" id="submit">Submit</button>
+    </div>
+    <div id="results">
+    </div>
+    <hr>
+    <div id="tally">
+      total right: <span id="showRight"></span>
+      total wrong: <span id="showWrong"></span>
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
