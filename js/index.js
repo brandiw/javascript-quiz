@@ -31,15 +31,11 @@ $(document).ready(function(){
   // show the questions on the page
   // show as radio buttons
   function showQuestion() {
-    $('#container').append('<p>'+allQuestions[0].question+'</p>');
+    var radioText = ['<input type="radio" name="answers">','<br>']
+    $('#answerContainer').append('<p>'+allQuestions[0].question+'</p>');
+    $('#answerContainer').append(radioText[0] + allQuestions[0].answer1 + radioText[1]);
+    $('#answerContainer').append(radioText[0] + allQuestions[0].answer2 + radioText[1]);
   };
-/*
-    $("#question").html(allQuestions[0].question);
-    console.log("start radio");
-    $("#answers").append( allQuestions[0].answer1);
-    console.log("end radio");
-  }
-  */
 
   showQuestion();
 
