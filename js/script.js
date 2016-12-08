@@ -7,6 +7,7 @@
 $(document).ready(function() {
 
 	// STARTING THE QUIZ
+
 	$("#title-container").show();
 	$("#questions-container").hide();
 	$("#score-container").hide();
@@ -15,6 +16,7 @@ $(document).ready(function() {
 		$("#title-container").hide();
 		$("#questions-container").show();
 	});
+
 
 	// GENERATING THE QUESTIONS
 
@@ -94,23 +96,19 @@ $(document).ready(function() {
 
 	$("#1").click(function () {
 		choice = 0;
-		console.log(choice);
 	});
 
 	$("#2").click(function () {
 		choice = 1;
-		console.log(choice);
 	});
 
 	$("#3").click(function () {
 		choice = 2;
-		console.log(choice);
 	});
 
 
 	$("#4").click(function () {
 		choice = 3;
-		console.log(choice);
 	});
 
 
@@ -119,8 +117,6 @@ $(document).ready(function() {
 	$("#submit").click(function(event) {
 		event.preventDefault();
 		if (numQuestion === questions.length-1) {
-			console.log("GAME OVER");
-			console.log(numCorrect);
 			if(choice===questions[numQuestion].correctAnswer){
 			numCorrect++;}
 			$("#numCorrect").text(numCorrect);
