@@ -8,6 +8,7 @@ $(document).ready(function(){
   $("#showRight").text(RIGHT);
   $("#showWrong").text(WRONG);
 
+
   // define the class container
   class question {
     constructor(question, choice, correctAnswer) {
@@ -20,22 +21,23 @@ $(document).ready(function(){
   // populate the class with the questions & answers
   questionNum = 0;
   var allQuestions = [];
-  allQuestions.push(new question ("3+4?", [7,1,12], 0));
-  allQuestions.push(new question ("3+2?", [3,5,6], 1));
-
+  allQuestions.push(new question ("3+4 ?", [7,1,12], 0));
+  allQuestions.push(new question ("3+2 ?", [3,5,6], 1));
+  allQuestions.push(new question ("1+1 ?", [1,2,-1], 1));
+  allQuestions.push(new question ("5-2 ?", [7,2,3], 2));
+  allQuestions.push(new question ("1 x -1 ?", [0,1,-1], 2));
 
   // show the questions on the page
   // show as radio buttons
   function showQuestion() {
     var radioText = '<input type="radio" class="radio-inline" name="answers">'
-    $('#question').append('<p>'+allQuestions[0].question+'</p>');
-    $('#answers').append(radioText + allQuestions[0].choice[0]);
-    $('#answers').append(radioText + allQuestions[0].choice[1]);
-    $('#answers').append(radioText + allQuestions[0].choice[2]);
+    var pText = ['<p>','</p>']
+    $('#question').append(pText[0] + allQuestions[questionNum].question+ pText[1]);
+    $('#answers').append(radioText + allQuestions[questionNum].choice[0]);
+    $('#answers').append(radioText + allQuestions[questionNum].choice[1]);
+    $('#answers').append(radioText + allQuestions[questionNum].choice[2]);
   };
-
   showQuestion();
-
 
   // event listener on tthe button that
   $("#submit").click(function(e){
@@ -47,22 +49,34 @@ $(document).ready(function(){
   // checks radio button value against answer
   function verifyAnswer() {
     var checkedValue = $("input[name=answers]");
-    if (checkedValue[allQuestions[0].correctAnswer].checked) {
-      console.log("correct answer");
+    if (checkedValue[allQuestions[questionNum].correctAnswer].checked) {
+      console.log("correct");
+      RIGHT++;
+      displayResults(true);
+    } else if (!checkedValue[allQuestions[questionNum].correctAnswer].checked) {
+      console.log("incorrect");
+      WRONG++
+      displayResults(false);
+    } else {
+      console.log("something strange going on!");
     }
   }
 
-
   // display answer wright or wrong to user
+  function displayResults(bool) {
+    if (bool) {
+      $("#results").html("You are right!");
+      $("#showRight").text(RIGHT);
+    } else {
+      $("#results").html("Sorry, that is wrong.");
+      $("#showWrong").text(WRONG);
+    }
 
-
-
-  // if correct increment correct/incorrect results
-  if (true){
-    RIGHT++;
-  } else {
-    WRONG++;
   }
+
+  // change button to next
+
+
 
 
   //add event lister to next questions,
@@ -70,5 +84,8 @@ $(document).ready(function(){
 
 
   //go to next question if clicked, show next question
+  function nextQuestion() {
+
+  }
 
 });
