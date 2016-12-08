@@ -79,10 +79,14 @@ function setAnswer() {
         score++;
 
     }
-
     $('#answer' + allQuestions[questionCount].correctAnswerIndex)[0].checked = true; //checks a radio button
     $('#answer' + allQuestions[questionCount].correctAnswerIndex)[0].checked = false; //then unchecks it so none are checked after the new question is drawn
     questionCount++;
+
+    if($('#answer' + allQuestions[questionCount].selectedAnswerIndex !== null)){
+        $('#answer' + allQuestions[questionCount].selectedAnswerIndex)[0].checked = true;
+    }
+
     if (questionCount == allQuestions.length) {
         printAnswer();
     }
@@ -90,6 +94,9 @@ function setAnswer() {
 }
     function printAnswer() {
         $('#answerbox').css("visibility", "hidden");
+        $('#submitButton').css("visibility", "hidden");
+        $('#back').css("visibility", "hidden");
+
         $('#scorebox p').remove();
         $('#scorebox').append("Your score is " + score + " of " + allQuestions.length);
 
