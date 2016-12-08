@@ -134,6 +134,8 @@ $(document).ready(function() {
 			$("#numQuestion").text(numQuestion+1);
 			showQuestion(questions[numQuestion]);
 		}
+		$("#1").prop("checked", true)
+
 	});
 
 
