@@ -2,8 +2,6 @@
 * Your names: Robert, David
 */
 $(document).ready(function(){
-
-
   console.log("JS file is linked up!");
 
   // define the class container
@@ -16,17 +14,12 @@ $(document).ready(function(){
       }
   };
 
-
   // populate the class with the questions & answers
   questionNum = 0;
   var allQuestions = [];
   allQuestions.push(new question ("3+4?", 7, 1, 7));
   allQuestions.push(new question ("2+2?", 3, 4, 4));
 
-
-
-  console.log(allQuestions);
-  console.log($("#answer1"));
 
   // show the questions on the page
   // show as radio buttons
@@ -41,11 +34,16 @@ $(document).ready(function(){
 
 
   // event listener on tthe button that
-
+  $("#submit").click(function(e){
+    e.preventDefault();
+    verifyAnswer();
+  });
 
 
   // checks radio button value against answer
-
+  function verifyAnswer() {
+    console.log(answerContainer);
+  }
 
 
 
