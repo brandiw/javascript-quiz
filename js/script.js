@@ -6,6 +6,16 @@
 
 $(document).ready(function() {
 
+	// STARTING THE QUIZ
+	$("#title-container").show();
+	$("#questions-container").hide();
+	$("#score-container").hide();
+
+	$("#start").click(function(event) {
+		$("#title-container").hide();
+		$("#questions-container").show();
+	});
+
 	// GENERATING THE QUESTIONS
 
 	class question {
@@ -17,8 +27,46 @@ $(document).ready(function() {
 	}
 
 	var questions = [];
-	questions.push(new question("Is Kanye the best?", "no", "no", "yes", "no", 2));
-	questions.push(new question("What country has the highest population?", "USA", "China", "India", "Indonesia", 1));
+
+	questions.push(new question(
+		"''Most rappers' taste level ain't at my waist level / Turn up the bass 'til it's ______ level''",
+		"Somewhere-in-space",
+		"Up-in-yo-face",
+		"Just-a-disgrace",
+		"Give-me-some-space",
+		1));
+
+	questions.push(new question(
+		"''Maybe 15 minutes, took some pictures with your sister / ______, then I'm finished, then it's back to business''",
+		"Get forgiveness", 
+		"Get a witness", 
+		"Merry Christmas", 
+		"Get some distance", 
+		2));
+
+	questions.push(new question(
+		"''You like piña coladas, getting caught in the rain / Or rocking flannels all summer like ______''",
+		"You're from the Ukraine",
+		"Jack Lalanne",
+		"Kurt Cobain",
+		"Garth and Wayne",
+		2));
+
+	questions.push(new question(
+		"''Her man in the store tryna try his best / But he just can't seem to ______''",
+		"Find the right vest",
+		"Catch Kanye West",
+		"Get any press",
+		"Get Kanye fresh",
+		3));
+
+	questions.push(new question(
+		"''Break records at Louis, ate breakfast at Gucci / My girl a superstar all from ______''",
+		"A home movie",
+		"Selling jewelry",
+		"Juice getting off scot-free",
+		"Starring in a nudie",
+		0));
 
 
 	// DISPLAYING THE CURRENT QUESTION
@@ -72,19 +120,43 @@ $(document).ready(function() {
 		event.preventDefault();
 		if (numQuestion === questions.length-1) {
 			console.log("GAME OVER");
+			console.log(numCorrect);
 			if(choice===questions[numQuestion].correctAnswer){
 			numCorrect++;}
 			$("#numCorrect").text(numCorrect);
+			$("#questions-container").hide();
+			$("#score-container").show();
+			$("#kanye").css("width", "610px");
+			resultsMessage(numCorrect);
 		} else {
-			if(choice===questions[numQuestion].correctAnswer){
-			numCorrect++;
+			if (choice===questions[numQuestion].correctAnswer) {
+				numCorrect++;
+			};
 			numQuestion++;
 			$("#numCorrect").text(numCorrect);
 			$("#numQuestion").text(numQuestion+1);
 			showQuestion(questions[numQuestion]);
-		};
 		}
 	});
+
+
+	// DISPLAYING RESULTS MESSAGE
+
+	function resultsMessage(num) {
+		if (num === 0) {
+			$("#result-message").text("Working graveshift.");
+		} else if (num === 1) {
+			$("#result-message").text("You a fake Denzel like the Allstate n***a.");
+		} else if (num === 2) {
+			$("#result-message").text("Too many Urkels on your team, that's why your win's low.");
+		} else if (num === 3) {
+			$("#result-message").text("You gave it your Kanye's best.");
+		} else if (num === 4) {
+			$("#result-message").text("Doctors say you're the illest 'cause you're suffering from realness.");
+		} else if (num === 5) {
+			$("#result-message").text("Walking living legend.");
+		}
+	}
 
 
 	// RESTARTING THE QUIZ
@@ -95,8 +167,9 @@ $(document).ready(function() {
 		showQuestion(questions[numQuestion]);
 		$("#numCorrect").text(numCorrect);
 		$("#numQuestion").text(numQuestion+1);
-		console.log(numQuestion);
-		console.log(numCorrect);
+		$("#title-container").show();
+		$("#score-container").hide();
+		$("#kanye").css("width", "500px");
 	});
 
 
