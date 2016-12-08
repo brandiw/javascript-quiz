@@ -1,15 +1,16 @@
 class Question {
-    constructor(ask, choices, answer) {
+    constructor(ask, choice, answer) {
         this.ask = ask;
-        this.choices = choices;
+        this.choice = choice;
         this.answer = answer;
     }
 }
 $(document).ready(function() {
 
+    var currentQuestion = 0;
     var score = 0;
     var allQuestions = [];
-    var currentQuestion = 0;
+
     allQuestions.push(new Question("question 1 here", ["Thailand", "Kenya", "South Africa", "Khazikstan"], 0));
 
     allQuestions.push(new Question("question 2 here", ["Thailand", "Kenya", "South Africa", "Khazikstan"], 2));
@@ -19,16 +20,32 @@ $(document).ready(function() {
     $("#startQuiz").click(function() {
         $("#toggleDiv").toggle();
         $('#askQuestions').text(allQuestions[currentQuestion].ask);
+        // $('.choiceList').text(allQuestions[currentQuestion].choice);
+        drawRadioButtons();
     });
 
-    function drawQuestions() {
-
+    function drawRadioButtons() {
+        for (i = 0; i < allQuestions[currentQuestion].choice.length; i++) {
+            $('.choiceList').append("<li class='choiceButtons'><input type='radio'name='choices'>" + allQuestions[currentQuestion].choice[i] + "</input> </li>");
+        }
     }
 
+    function nextQuestion() {
+        for (i = 0; i < allQuestions.length; i++) {
+            $("#next").click(function())
+        }
+    }
+
+    //     for (currentQusetion = 0; i < allQuestions.length; currentQuestion++) {
+
+    //     for (var i = 0; i < allQuestions[i].choices.length; i++) { //add choices
+    //         var choice = allQuestions[i].choices[i];
+    //         $choiceArea.append("<li class='choice'><input type='radio' name='choices' value='" + i + "'>" + choice + "</input></li>");
 
 
 
-    console.log(allQuestions);
+
+    // console.log(allQuestions);
 
     // use next for the question index
     // on toggle i want to display allquestions[0] and filter through on next button
