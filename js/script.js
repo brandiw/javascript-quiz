@@ -168,7 +168,7 @@ $(document).ready(function() {
 		$("#numQuestion").text(numQuestion+1);
 		$("#title-container").show();
 		$("#score-container").hide();
-		$("#kanye").css("width", "500px");
+		$("#kanye").css("max-height", "42%").css("height", "400px");
 	});
 
 
