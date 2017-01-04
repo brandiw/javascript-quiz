@@ -118,22 +118,22 @@ $(document).ready(function() {
 	$("#submit").click(function(event) {
 		event.preventDefault();
 		if (numQuestion === questions.length-1) {
-			if(choice===questions[numQuestion].correctAnswer){
-			numCorrect++;}
-			$("#numCorrect").text(numCorrect);
-			$("#questions-container").hide();
-			$("#score-container").show();
-			$("#kanye").css("width", "610px");
-			resultsMessage(numCorrect);
-		} else {
-			if (choice===questions[numQuestion].correctAnswer) {
-				numCorrect++;
-			};
-			numQuestion++;
-			$("#numCorrect").text(numCorrect);
-			$("#numQuestion").text(numQuestion+1);
-			showQuestion(questions[numQuestion]);
-		}
+			if (choice === questions[numQuestion].correctAnswer) {
+				numCorrect++;}
+				$("#numCorrect").text(numCorrect);
+				$("#questions-container").hide();
+				$("#score-container").show();
+				$("#kanye").css("max-height", "54%").css("height", "520px");
+				resultsMessage(numCorrect);
+			} else {
+				if (choice===questions[numQuestion].correctAnswer) {
+					numCorrect++;
+				};
+				numQuestion++;
+				$("#numCorrect").text(numCorrect);
+				$("#numQuestion").text(numQuestion+1);
+				showQuestion(questions[numQuestion]);
+			}
 		$("#1").prop("checked", true)
 
 	});

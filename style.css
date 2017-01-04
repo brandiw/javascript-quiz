@@ -22,6 +22,7 @@ p {
 	font-size: 17px;
 	font-weight: 400;
 	margin-top: 0;
+	line-height: 24px;
 }
 
 #main-container {
@@ -38,8 +39,9 @@ p {
 
 #speech-tail {
 	position: absolute;
-	width: 150px;
-	bottom: -70px;
+	height: 65px;
+	max-height: 20%;
+	bottom: -60px;
 	right: 40px;
 }
 
@@ -81,10 +83,60 @@ input[type=radio] {
 	background-color: #e14545;
 }
 
-img#kanye {
+#kanye {
 	position: absolute;
 	bottom: 0;
-	right: 21%;
-	width: 500px;
+	right: 20%;
+	height: 400px;
+	max-height: 42%;
 	z-index: 1;
+}
+
+
+/*** MEDIA QUERIES ***/
+
+
+
+@media (max-width: 1366px) {
+  
+	#main-container {
+		border-radius: 55px;
+		padding: 35px;
+		width: 29%;
+	}
+
+	.button {
+		padding: 11px 14px;
+		font-size: 15px;
+		border-right: 2px solid #dc4f4f;
+		border-bottom: 2px solid #dc4f4f;
+	}
+
+	#speech-tail {
+		height: 50px;
+		max-height: 20%;
+		bottom: -45px;
+	}
+
+	h1 {
+		font-size: 27px;
+		line-height: 30px;
+	}
+
+	p {
+		font-size: 15px;
+		line-height: 20px;
+	}
+
+	.answer {
+		font-size: 15px;
+	}
+
+	.question-row {
+		margin-bottom: 3px;
+		width: 100%;
+	}
+
+
+
 }
