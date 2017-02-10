@@ -16,6 +16,10 @@ function startTimer(){
 	timer = 10;
 	$(".timer h3").text("Time left: " + timer);
 	interval = setInterval(function() {
+		if(timer === 0){
+			$(".correct h3").text("You ran out of time. Are we grillin' you too hard?").fadeIn();
+		}
+
 		if( timer > 0 ) {
 			timer--;
 		}
@@ -52,6 +56,12 @@ function displayQA() {
 		answer2.text(allQuestions[currentQuestion].choices[2]);
 		answer3.text(allQuestions[currentQuestion].choices[3]);
 		$("#container").fadeIn(2000);
+		$(".correct h3").text("").fadeOut();
+		//clear last choice
+		$("#container input[type='radio']:checked").each(function(){
+			// console.log($)
+		 	$(this).prop('checked', false);
+ 		});
 };
 
 // CHECK ANSWER ON CLICK
@@ -60,42 +70,52 @@ $(".checkAnswer").click(checkScore)
 
 function checkScore() {
 		playerAnswer = $("#container input[type='radio']:checked").val();
-	if (playerAnswer == allQuestions[currentQuestion].correctAnswerIndex) {
-		points = points + 10;
-		console.log("correct")
-	} else {
-		console.log("wrong")
-	}
+			if (playerAnswer == allQuestions[currentQuestion].correctAnswerIndex) {
+				points = points + 10;
+				$(".correct h3").text("Correct!").fadeIn();
+				console.log("correct")
+			} else {
+				$(".correct h3").text("You are wrong!").fadeIn();
+				console.log("wrong")
+			}
+
+
 };
 
 
 
 // NEXT FUNCTION
 $(".next").click(function(){
-	stopTimer();
-	if (currentQuestion >= allQuestions.length -1) {
-		console.log("No more quesitons");
-		if(timer >0 ){
+	playerAnswer = $("#container input[type='radio']:checked").val();
+	if(playerAnswer){
+		stopTimer();
+		if (currentQuestion >= allQuestions.length -1) {
+			console.log("No more quesitons");
+			if(timer >0 ){
+					checkScore();
+			}
+			displayScore();
+		} else {
+			//only check score if timer is > 0
+			if(timer > 0){
 				checkScore();
-		}
-		displayScore();
-	} else {
-		//only check score if timer is > 0
-		if(timer > 0){
-			checkScore();
-			var themesongSound = document.getElementById("themesong");
-  			themesongSound.pause();
-		}
-		//restart timer
+				var themesongSound = document.getElementById("themesong");
+	  			themesongSound.pause();
+			}
+			//restart timer
 
-		currentQuestion++
-		$("#container").fadeOut(2000);
-		setTimeout(function() {
-		displayQA();
-		startTimer();
-	}, 2000);
-		console.log(currentQuestion)
+			currentQuestion++
+			$("#container").fadeOut(2000);
+			setTimeout(function() {
+			displayQA();
+			startTimer();
+		}, 2000);
+			console.log(currentQuestion)
+		}
+	} else {
+		$(".correct h3").text("Choose an answer").show();
 	}
+
 });
 
 // DISPLAY SCORE
@@ -105,6 +125,7 @@ function displayScore() {
 	$(".next").prop("disabled", true);
 	$("#container").hide();
 	$(".timer").hide();
+	$(".correct h3").text("").hide();
 	//stop interval
 	clearInterval();
 }
