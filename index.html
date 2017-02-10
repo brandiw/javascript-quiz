@@ -2,38 +2,35 @@
 <html>
 <head>
   <title>JavaScript Quiz</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 </head>
 <body>
   
-  <form>
-  <h1>JavaScript Quiz</h1>
-  <h3>Question 1</h3>
-  <label>
-    <input type="radio" name="gender" value="male">
-    Male
-  </label>
-  <label>
-    <input type="radio" name="gender" value="female" checked>
-    Female
-  </label>
+<div id="quizStart">
+	<h1>JavaScript Quiz</h1>
+	<h3>Welcom to the quiz!</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat.</p>
+	<button type="button" id="startButton">START</button>
 
-   <h3>Question 2</h3>
-  <label>
-    <input type="radio" name="gender" value="male">
-    Male
-  </label>
-  <label>
-    <input type="radio" name="gender" value="female" checked>
-    Female
-  </label>
-  <br>
-  <button type="button" id="submit">Next Question</button>
-</form>
+</div>
+<div id="quizQuestion">
 
-<script src="/js/index.js" type="text/javascript"></script>
-<script src="//code.jquery.com/jquery.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<h3></h3>
+	<!-- <form id="selections"> -->
+		<input type ='radio' name='choice' value = "0"><p id = 'a1'></p>
+		<input type ='radio' name='choice' value = "1"><p id = 'a2'></p>
+		<input type ='radio' name='choice' value = "2"><p id = 'a3'></p>
+		<input type ='radio' name='choice' value = "3"><p id = 'a4'></p>
+		<button id="next">NEXT</button>
+	<!-- </form> -->
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="./js/index.js" type="text/javascript"></script>
 
 </body>
 </html>
