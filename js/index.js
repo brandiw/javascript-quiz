@@ -14,7 +14,7 @@ var timer = 10;
 
 function startTimer(){
 	timer = 10;
-	$(".timer h3").text(timer);
+	$(".timer h3").text("Time left: " + timer);
 	interval = setInterval(function() {
 		if( timer > 0 ) {
 			timer--;
@@ -41,6 +41,7 @@ function displayQA() {
 		answer1.text(allQuestions[currentQuestion].choices[1]);
 		answer2.text(allQuestions[currentQuestion].choices[2]);
 		answer3.text(allQuestions[currentQuestion].choices[3]);
+		$("#container").fadeIn(2000);
 };
 
 // CHECK ANSWER ON CLICK
@@ -52,7 +53,6 @@ function checkScore() {
 	if (playerAnswer == allQuestions[currentQuestion].correctAnswerIndex) {
 		points = points + 10;
 		console.log("correct")
-		console.log(points)
 	} else {
 		console.log("wrong")
 	}
@@ -75,17 +75,21 @@ $(".next").click(function(){
 			checkScore();
 		}
 		//restart timer
-		startTimer();
 
 		currentQuestion++
+		$("#container").fadeOut(2000);
+		setTimeout(function() {
 		displayQA();
+		startTimer();
+	}, 2000);
 		console.log(currentQuestion)
 	}
 });
 
 // DISPLAY SCORE
 function displayScore() {
-	$(".score h3").text(points);
+	$(".score h3").text("You've earned " + points + "! Nice job.");
+	console.log("You Suck.");
 	$(".next").prop("disabled", true);
 	$("#container").hide();
 	$(".timer").hide();
