@@ -1,26 +1,83 @@
 body {
+	
 	margin: 0 auto;
 	text-align: center;
-	font-family: 'Karla', sans-serif;
+	font-family: 'Med', sans-serif;
+	background-image: url(../img/burger.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+
+}
+
+h2 {
+	font-family: 'Bold', sans-serif;
+	font-size: 48px;
+	color: yellowgreen;
+	margin-top: 50px;
+	padding: 30px;
+	text-shadow: black 2px 2px 1px;
+	text-decoration: underline;
+}
+
+.timer {
+	color: gold;
+	font-size: 24px;
+	text-shadow: black 2px 2px 1px;
+}
+
+#container {
+	font-size: 18px;
+}
+
+.question {
+	color: tomato;
+	font-size: 26px;
+	text-shadow: black -1px -1px 1px;
 }
 
 input {
-	margin: 5px;
+	margin-top: 2px;
+	margin-right: 2px;
+	margin-bottom: 15px;
+	margin-left: 2px;
+}
+
+span {
+	color: tomato;
+	text-shadow: black 1px 1px 1px;
 }
 
 button {
 	display: block;
-	margin: 10px auto;
+	margin: 7px auto;
 	height: 40px;
 	width: 100px;
 	border: none;
-	font-size: 25px;
+	font-size: 30px;
+	border-radius: 5px;
+	box-shadow: -0.1em 0.1em 0.2em #47494a;
+	font-family: 'Bold', sans-serif;
 }
 
 button:hover {
-	background-color: pink;
+	background-color: tomato;
 }
 
-.timer {
-	font-size: 30px;
+.score {
+	font-size: 36px;
+}
+
+@font-face {
+    font-family: 'Bold';
+    src: url(../VeggiBol.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Med';
+    src: url(../VeggiMed.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Light';
+    src: url(../VeggiLig.ttf) format('truetype');
 }

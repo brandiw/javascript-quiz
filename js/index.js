@@ -28,9 +28,19 @@ function stopTimer(){
 }
 
 startTimer();
+themesongSound = document.getElementById("themesong");
+themesongSound.play();
 
-var allQuestions = [{question: "What is the official language of the Canadian province Quebec?", choices: ["French", "English", "German", "Spanish"], correctAnswerIndex: 0},
-{question: "Where did the sport of curling originate?", choices: ["United Kingdom", "Greenland", "Canada", "Scottland"], correctAnswerIndex: 3}]
+var allQuestions = [{question: "Where was the first burger ever made?", choices: ["Berlin, Germany", "Hamburg, Germany", "Harelbeke, Belgium", "Beringen, Belgium"], correctAnswerIndex: 1},
+{question: "Burgers comprise what % of the beef servings in commercial restaurants?", choices: ["50%", "21%", "84", "71%"], correctAnswerIndex: 3},
+{question: "The most expensive burger can be found in Las Vegas, what's its cost?", choices: ["$495", "$5000", "$799", "$365"], correctAnswerIndex: 1},
+{question: "Where is the hamburger hall of fame?", choices: ["Seymour, WI", "Greenville, OH", "Knox, IN", "Decatur, IL"], correctAnswerIndex: 0},
+{question: "Which chain is essentially the same as Carl's Jr., but on the East Coast?", choices: ["Checkers", "ShakeShack", "Hardees", "Fat Burger"], correctAnswerIndex: 2},
+{question: "How many hamburgers are eaten in a year in the US?", choices: ["700 million", "3 billion", "300 billion", "50 billion"], correctAnswerIndex: 3},
+{question: "French fries became an important item on hamburger chain menu during:", choices: ["1890s", "World War II", "1920s", "World War I"], correctAnswerIndex: 1},
+{question: "What was the first US national hamburger chain?", choices: ["White Castle", "Bob's Big Boy", "Wendy's", "McDonald's"], correctAnswerIndex: 0},
+{question: "How much did the biggest cheeseburger ever made weigh?", choices: ["1,314lbs", "989lbs", "2,014lbs", "3,450lbs"], correctAnswerIndex: 2},
+{question: "WHat is the world record for most burgers eaten in 3 minutes?", choices: ["8", "9", "11", "12"], correctAnswerIndex: 3},]
 
 displayQA();
 
@@ -73,6 +83,8 @@ $(".next").click(function(){
 		//only check score if timer is > 0
 		if(timer > 0){
 			checkScore();
+			var themesongSound = document.getElementById("themesong");
+  			themesongSound.pause();
 		}
 		//restart timer
 
@@ -88,7 +100,7 @@ $(".next").click(function(){
 
 // DISPLAY SCORE
 function displayScore() {
-	$(".score h3").text("You've earned " + points + "! Nice job.");
+	$(".score h3").text("You've earned " + points + "points! Nice job.").append('<img src="./img/burgerminis.png" height="64px" width="72px">');
 	console.log("You Suck.");
 	$(".next").prop("disabled", true);
 	$("#container").hide();
