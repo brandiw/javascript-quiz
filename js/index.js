@@ -37,8 +37,9 @@ timer();
 
 
 $('#nextButton').on('click', function() {
-	$("p").fadeOut(800); 
-	$("input").fadeOut(800); 
+	$("p").fadeOut(300);
+	$("label").fadeOut(300);
+	$("input").fadeOut(300); 
 	checkEndgame();
 	clearInterval(tickDown);
 	if (questionNumber === allQuestions.length) {
@@ -61,7 +62,7 @@ function timer() {
 }
 function checkEndgame() {
 	questionNumber += 1;
-	if (questionNumber === allQuestions.length) {
+	if (questionNumber >= allQuestions.length) {
 		checkAnswer();
 		tallyScore();
 	} else {
@@ -81,7 +82,8 @@ function tallyScore(){
 };
 
 function nextQuestion(){
-	$("p").fadeIn(800); 
+	$("p").fadeIn(800);
+	$("label").fadeIn(800);
 	$("input").fadeIn(800); 
 	$('#lab1').html(allQuestions[questionNumber].choices[0]);
 	$('#lab2').html(allQuestions[questionNumber].choices[1]);
