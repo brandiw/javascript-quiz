@@ -1,0 +1,26 @@
+body {
+	margin: 0 auto;
+	text-align: center;
+	font-family: 'Karla', sans-serif;
+}
+
+input {
+	margin: 5px;
+}
+
+button {
+	display: block;
+	margin: 10px auto;
+	height: 40px;
+	width: 100px;
+	border: none;
+	font-size: 25px;
+}
+
+button:hover {
+	background-color: pink;
+}
+
+.timer {
+	font-size: 30px;
+}

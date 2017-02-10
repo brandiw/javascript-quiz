@@ -19,7 +19,7 @@ function startTimer(){
 		if( timer > 0 ) {
 			timer--;
 		}
-		$(".timer h3").text(timer);
+		$(".timer h3").text("Time left: " + timer);
 	}, 1000)
 }
 
