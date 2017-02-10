@@ -1,0 +1,21 @@
+.container{
+ margin-top: 150px;
+}
+body{
+ font-family: 'ABeeZee', sans-serif;
+ background-image: url("http://www.highlandhomesllc.com/blog/wp-content/uploads/2016/07/Roadmap-4c.jpg");
+ color: white;
+}
+
+#quizQuestion {
+	background: rgba(222, 222, 222, 0.5);
+	border: 1px solid gray;
+    border-radius: 23px;
+
+}
+
+#next {
+	margin: 0 0 5px 0;
+
+}
+
