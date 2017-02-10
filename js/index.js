@@ -7,6 +7,7 @@ var allQuestions = [{question:"Complete the following Mark Twain quote: 'Go to H
 					{question:"What poker hand did Wild Bill Hickok have when he was shot in a Deadwood saloon?", choices: ['Full House (Queens over fives)','2 pair (Aces and eights)', 'Flush (Hearts to the ten)', 'Three of a Kind (Sevens)'], correctAnswerIndex:1},
 					{question:"What is the last word in the Declaration of Independence?", choices: ['Honor', 'Fortunes', 'Lives', 'Republic'], correctAnswerIndex:0},
 					{question:"What is Canada's most populous city?", choices: ['Montreal','Quebec City', 'Winnipeg', 'Toronto'], correctAnswerIndex:3}]
+
 var questionNumber = 3;
 var score;
 var time;
@@ -25,10 +26,7 @@ timer();
 
 
 $('#nextButton').on('click', function() {
-	checkAnswer();
-	tallyScore();
-	nextQuestion();
-	questionNumber++;
+	checkEndgame();
 	if (questionNumber === allQuestions.length) {
 		switchToSubmitButton()
 	}
@@ -41,20 +39,18 @@ function timer() {
 		$('#timeDisplay').text(time.toString());
 
 		if (time === 0) {
-			console.log('next question will now commence'); //placeholder
-			clearInterval(tickDown);
-			
-			checkEndgame();
+			console.log('next question will now commence'); //placeholder			
+			checkEndgame(tickDown);
 		}
 	}, 1000)
 }
-function checkEndgame() {
+function checkEndgame(tickDown) {
+	questionNumber += 1;
 	if (questionNumber === allQuestions.length) {
 		checkAnswer();
 		clearInterval(tickDown);
 		tallyScore();
 	} else {
-		questionNumber += 1;
 		nextQuestion();
 		timer();
 	}
