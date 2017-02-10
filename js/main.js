@@ -40,7 +40,7 @@ $(document).ready(function(){
 
 	$("#startButton").click(function(){
 		$("#quizStart").hide();
-		$("#quizQuestion").show();
+		$("#quizQuestion").fadeIn("slow");
 		$('h3').text(allQuestions[curQuestion].question);
 		$("#a0").text(allQuestions[curQuestion].choices[0]);
 	 	$("#a1").text(allQuestions[curQuestion].choices[1]);
@@ -48,6 +48,9 @@ $(document).ready(function(){
 	 	$("#a3").text(allQuestions[curQuestion].choices[3]);
 	 	$("#displayScore").text('Your Score: '+score);
 	})
+
+
+
 
 	$("#next").click(function(){
 		curQuestion++
@@ -61,6 +64,9 @@ $(document).ready(function(){
 	 	if (curQuestion >= 5) {	
 	 		$("#quizQuestion").hide()
 	 		$("#displayScore").text('Yay! You Scored a ' + score);
+	 		$("#displayScore").append("<br><button class = 'btn btn-success'>PLAY AGAIN</button>").click(function(){
+	 			location.reload();
+	 		});
 	 	}
 	 	$('input').prop("checked", false);
 	})
