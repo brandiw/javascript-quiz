@@ -19,10 +19,10 @@ var allQuestions = [{question:"What was Arnold's catchphrase?", choices: ['I kne
 					{question:"What real life singer voices The Magic School Bus rock star Molly Cule?", choices: ['Wynona Judd', 'Joan Jett', 'Cher', 'Sting'], correctAnswerIndex:0},
 					{question:"What phrase does Wanda Li repeat when she's stressed?", choices: ['Oh dear, oh dear, oh dear!', 'Not good, not good, not good!', 'What are we gonna do, what are we gonna do, what are we gonna do!?', 'Oh my Goodness! Where is Ms. Frizzle?'], correctAnswerIndex:2}]
 
-var questionNumber = 3;
+var questionNumber = 0;
 var score;
 var time;
-
+var tickDown;
 // append question here
 $('#question').html(allQuestions[questionNumber].question);
 
@@ -46,7 +46,7 @@ $('#nextButton').on('click', function() {
 
 function timer() {
 	time = 5;
-	var tickDown = setInterval(function(){
+	tickDown = setInterval(function(){
 		time -= 1;
 		$('#timeDisplay').text(time.toString());
 
