@@ -37,6 +37,8 @@ timer();
 
 
 $('#nextButton').on('click', function() {
+	$("p").fadeOut(800); 
+	$("input").fadeOut(800); 
 	checkEndgame();
 	clearInterval(tickDown);
 	if (questionNumber === allQuestions.length) {
@@ -76,6 +78,8 @@ function tallyScore(){
 };
 
 function nextQuestion(){
+	$("p").fadeIn(800); 
+	$("input").fadeIn(800); 
 	$('#lab1').html(allQuestions[questionNumber].choices[0]);
 	$('#lab2').html(allQuestions[questionNumber].choices[1]);
 	$('#lab3').html(allQuestions[questionNumber].choices[2]);
@@ -98,6 +102,7 @@ function showScore(){
 };
 
 });
+
 
 
 
