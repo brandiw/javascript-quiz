@@ -1,0 +1,64 @@
+h1 {
+	text-align: center;
+	color: red;
+	font-family: 'Barrio', cursive;
+	font-size: 55px;
+
+}
+body{
+	text-align: center;
+	background-image: url('../images/ufoHitchHike.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+
+}
+ol  {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.well {
+	background-color: rgba(1,1,1,0.4);
+	height: 650px;
+	padding: 40px 10px 10px 10px;
+	margin: 50px 300px 0 300px;
+	border-radius: 50px;
+}
+ol{
+	margin: 20px;
+}
+li {
+	color: white;
+	font-size: 20px;
+	margin: 10px;
+	cursor: pointer;
+}
+li:hover{
+	color: purple;
+}
+button {
+	margin: 10px;
+}
+
+h2{
+	color: white;
+}
+.choice {
+	font-size: 100px;
+}
+.pulsate {
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0.3;
+}
+@-webkit-keyframes pulsate {
+    0% { 
+        opacity: 0.9;
+    }
+    20% { 
+        opacity: 1.0;
+    }
+    100% { 
+        opacity: 0.5;
+    }
+}
