@@ -1,16 +1,29 @@
 body{
-	background: url("./../image/mrsfizzle.png");
+	background: url("./../image/large mgsb pic.jpg");
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
 h1{
-	color: 
+	text-align: center;
+	font-family: "Dust", Eraser, Serif;
+	font-size: 50px;
 }
 p{
 	color: ;
 }
 div{
-	background-color: white;
-	color: red;
+	background-color: black;
+	color: white;
+	display: block;
+	width: 650px;
+	height: 300px;
+	text-align: center;
+	background-repeat: no-repeat;
+	font-family: "Dust", Eraser, Serif;
+	font-size: 30px;
+	margin-left: 10%;
+	border: 5px #905e26 solid;
+	border-radius: 10px;
+	
 
 }
