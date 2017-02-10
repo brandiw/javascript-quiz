@@ -3,6 +3,7 @@
 */
 $('document').ready(function() {
 console.log("JS file is linked up!");
+
 var allQuestions = [{question:"What was Arnold's catchphrase?", choices: ['I knew I should have stayed home today.', 'I think this is against school policy.', 'Are we all going to die.', 'Hey! Hey! it is Fat Albert'], correctAnswerIndex:0},
 					{question:"What is Ms. Frizzle first name?", choices: ['Vicky','Valerie', 'Fran', 'Joyce'], correctAnswerIndex:1},
 					{question:"Which student is a recent transfer?", choices: ['Phoebe', 'Dorothy Ann', 'Ralphie', 'Jake'], correctAnswerIndex:0},
@@ -36,10 +37,7 @@ timer();
 
 
 $('#nextButton').on('click', function() {
-	checkAnswer();
-	tallyScore();
-	nextQuestion();
-	questionNumber++;
+	checkEndgame();
 	if (questionNumber === allQuestions.length) {
 		switchToSubmitButton()
 	}
@@ -52,20 +50,18 @@ function timer() {
 		$('#timeDisplay').text(time.toString());
 
 		if (time === 0) {
-			console.log('next question will now commence'); //placeholder
-			clearInterval(tickDown);
-			
-			checkEndgame();
+			console.log('next question will now commence'); //placeholder			
+			checkEndgame(tickDown);
 		}
 	}, 1000)
 }
-function checkEndgame() {
+function checkEndgame(tickDown) {
+	questionNumber += 1;
 	if (questionNumber === allQuestions.length) {
 		checkAnswer();
 		clearInterval(tickDown);
 		tallyScore();
 	} else {
-		questionNumber += 1;
 		nextQuestion();
 		timer();
 	}
