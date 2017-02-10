@@ -32,7 +32,7 @@ themesongSound = document.getElementById("themesong");
 themesongSound.play();
 
 var allQuestions = [{question: "Where was the first burger ever made?", choices: ["Berlin, Germany", "Hamburg, Germany", "Harelbeke, Belgium", "Beringen, Belgium"], correctAnswerIndex: 1},
-{question: "Burgers comprise what % of the beef servings in commercial restaurants?", choices: ["50%", "21%", "84", "71%"], correctAnswerIndex: 3},
+{question: "Burgers comprise what % of the beef servings in commercial restaurants?", choices: ["50%", "21%", "84%", "71%"], correctAnswerIndex: 3},
 {question: "The most expensive burger can be found in Las Vegas, what's its cost?", choices: ["$495", "$5000", "$799", "$365"], correctAnswerIndex: 1},
 {question: "Where is the hamburger hall of fame?", choices: ["Seymour, WI", "Greenville, OH", "Knox, IN", "Decatur, IL"], correctAnswerIndex: 0},
 {question: "Which chain is essentially the same as Carl's Jr., but on the East Coast?", choices: ["Checkers", "ShakeShack", "Hardees", "Fat Burger"], correctAnswerIndex: 2},
