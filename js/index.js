@@ -9,6 +9,7 @@ var allQuestions = [{question:"Complete the following Mark Twain quote: 'Go to H
 					{question:"What is Canada's most populous city?", choices: ['Montreal','Quebec City', 'Winnipeg', 'Toronto'], correctAnswerIndex:3}]
 var questionNumber = 0;
 var score;
+var time;
 
 // append question here
 $('#question').html(allQuestions[questionNumber].question);
@@ -29,8 +30,16 @@ $('#nextButton').on('click', function() {
 		switchToSubmitButton()
 	}
 
-});
 
+});;
+timer()
+function timer() {
+	time = 30;
+	var tickDown = setInterval(function(){
+		time -= 1;
+		$('#timeDisplay').text(time.toString());
+	}, 1000)
+}
 function checkAnswer(){
 	
 };
@@ -45,6 +54,9 @@ function nextQuestion(){
 	$('#lab3').html(allQuestions[questionNumber].choices[2]);
 	$('#lab4').html(allQuestions[questionNumber].choices[3]);
 	$('#question').html(allQuestions[questionNumber].question);
+setTimeout(function(){ 
+	alert("Hello"); 
+}, 30000);
 };
 
 function switchToSubmitButton(){
