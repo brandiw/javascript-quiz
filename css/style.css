@@ -3,6 +3,20 @@ body{
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
+#scoreBoard {
+	position: absolute;
+	
+	height: 100px;
+	width: 100px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+#feedbackBox {
+	height: 100px;
+	width: 300px;
+	position: absolute;
+}
 h1{
 	text-align: right;
 	font-family: "Dust", Eraser, Serif;
