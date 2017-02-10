@@ -18,7 +18,7 @@ body{
 	position: absolute;
 }
 h1{
-	text-align: center;
+	text-align: right;
 	font-family: "Dust", Eraser, Serif;
 	font-size: 50px;
 }
@@ -29,15 +29,26 @@ div{
 	background-color: black;
 	color: white;
 	display: block;
-	width: 650px;
+	width: 720px;
 	height: 300px;
 	text-align: center;
 	background-repeat: no-repeat;
 	font-family: "Dust", Eraser, Serif;
 	font-size: 30px;
-	margin-left: 10%;
+	/*margin-left: 8%;*/
 	border: 5px #905e26 solid;
 	border-radius: 10px;
+	margin-top: 5px;
+}
+#timeDisplay{
+	height: 50px;
+	width: 50px;
+	margin-top: -11%;
+	margin-left: 275px;
+	display: block;
+	text-align: center;
+}
+#timer{
 	
 
 }
