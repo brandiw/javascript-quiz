@@ -38,6 +38,7 @@ timer();
 
 $('#nextButton').on('click', function() {
 	checkEndgame();
+	clearInterval(tickDown);
 	if (questionNumber === allQuestions.length) {
 		switchToSubmitButton()
 	}
@@ -51,15 +52,15 @@ function timer() {
 
 		if (time === 0) {
 			console.log('next question will now commence'); //placeholder			
-			checkEndgame(tickDown);
+			clearInterval(tickDown);
+			checkEndgame();
 		}
 	}, 1000)
 }
-function checkEndgame(tickDown) {
+function checkEndgame() {
 	questionNumber += 1;
 	if (questionNumber === allQuestions.length) {
 		checkAnswer();
-		clearInterval(tickDown);
 		tallyScore();
 	} else {
 		nextQuestion();
