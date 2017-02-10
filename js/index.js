@@ -91,6 +91,8 @@ function handleResponse(){
   $('#userScore').children().remove();
   $('#userScore').append('<h2>' + score+ '</h2>');
   $('#choices').children()[correctAns].style.color ='red';
+  console.log($('#choices').children()[correctAns])
+  $('#choices').children()[correctAns].addClass('choice');
   $('#questionTitle').fadeOut();
   $('#choices').children().fadeOut();
   setTimeout(function(){
