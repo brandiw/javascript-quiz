@@ -3,34 +3,41 @@
 <head>
   <title>JavaScript Quiz</title>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  
-<div id="quizStart">
-	<h1>JavaScript Quiz</h1>
-	<h3>Welcom to the quiz!</h3>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat.</p>
-	<button type="button" id="startButton">START</button>
+<div class='container'>
+	<div id="quizStart" class="text-center">
+		<h1>Welcome to the Quiz</h1>
+		<h3>Do you know your State Capitals</h3>
+		<p>Lets find out!</p>
+		<button type="button" class="btn btn-success" id="startButton">START</button>
 
-</div>
-<div id="quizQuestion">
+	</div>
+	<div>
+		<h1 id="displayScore"></h1>
+	</div>
+	<div id="quizQuestion">
 
-	<h3></h3>
-	<!-- <form id="selections"> -->
-		<input type ='radio' name='choice' value = "0"><p id = 'a1'></p>
-		<input type ='radio' name='choice' value = "1"><p id = 'a2'></p>
-		<input type ='radio' name='choice' value = "2"><p id = 'a3'></p>
-		<input type ='radio' name='choice' value = "3"><p id = 'a4'></p>
-		<button id="next">NEXT</button>
-	<!-- </form> -->
+		<h3></h3>
+		<div class='row'>
+			<div class='col-xs-12 col-md-6 col-lg-3'><input type ='radio' name='choice' value = "0"><p id = 'a0'></p></div>
+	        <div class='col-xs-12 col-md-6 col-lg-3'><input type ='radio' name='choice' value = "1"><p id = 'a1'></p></div>
+	        <div class='col-xs-12 col-md-6 col-lg-3'><input type ='radio' name='choice' value = "2"><p id = 'a2'></p></div>
+	        <div class='col-xs-12 col-md-6 col-lg-3'><input type ='radio' name='choice' value = "3"><p id = 'a3'></p></div>
+	        <div class="text-center" class='col-xs-12 col-md-6 col-lg-3'>
+	        <button class="btn btn-success" id="next">NEXT</button></div>
+		</div>
+	</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="./js/index.js" type="text/javascript"></script>
+<script type="text/javascript" src="./js/main.js"></script>
 
 </body>
 </html>
