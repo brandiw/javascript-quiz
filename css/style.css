@@ -1,0 +1,43 @@
+body{
+	background: url("./../image/large mgsb pic.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+#scoreBoard {
+	position: absolute;
+	
+	height: 100px;
+	width: 100px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+#feedbackBox {
+	height: 100px;
+	width: 300px;
+	position: absolute;
+}
+h1{
+	text-align: center;
+	font-family: "Dust", Eraser, Serif;
+	font-size: 50px;
+}
+p{
+	color: ;
+}
+div{
+	background-color: black;
+	color: white;
+	display: block;
+	width: 650px;
+	height: 300px;
+	text-align: center;
+	background-repeat: no-repeat;
+	font-family: "Dust", Eraser, Serif;
+	font-size: 30px;
+	margin-left: 10%;
+	border: 5px #905e26 solid;
+	border-radius: 10px;
+	
+
+}
