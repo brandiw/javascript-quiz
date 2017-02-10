@@ -1,5 +1,7 @@
 body{
 	background: url("./../image/mrsfizzle.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 h1{
 	color: 
