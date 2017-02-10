@@ -8,6 +8,7 @@ var allQuestions = [{question:"Complete the following Mark Twain quote: 'Go to H
 					{question:"What is the last word in the Declaration of Independence?", choices: ['Honor', 'Fortunes', 'Lives', 'Republic'], correctAnswerIndex:0},
 					{question:"What is Canada's most populous city?", choices: ['Montreal','Quebec City', 'Winnipeg', 'Toronto'], correctAnswerIndex:3}]
 // append question here
+$('#question').html(allQuestions[0].question);
 // for (var i = 0, j = 1; i < 5; i++, j++) {
 // $(' "#lab' + j + '" ').html(allQuestions[i].choices[i]);
 // }
