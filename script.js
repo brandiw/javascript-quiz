@@ -53,7 +53,11 @@ var allQuestions = [
 }
 ]
 
-
+// jquery selector aliases
+var $question = $('.question');
+var $next = $('#next');
+var $answers = $('.answers');
+var $label = $('label');
 
 $( function() {
   $( "#progressbar" ).progressbar({
@@ -76,30 +80,42 @@ function randomizedChoices(question) {
 // random question function
 function getRandomQuestion() {
    var i = Math.floor(Math.random() * allQuestions.length);
-   $('.question').text(allQuestions[i].question);
-   randomChoices(i);
+   return allQuestions[i];
 }
-$(function(){
-	$('#next').click(function(){
-		getRandomQuestion();
-	})
+
+// $(function(){
+// 	$('#next').click(function(){
+// 		getRandomQuestion();
+// 	})
+// });
+
+// next event listener
+$next.on('click', function() {
+	var randomQuestion = getRandomQuestion();
+	var choices = randomizedChoices(randomQuestion);
+	$question.val(randomQuestion.question);
+	for (var i = 0; i < $answers.length; i++) {
+		//console.log($answers[i]);
+		$($answers[i]).next().text(choices[i]);
+		$question.text(randomQuestion.question);
+	}
+	// TODO: clear radio
+	// TODO: checkIfCorrect();
 });
 
 //score function
 function getScore(){
-var score=0;
-var numQuestions=10;
+	var score=0;
+	var numQuestions=10;
 
-for (var i=0;i<numQuestions;i++){
-if (userInput[i]==answers[i]){
-score += 1;
-}
-else{
-score += 0;
-}
+	for (var i=0;i<numQuestions;i++){
+		if (userInput[i]==answers[i]){
+			score += 1;
+		}
+		else{
+			score += 0;
+		}
 
+	}
+	return score;
 }
-return score;
-}
-
-
