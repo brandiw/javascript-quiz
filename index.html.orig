@@ -15,10 +15,17 @@
 		<div class="row">
 			<div class="col-sm-9">
 				<form class="choices">
+<<<<<<< HEAD
 					<input class="answers" type="radio" name="choice" id="0"><label for="0"></label><br />
 					<input class="answers" type="radio" name="choice" id="1"><label for="1"></label><br />
 					<input class="answers" type="radio" name="choice" id="2"><label for="2"></label><br />
 					<input class="answers" type="radio" name="choice" id="3"><label for="3"></label>
+=======
+					<input class="answers" type="radio" name="choice" value="0"><label for="0"></label><br />
+					<input class="answers" type="radio" name="choice" value="1"><label for="1"></label><br />
+					<input class="answers" type="radio" name="choice" value="2"><label for="2"></label><br />
+					<input class="answers" type="radio" name="choice" value="3"><label for="3"></label>
+>>>>>>> 031a6ec41b17b2afdc2af9085e50b099e103e773
 				</form>
 			</div>
 			<div class="col-sm-3">

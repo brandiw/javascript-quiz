@@ -69,14 +69,6 @@ var $next = $('#next');
 var $answers = $('.answers');
 var $label = $('label');
 
-var currentQuestion = {question: "", choices: ["0", "1", "2", "3"]};
-
-
-$(document).ready(function () {
-   $('#next').click();
-});
-
-
 $( function() {
   $( "#progressbar" ).progressbar({
     value: .5
@@ -96,14 +88,9 @@ function randomizedChoices(question) {
   return choices;
 }
 // random question function
-var counter = 0;
 function getRandomQuestion() {
-	if(counter < 10) {
-		return allQuestions[counter];
-	} else {
-		$('.container').remove();
-		$('h2').append( "<h4>You scored...</h4>" );
-	}
+   var i = Math.floor(Math.random() * allQuestions.length);
+   return allQuestions[i];
 }
 
 // $(function(){
@@ -128,46 +115,18 @@ $next.on('click', function() {
 
 // next event listener
 $next.on('click', function() {
-	var answer = selectedAnswer();
-	checkAnswer(answer, currentQuestion);
 	var randomQuestion = getRandomQuestion();
-	currentQuestion = randomQuestion;
 	var choices = randomizedChoices(randomQuestion);
 	$question.val(randomQuestion.question);
 	for (var i = 0; i < $answers.length; i++) {
 		//console.log($answers[i]);
 		$($answers[i]).next().text(choices[i]);
 		$question.text(randomQuestion.question);
-		$($answers[i]).val(choices[i]);
 	}
+
 
 
 });
-
-function selectedAnswer() {
-	for (var i = 0; i < $answers.length; i++) {
-		if ($($answers[i]).is(":checked")) {
-			return $($answers[i]).val();
-		}
-	}
-	// get user input
-	// compare user input vs that question's first choice index
-	// return true/false
-}
-
-function checkAnswer(answer, question) {
-	console.log(question);
-	if (answer === question.choices[0]) {
-		console.log("got it!");
-	} else {
-		console.log("wrong!");
-	}
-}
-
-	$('input[name="choice"]').prop('checked',false);
-	counter++;
-});
-
 
 //score function
 function getScore(){
