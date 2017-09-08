@@ -69,6 +69,9 @@ var $next = $('#next');
 var $answers = $('.answers');
 var $label = $('label');
 
+$(document).ready(function () {
+   $('#next').click();
+});
 
 $( function() {
   $( "#progressbar" ).progressbar({
@@ -89,9 +92,14 @@ function randomizedChoices(question) {
   return choices;
 }
 // random question function
+var counter = 0;
 function getRandomQuestion() {
-   var i = Math.floor(Math.random() * allQuestions.length);
-   return allQuestions[i];
+	if(counter < 10) {
+		return allQuestions[counter];
+	} else {
+		$('.container').remove();
+		$('h2').append( "<h4>You scored...</h4>" );
+	}
 }
 
 $(function(){
@@ -110,9 +118,8 @@ $next.on('click', function() {
 		$($answers[i]).next().text(choices[i]);
 		$question.text(randomQuestion.question);
 	}
-
-
-
+	$('input[name="choice"]').prop('checked',false);
+	counter++;
 });
 
 //score function
