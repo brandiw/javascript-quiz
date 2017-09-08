@@ -1,3 +1,5 @@
+var score = 0;
+
 var allQuestions = [
 {
 	question: "What makes a muskrat guard hus musk?",
@@ -6,7 +8,7 @@ var allQuestions = [
 	},
 	{
 	question: "Whooo aaarrrreeee yooooouuuuu?",
-	choices: [“Owl”, “Alice”, “Mr Bean”, “The Great and Powerful Oz”],
+	choices: ["Owl", "Alice", "Mr Bean", "The Great and Powerful Oz"],
 	correctAnswerIndex: 2
 	},
 	{
@@ -40,11 +42,65 @@ var allQuestions = [
 	correctAnswerIndex: 0
 	},
 	{
-	question: "",
-	choices: ["", "", "", ""],
-	correctAnswerIndex: 
-}];
+	question: "How do you call for the widged monkeys in the wizard of oz?",
+	choices: ["Ep-pe, pep-pe, kak-ke! Hil-lo, hol-lo, hel-lo! Ziz-zy, zuz-zy, zik!", "Ep-pe, pep-pe, kak-ke! Ziz-zy, zuz-zy, zik! Hil-lo, hol-lo, hel-lo!", "Ziz-zy, zuz-zy, zik! Ep-pe, pep-pe, kak-ke!  Hil-lo, hol-lo, hel-lo!", "There's no place like home"],
+	correctAnswerIndex: 0
+	},
+	{
+	question: "Your score is: ",
+	choices: ["","","",""],
+	correctAnswerIndex: 0
+	}
 
-function currentQuestion() {
-	//var questionNumber = 0;
+];
+
+//counter to tell what question we are on
+var questionCounter = 0;
+var selectedAnswer = $("input[name=question1]:checked").val();
+var submitAnswer = $("#userClick");
+
+
+var getUserSelection = function(){
+    var checked = $('input[name="question1"]:checked').val();
+    return checked;
 }
+
+var answerIsCorrect = function(){
+    userSelection = parseInt(getUserSelection());   
+	if(allQuestions[questionCounter].correctAnswerIndex === userSelection){
+          console.log(allQuestions[questionCounter].correctAnswerIndex, userSelection);
+          score++;
+          var win = "Your score is " + score;
+          allQuestions[allQuestions.length-1].question = win;
+          return true;
+
+      } else {
+          return false;
+          console.log(allQuestions[questionCounter].correctAnswerIndex, userSelection);
+      } 
+} 
+
+
+function changeQuestion() {
+	$("div h1").text(allQuestions[questionCounter].question);
+}
+
+function changeAnswers() {
+	var answers = allQuestions[questionCounter].choices;
+	//console.log("test one");
+	var getAnswers = function(){
+	 for (i=0; i<answers.length; i++){
+	     $("#" + i).text(answers[i]);
+	     //console.log("test 2");
+	}};
+	getAnswers();
+}
+
+submitAnswer.on("click", function() {
+	//getUserSelection();
+	console.log(answerIsCorrect());
+	questionCounter++;
+	changeQuestion();
+	changeAnswers();
+
+});
