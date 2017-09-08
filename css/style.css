@@ -2,11 +2,12 @@
 	display: inline-block;
 	position: relative;
 }
-#c1 {
+
+/*#r1 {
 	display: inline-block;
 	position: relative;
-}
-#r1 {
+}*/
+p {
 	display: inline-block;
-	position: relative;
+	position: absolute;
 }
