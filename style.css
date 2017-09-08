@@ -1,15 +1,25 @@
 h2{
 	text-align: center;
 	font-size: 48px;
+	color:white;
+}
+body{
+	background: url(img/garden.jpeg) no-repeat;
+	background-size: cover;
+}
+p{
+	color: white;
+	font-size: 24px;
 }
 .choices{
-
+	color:white;
 }
 #next{
 
 }
 #progressbar{
 	width: 400px;
+	color: royalblue;
 }
 .container{
 	width: 500px;

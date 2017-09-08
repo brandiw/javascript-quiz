@@ -1,4 +1,4 @@
-
+var userInput = new Array();
 
 var allQuestions = [
 {
@@ -53,17 +53,15 @@ var allQuestions = [
 }
 ]
 
-function getRandomQuestion() {
-   var i = Math.floor(Math.random() * allQuestions.length);
-   return allQuestions[i];
-   // $('#question').text(i);
-}
+
+
 $( function() {
   $( "#progressbar" ).progressbar({
-    value: 0
+    value: .5
   });
 } );
 
+//picks choices in random order
 function randomizedChoices(question) {
   var choices = [];
   while (choices.length !== question.choices.length) {
@@ -75,14 +73,33 @@ function randomizedChoices(question) {
   }
   return choices;
 }
+// random question function
+function getRandomQuestion() {
+   var i = Math.floor(Math.random() * allQuestions.length);
+   $('.question').text(allQuestions[i].question);
+   randomChoices(i);
+}
+$(function(){
+	$('#next').click(function(){
+		getRandomQuestion();
+	})
+});
 
-// $(function(){
-// 	$('#next').click(function(){
-// 		getRandomQuestion();
-// 	})
-// });
+//score function
+function getScore(){
+var score=0;
+var numQuestions=10;
 
-$(".answers")
+for (var i=0;i<numQuestions;i++){
+if (userInput[i]==answers[i]){
+score += 1;
+}
+else{
+score += 0;
+}
 
+}
+return score;
+}
 
 
