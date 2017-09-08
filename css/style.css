@@ -1,0 +1,13 @@
+.answers {
+	display: inline-block;
+	position: relative;
+}
+
+/*#r1 {
+	display: inline-block;
+	position: relative;
+}*/
+p {
+	display: inline-block;
+	position: absolute;
+}

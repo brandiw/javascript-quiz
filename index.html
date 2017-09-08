@@ -2,9 +2,24 @@
 <html>
 <head>
   <title>JavaScript Quiz</title>
-  <script src="/js/index.js" type="text/javascript"></script>
+  <style type="text/css" src="css/style.css"></style>
 </head>
 <body>
-  <h1>Hello world!</h1>
+  <h1>Quizes</h1>
+
+  <h2 id="question">Question goes here</h2>
+  <div class="answers">
+    <form>
+      <input id="r1" type="radio" name="gender" value="Question 1"> <span id="c1"></span><br>
+      <input id="r2" type="radio" name="gender" value="Question 2"> <span id="c2"></span><br>
+      <input id="r3" type="radio" name="gender" value="Question 3"> <span id="c3"></span> <br>
+      <input id="r4" type="radio" name="gender" value="Question 4"> <span id="c4"></span><br>
+      <input type="button" id="submitButton" value="Submit">
+    </form>
+  	</div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="js/index.js" type="text/javascript"></script>
 </body>
 </html>
