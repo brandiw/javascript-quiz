@@ -2,6 +2,8 @@ h2{
 	text-align: center;
 	font-size: 48px;
 	color:white;
+	background: black;
+	opacity: .7;
 }
 body{
 	background: url(img/garden.jpeg) no-repeat;
@@ -23,6 +25,8 @@ p{
 }
 .container{
 	width: 500px;
+	background: black;
+	opacity: .7;
 }
 .row{
 	margin: 1em;

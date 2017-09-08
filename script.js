@@ -68,7 +68,14 @@ var $question = $('.question');
 var $next = $('#next');
 var $answers = $('.answers');
 var $label = $('label');
+
 var currentQuestion = {question: "", choices: ["0", "1", "2", "3"]};
+
+
+$(document).ready(function () {
+   $('#next').click();
+});
+
 
 $( function() {
   $( "#progressbar" ).progressbar({
@@ -89,9 +96,14 @@ function randomizedChoices(question) {
   return choices;
 }
 // random question function
+var counter = 0;
 function getRandomQuestion() {
-   var i = Math.floor(Math.random() * allQuestions.length);
-   return allQuestions[i];
+	if(counter < 10) {
+		return allQuestions[counter];
+	} else {
+		$('.container').remove();
+		$('h2').append( "<h4>You scored...</h4>" );
+	}
 }
 
 // $(function(){
@@ -129,6 +141,7 @@ $next.on('click', function() {
 		$($answers[i]).val(choices[i]);
 	}
 
+
 });
 
 function selectedAnswer() {
@@ -150,6 +163,11 @@ function checkAnswer(answer, question) {
 		console.log("wrong!");
 	}
 }
+
+	$('input[name="choice"]').prop('checked',false);
+	counter++;
+});
+
 
 //score function
 function getScore(){
