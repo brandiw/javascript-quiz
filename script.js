@@ -68,6 +68,8 @@ var $question = $('.question');
 var $next = $('#next');
 var $answers = $('.answers');
 var $label = $('label');
+var counter = 0;
+var score = 0;
 
 var currentQuestion = {question: "", choices: ["0", "1", "2", "3"]};
 
@@ -96,14 +98,16 @@ function randomizedChoices(question) {
   return choices;
 }
 // random question function
-var counter = 0;
+
 function getRandomQuestion() {
 	if(counter < 10) {
-		return allQuestions[counter];
+		var i = Math.floor(Math.random() * allQuestions.length);
+    return allQuestions[i];
 	} else {
 		$('.container').remove();
-		$('h2').append( "<h4>You scored...</h4>" );
+		$('h2').append( "<h4>You scored...</h4>" + score);
 	}
+
 }
 
 // $(function(){
@@ -113,23 +117,10 @@ function getRandomQuestion() {
 // });
 
 // next event listener
-$next.on('click', function() {
-	var randomQuestion = getRandomQuestion();
-	var choices = randomizedChoices(randomQuestion);
-	$question.val(randomQuestion.question);
-	for (var i = 0; i < $answers.length; i++) {
-		//console.log($answers[i]);
-		$($answers[i]).next().text(choices[i]);
-		$question.text(randomQuestion.question);
-	}
-	// TODO: clear radio
-	// TODO: checkIfCorrect();
-});
-
-// next event listener
+var counter = 0;
 $next.on('click', function() {
 	var answer = selectedAnswer();
-	checkAnswer(answer, currentQuestion);
+	getScore(answer, currentQuestion);
 	var randomQuestion = getRandomQuestion();
 	currentQuestion = randomQuestion;
 	var choices = randomizedChoices(randomQuestion);
@@ -141,6 +132,8 @@ $next.on('click', function() {
 		$($answers[i]).val(choices[i]);
 	}
 
+		$('input[name="choice"]').prop('checked',false);
+		counter++;
 
 });
 
@@ -155,33 +148,16 @@ function selectedAnswer() {
 	// return true/false
 }
 
-function checkAnswer(answer, question) {
+function getScore(answer, question) {
 	console.log(question);
 	if (answer === question.choices[0]) {
-		console.log("got it!");
+		score += 1;
+		$( "#progressbar" ).progressbar({
+			value: (score * 10)
+		});
 	} else {
+		score += 0;
 		console.log("wrong!");
 	}
-}
 
-	$('input[name="choice"]').prop('checked',false);
-	counter++;
-});
-
-
-//score function
-function getScore(){
-	var score=0;
-	var numQuestions=10;
-
-	for (var i=0;i<numQuestions;i++){
-		if (userInput[i]==answers[i]){
-			score += 1;
-		}
-		else{
-			score += 0;
-		}
-
-	}
-	return score;
 }
