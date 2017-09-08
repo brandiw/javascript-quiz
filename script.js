@@ -63,6 +63,11 @@ var allQuestions = [
 }
 ]
 
+// jquery selector aliases
+var $question = $('.question');
+var $next = $('#next');
+var $answers = $('.answers');
+var $label = $('label');
 
 
 $( function() {
@@ -86,13 +91,28 @@ function randomizedChoices(question) {
 // random question function
 function getRandomQuestion() {
    var i = Math.floor(Math.random() * allQuestions.length);
-   $('.question').text(allQuestions[i].question);
-   randomChoices(i);
+   return allQuestions[i];
 }
+
 $(function(){
 	$('#next').click(function(){
 		getRandomQuestion();
 	})
+});
+
+// next event listener
+$next.on('click', function() {
+	var randomQuestion = getRandomQuestion();
+	var choices = randomizedChoices(randomQuestion);
+	$question.val(randomQuestion.question);
+	for (var i = 0; i < $answers.length; i++) {
+		//console.log($answers[i]);
+		$($answers[i]).next().text(choices[i]);
+		$question.text(randomQuestion.question);
+	}
+
+
+
 });
 
 //score function
@@ -111,12 +131,3 @@ score += 0;
 }
 return score;
 }
-function qAsked(){
-	for (var i = 0; allQuestions.length + 1; i++) {
-		if () {
-
-	}
-	}
-	
-}
-
