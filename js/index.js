@@ -31,7 +31,10 @@ var score = 0;
 var counter = 0; 
 var numberQuestions = 3; 
 
-$(document).ready(changeQuestion());
+$(document).ready(function(){
+  changeQuestion();
+  $("#reset").toggle();
+  });
 
 function changeQuestion(){
     if(counter < 3){
@@ -39,6 +42,7 @@ function changeQuestion(){
       var label = document.createElement("p");
       label.append(allQuestions[counter].question);
       $('form').append(label);
+
       for (var j = 0; j < allQuestions[counter].choices.length; j++) {
         var input = $('<input type="radio" name='+allQuestions[counter].name+'>');
         var text = allQuestions[counter].choices[j]; 
@@ -51,6 +55,7 @@ function changeQuestion(){
     $("form").empty();
     $("#submit").toggle();
     $("#score").text("You got "+score+" out of 3 questions correct!");
+    $("#reset").toggle();
   }
  } 
 
@@ -60,6 +65,7 @@ function checkAnswer(){
 
   if (!$("input:checked").val()) {
    $("#score").text("Please select an answer.");
+
   }else if($('input:checked').val() == answerIndex) { 
     score++;
     $("#score").text("");
@@ -68,4 +74,13 @@ function checkAnswer(){
     $("#score").text("");
     changeQuestion();
    }
+}
+
+function reset(){
+  score = 0; 
+  counter = 0;
+  changeQuestion();
+  $("#score").text("");
+  $("#reset").toggle();
+  $("#submit").toggle();
 }
