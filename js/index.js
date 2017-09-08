@@ -59,11 +59,13 @@ function checkAnswer(){
   var answerIndex = allQuestions[counter-1].correctAnswerIndex;
 
   if (!$("input:checked").val()) {
-   alert('Nothing is checked!');
+   $("#score").text("Please select an answer.");
   }else if($('input:checked').val() == answerIndex) { 
     score++;
+    $("#score").text("");
     changeQuestion();
    }else{
+    $("#score").text("");
     changeQuestion();
    }
 }
