@@ -2,7 +2,8 @@
 * Jenna Badanowski and Lauren Perez
 */
 
-console.log("JS file is linked up!");
+// to do:
+//add reset button to end
 
 
 var allQuestions = [
@@ -33,22 +34,36 @@ var numberQuestions = 3;
 $(document).ready(changeQuestion());
 
 function changeQuestion(){
-  $("form").empty();
-  var label = document.createElement("p");
-  label.append(allQuestions[counter].question);
-  $('form').append(label);
-  for (var j = 0; j < allQuestions[counter].choices.length; j++) {
-    var input = $('<input type="radio" name='+allQuestions[counter].name+'>');
-    var text = allQuestions[counter].choices[j]; 
-    $(input).val(allQuestions[counter].choices[j])
-    $('form').append(input);
-    $('form').append(text + '<br>');
-      }
-  counter++; 
-  // if($('input[allQuestions[i].name]:checked').val() == allQuestions[i].choices[correctAnswerIndex]){
-  // };
+    if(counter < 3){
+      $("form").empty();
+      var label = document.createElement("p");
+      label.append(allQuestions[counter].question);
+      $('form').append(label);
+      for (var j = 0; j < allQuestions[counter].choices.length; j++) {
+        var input = $('<input type="radio" name='+allQuestions[counter].name+'>');
+        var text = allQuestions[counter].choices[j]; 
+        $(input).val(j);
+        $('form').append(input);
+        $('form').append(text + '<br>');
+          }
+      counter++; 
+  }else{
+    $("form").empty();
+    $("#submit").toggle();
+    $("#score").text("You got "+score+" out of 3 questions correct!");
+  }
+ } 
+
+
+function checkAnswer(){
+  var answerIndex = allQuestions[counter-1].correctAnswerIndex;
+
+  if (!$("input:checked").val()) {
+   alert('Nothing is checked!');
+  }else if($('input:checked').val() == answerIndex) { 
+    score++;
+    changeQuestion();
+   }else{
+    changeQuestion();
+   }
 }
-
-//if checked radio button's value = choices[correctAnswerIndex] then score ++
-// indexof checked radio button == allQuestions[i].correctAnswerIndex;
-
