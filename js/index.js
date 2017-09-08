@@ -27,27 +27,25 @@ var allQuestions = [
 ]; 
 
 var score = 0; 
+var counter = 0; 
 var numberQuestions = 3; 
 
+$(document).ready(changeQuestion());
 
 function changeQuestion(){
-  for (var i = 0; i < allQuestions.length; i++) {
-      var label = document.createElement("p");
-      label.append(allQuestions[i].question);
-      $('form').append(label);
-
-      for (var j = 0; j < allQuestions[i].choices.length; j++) {
-        var input = $('<input type="radio" name='+allQuestions[i].name+'>');
-        var text = allQuestions[i].choices[j]; 
-        $(input).val(allQuestions[i].choices[j])
-        $('form').append(input);
-        $('form').append(text + '<br>');
+  $("form").empty();
+  var label = document.createElement("p");
+  label.append(allQuestions[counter].question);
+  $('form').append(label);
+  for (var j = 0; j < allQuestions[counter].choices.length; j++) {
+    var input = $('<input type="radio" name='+allQuestions[counter].name+'>');
+    var text = allQuestions[counter].choices[j]; 
+    $(input).val(allQuestions[counter].choices[j])
+    $('form').append(input);
+    $('form').append(text + '<br>');
       }
-
-  }
-
+  counter++; 
   // if($('input[allQuestions[i].name]:checked').val() == allQuestions[i].choices[correctAnswerIndex]){
-// console.log(input[allQuestions[i].name]':checked');
   // };
 }
 
