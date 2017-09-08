@@ -3,9 +3,11 @@
 */
 $(function() {
 
-console.log("JS file is linked up!");
-
-
+var submitButton = $("#submitButton");
+var currentScore = 0;
+var counter = 0
+var choices = nextQuestionArr[counter].choices
+var nextQuestionArr = [];
 
 var questions = [
 	{	question: "what is 1 + 1?",
@@ -24,18 +26,11 @@ var questions = [
 		choices: ["five", "six", "seven", "ten"],
 		correctAnswer: 3 }
 ];
-
-
-var submitButton = $("#submitButton");
-var currentScore = 0;
-var questionsAnswered = 0;
-var counter = 0
-var choices = nextQuestionArr[counter].choices
-
+console.log(choices);
 
 var loadQuestion = function() {
 	$("#question").append.nextQuestionArr[counter].question;
-	for (i=0; i < choices.length; i++) {
+	for (i=0; i<choices.length; i++) {
 		$("#c1").append(choices[i]);
 		$("#c2").append(choices[i]);
 		$("#c3").append(choices[i]);
@@ -45,24 +40,20 @@ var loadQuestion = function() {
 }
 loadQuestion();
 
-
-//put check correct score function here:  	if (questions.choices === questions.correctAnswer) { next 4 lines }
-//put this next:  							questionsAnswered += 1;
-//put this next: 							$(XXXXX).remove();
-//put this next: 							loadQuestion();
-//put this next: 			currentScore += 1;
-
 var lastQuestionCheck = function() {
-	if (questionsAnswered === questions.length) {
+	if (counter === questions.length) {
+		$("#quesiton").remove();
+		$(".answers").remove();
 		$("#question").append(currentScore);
 	} else {
-		console.log("Not last question, yet");
+		console.log("More questions to answer");
+		loadQuestion();
 	}
 }
 
-
-
-
-
-
 });
+
+//IF ANSWER IS CORRECT . 					IF ANSWER IS INCORRECT
+//currentScore += 1;
+//lastQuestionCheck();						lastQuestionCheck();
+
