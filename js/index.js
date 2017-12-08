@@ -3,6 +3,7 @@
 */
 
 var correct = 0;
+var wrong = 0;
 var turn = 0;
 
 var allQuestions = [
@@ -37,8 +38,13 @@ var win = function(){
   }else if ((turn == 2) && ($("#answers-D").is(":checked") )){
     correct++;
     alert("You got " + correct + " right!")
-  }else{
-    alert("Guess Again!")
+  }else if (turn == 2) {
+    wrong++;
+    alert("You got " + correct + " right! And " + wrong + " wrong!")
+  } else {
+    console.log("Wrong!")
+    wrong++;
+    nextQ();
   }
 };
 
