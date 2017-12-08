@@ -10,9 +10,9 @@ var questions =
 	choices: ["The Doors", "Pink Floyd", "The Beatles", "Eagles", "Led Zeppelin"],
 	correctAnswerIndex:0},
 	{question: "Who joined Alicia Keys on the 2002 hit song \"Gangsta Lovin\"?",
-	choices: ["Jay Z", "Jennifer Hudson", "Swizz Beatz", "Beyonce", "Eve"],
-	correctAnswerIndex:4},
-	{question: "With which group would you associate the songs \"Light My Fighter\"and \"Hello I Love You\"?",
-	choices: ["The Doors", "Pink Floyd", "The Beatles", "Eagles", "Led Zeppelin"],
-	correctAnswerIndex:0}
+	choices: ["Jay Z", "Jennifer Hudson", "Swizz Beatz", "Eve"],
+	correctAnswerIndex:3},
+	{question: "What instrument does Jack White play in the band White Stripes?",
+	choices: ["Drum", "Guitar", "Bass", "Trombone", "Cowbell"],
+	correctAnswerIndex:1}
 ];
