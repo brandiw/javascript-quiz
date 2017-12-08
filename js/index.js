@@ -69,13 +69,13 @@ $(function() {
   }
 
   function checkResult(input, questionNumber) {
-    if (input === QUESTIONS[questionNumber].correctAnswer) {
+    if (input == QUESTIONS[questionNumber].correctAnswer) {
       return true;
     }
   }
 
   function doneWithTest(input) {
-    if (currentQuestion === QUESTIONS.length-1) {
+    if (currentQuestion === QUESTIONS.length - 1) {
 
       $('#quizBox').empty().append(`
         <div class="row">
@@ -84,9 +84,9 @@ $(function() {
          <h2 id="">Your score is ${score}</h2>
       </div>
         `);
-      
 
-   
+
+
 
     }
   }
@@ -105,17 +105,17 @@ $(function() {
 
       var userInput = readInput();
       console.log('user input read', userInput);
-      if (!userInput) {
-
+      if (userInput) {
+        if (checkResult(userInput, currentQuestion)) {
+          score += 1;
+          console.log(score)
+        }
         currentQuestion += 1;
 
         generateBoard(currentQuestion);
 
-        if (checkResult(userInput, currentQuestion)) {
-          score += 1;
-          console.log(score)
-        } 
-      } else {  }
+
+      } else {}
 
 
     })
