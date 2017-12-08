@@ -1,0 +1,133 @@
+header {
+	border: 3px;
+	background: rgba(215, 92, 55, 1);
+	margin: -10px -10px -33px -10px;
+	padding: 10px;
+	text-align: right;
+}
+
+body {
+	background-image: url("../img/quiz-background.jpg");
+	background-repeat: no-repeat;
+	background-position: absolute;
+	background-size: 1200px 700px;
+	font-family: 'Inconsolata', monospace;
+}
+
+h1 {
+	text-align: center;
+	font-size: 50px;
+	background: rgba(103, 114, 122, .8);
+	margin: 33px -10px 20px -10px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	border: 3px solid black;
+	background: rgba(105, 145, 172, .8)
+}
+
+.scoreFrame {
+	display: none;
+	border: 3px solid black;
+	background: rgba(215, 92, 55, .8);
+	margin: 0 20%;
+	height: 440px;
+}
+
+.percent {
+	text-align: center;
+	line-height: 200px;
+	font-size: 50px;
+}
+
+.myScore {
+	text-align: center;
+	line-height: 10px;
+}
+
+.selection {
+	border: 3px solid black;
+	color: orange;
+}
+
+.question-box {
+	border: 3px solid black;
+	background: rgba(215, 92, 55, .8);
+	margin: 0 20%;
+}
+
+#query {
+	border: 3px solid black;
+	background: rgba(183, 3, 98, .8);
+	margin: 5% 10% 3% 10%;
+	font-size: 24px;
+	padding: 0 5%;
+}
+
+#solutions {
+	border: 3px solid black;
+	background: rgba(103, 114, 122, .8);
+	margin: 3% 10% 3% 10%;
+	font-size: 18px;
+	padding: 15% 0 0 0;
+}
+
+li:hover {
+	background: rgba(195, 215, 223, .8);
+}
+
+.answer {
+	display: inline;
+	margin: 10% 5%;
+}
+
+.submit {
+	position: relative;
+	left: 518px;
+	bottom: 10px;
+	background-color: rgba(183, 3, 98, .8);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 3px solid black;
+}
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.error {
+	text-align: center;
+	display: none;
+}
