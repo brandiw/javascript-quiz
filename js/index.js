@@ -108,10 +108,8 @@ $(function() {
   function readInput() {
 
     var radioValue = $("input[name='ansRadios']:checked").val();
-    if (radioValue) {
-      return (radioValue);
-    }
- 
+    return (radioValue);
+
   }
 
 
@@ -119,12 +117,22 @@ $(function() {
 
     $('#next').on('click', () => {
 
-      if (checkResult(readInput(), currentQuestion)) {
-        score +=1;
-        console.log(score)
-      }
-      currentQuestion += 1;
-      generateBoard(currentQuestion);
+      var userInput = readInput();
+      console.log('user input read', userInput);
+      if (userInput) {
+
+        alert('user ')
+        currentQuestion += 1;
+
+        generateBoard(currentQuestion);
+
+        if (checkResult(userInput, currentQuestion)) {
+          score += 1;
+          console.log(score)
+        } 
+      } else { alert('enter text') }
+
+
     })
 
 
