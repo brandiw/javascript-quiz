@@ -1,3 +1,7 @@
+// Colin Groark
+// Peter Li
+// Justin Mitchell
+
 var allQuestions = [{question: "Which of the following Wes Anderson film came first?",
 					 choices: ["The Life Aquatic", "The Royal Tenenbaums", "The Darturneeling Limited", "Fantastic Mr. Fox"],
 					 correctAnswerIndex:1},
@@ -76,7 +80,7 @@ var place = function() {
 	}
 	if(check === selections.length && turn != 0) {
 		console.log("this is empty");
-		alert("this is wrong");
+		document.getElementsByClassName("error")[0].style.display = "block";
 		return false;
 	}
 
@@ -92,6 +96,7 @@ var place = function() {
 
 		for(var i = 0; i < selectionsBoolean.length; i++) {
 			document.getElementsByClassName("answer")[i].textContent = allQuestions[turn].choices[i];
+			document.getElementsByClassName("error")[0].style.display = "none";
 		}
 		turn++;
 		console.log("turn " + turn);
