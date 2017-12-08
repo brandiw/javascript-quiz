@@ -56,78 +56,66 @@ $(function() {
   var currentQuestion = 0;
   var answersArr = [];
 
-  function generateBoard(questionNumber) {
-    //checks if the test has ended
-    doneWithTest();
-
-    $('#question-title').text(QUESTIONS[questionNumber].question);
-    $('#radioAns1').text(QUESTIONS[questionNumber].answers.a);
-    $('#radioAns2').text(QUESTIONS[questionNumber].answers.b);
-    $('#radioAns3').text(QUESTIONS[questionNumber].answers.c);
-    $('#radioAns4').text(QUESTIONS[questionNumber].answers.d);
-  }
-
-  function checkResult(input, questionNumber) {
-    if (input == QUESTIONS[questionNumber].correctAnswer) {
-      return true;
-    }
-  }
-
-  //checks if the current question is the last question
-  // if yes, replaces the questions HTML with the score 
-  function doneWithTest(input) {
-    if (currentQuestion === QUESTIONS.length - 1) {
-
-      $('#quizBox').empty().append(`
-        <div class="row">
-      <div class="col-sm-3 col-xs-12"></div>
-      <div class="col-sm-6 col-xs-12">
-         <h2 id="">Your score is ${score}</h2>
-      </div>
-        `);
-    }
-  }
-
-// reads the user input and returns the value
-  function readInput() {
-
-    var radioValue = $("input[name='ansRadios']:checked").val();
-    return (radioValue);
-
-  }
-
 // adds the next button event listener
 // reads gets the user input, compares it to the correct answer
 // and increments score upon a match
-  function init() {
-
-    $('#next').on('click', () => {
-
-      var userInput = readInput();
-      console.log('user input read', userInput);
-      if (userInput) {
-        //user has the right answer
-        if (checkResult(userInput, currentQuestion)) {
-          score += 1;
-          console.log(score)
-        }
-        currentQuestion += 1;
-
-        generateBoard(currentQuestion);
+function init() {
+  $('#next').on('click', () => {
+    var userInput = readInput();
+    // console.log('user input read', userInput);
+    if (userInput) {
+    //user has the right answer
+      if (checkResult(userInput, currentQuestion)) {
+        score += 1;
+        console.log(score)
+      }
+      currentQuestion += 1;
+      generateBoard(currentQuestion);
       }
     });
   } //ends init()
 
+// reads the user input and returns the value
+function readInput() {
+  var radioValue = $("input[name='ansRadios']:checked").val();
+  return (radioValue);
+}
+
+function checkResult(input, questionNumber) {
+  if (input == QUESTIONS[questionNumber].correctAnswer) {
+    return true;
+  }
+}
+
+function generateBoard(questionNumber) {
+  //checks if the test has ended
+  doneWithTest();
+  $('#question-title').text(QUESTIONS[questionNumber].question);
+  $('#radioAns1').text(QUESTIONS[questionNumber].answers.a);
+  $('#radioAns2').text(QUESTIONS[questionNumber].answers.b);
+  $('#radioAns3').text(QUESTIONS[questionNumber].answers.c);
+  $('#radioAns4').text(QUESTIONS[questionNumber].answers.d);
+}
+
+//checks if the current question is the last question
+// if yes, replaces the questions HTML with the score 
+function doneWithTest(input) {
+  if (currentQuestion === QUESTIONS.length) {
+    $('#quizBox').empty().append(`
+    <div class="row">
+    <div class="col-sm-3 col-xs-12"></div>
+    <div class="col-sm-6 col-xs-12">
+       <h2 id="">Your score is ${score}/5</h2>
+    </div>
+    `);
+  }
+}
+
+
+
+
 
   generateBoard(currentQuestion);
   init();
-
-
-
-
-
-
-
-
 
 }())
