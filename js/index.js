@@ -64,9 +64,12 @@ function nextQuestion(){
 
 function updateScore(){
 	userSelection = document.querySelector('input[name="option"]:checked');
-	console.log("User selected " + userSelection.value);
-	console.log("Correct answer was " + quizArr[currentIndex].correctAnswerIndex);
-	if (userSelection.value === "option" + quizArr[currentIndex].correctAnswerIndex) {
+	if(userSelection==undefined) {
+		console.log("You must make a choice.");
+		currentIndex--;
+		return;
+	}
+	else if (userSelection.value === "option" + quizArr[currentIndex].correctAnswerIndex) {
 		currentScore++;
 	}
 
