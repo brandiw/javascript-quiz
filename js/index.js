@@ -46,7 +46,6 @@ function loadQuestion() {
 }
 
 function nextQuestion(){
-
 	// Because for a 4 question quiz, index 2 of the array (the third question)
 	// is the last one where we want to actually move onto the next question, so need to length -2
 	if (currentIndex <= quizArr.length - 2) { 
@@ -59,17 +58,20 @@ function nextQuestion(){
 	 	updateScore();
 		document.getElementById("container").className = "complete";
 		document.getElementById("results-container").className = "complete";
-		document.getElementById("results-container").textContent = "You got " + currentScore + " out of 10 correct.";
+		document.getElementById("results-container").textContent = "You got " + currentScore + " out of " + quizArr.length + " correct.";
 	}
 }
 
 function updateScore(){
-	userSelection = document.querySelector('input[name="option"]:checked').value;
-	console.log("User selected " + userSelection);
+	userSelection = document.querySelector('input[name="option"]:checked');
+	console.log("User selected " + userSelection.value);
 	console.log("Correct answer was " + quizArr[currentIndex].correctAnswerIndex);
-	if (userSelection === "option" + quizArr[currentIndex].correctAnswerIndex) {
+	if (userSelection.value === "option" + quizArr[currentIndex].correctAnswerIndex) {
 		currentScore++;
 	}
+
+	userSelection.checked = false;
+
 	console.log("Current score is " + currentScore);
 }
 
