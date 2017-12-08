@@ -53,7 +53,7 @@ $(function() {
         <div class="row">
  			<div class="col-sm-3 col-xs-12"></div>
 				<div class="col-sm-6 col-xs-12">
-					<h1 id="question">${QUESTIONS[i].question}</h1>
+					<h2 id="question">${QUESTIONS[i].question}</h1>
 				</div>
 				<div class="col-sm-3 col-xs-12"></div>
 			</div>
