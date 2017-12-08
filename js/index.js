@@ -92,8 +92,12 @@ $(function() {
 
   function doneWithTest(input) {
     if (currentQuestion === QUESTIONS.length) {
+
       $('#quizBox').empty();
       console.log('quiz finished')
+
+      alert('Your score', score);
+
     }
   }
   //cycle through to next question in questions
