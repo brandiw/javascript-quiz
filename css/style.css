@@ -1,0 +1,50 @@
+body {
+	text-align: center;
+	background: linear-gradient(to bottom, pink, purple);
+	background-size: cover;
+	background-attachment: fixed;
+	letter-spacing: 1px;
+	font-family: 'Emilys Candy', cursive;
+}
+
+div {
+	margin: 60px auto 0 auto;
+	padding: 50px 40px;
+	background: rgba(265, 265, 265, .9);
+	width: 50%;
+	box-shadow: 5px 5px lightgrey;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+span {
+	font-size: 1.25em;
+}
+
+input {
+	background: black;
+	color: white;
+	border: 0;
+	padding: 3%;
+	margin: 10px;
+	font-size: 1em;
+	font-family: 'Emilys Candy', cursive;
+	letter-spacing: 1.5px;
+}
+
+#results-container {
+	display: none;
+	transition: all 2s;
+	transofrm: 1s;
+}
+
+/* For changing the class aftet the user completes the quiz*/
+#results-container.complete {
+	display: block;
+}
+
+#container.complete {
+	display: none;
+}
