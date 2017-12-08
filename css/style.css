@@ -1,3 +1,9 @@
 #quizBox {
-	background-color: #ccc;
+	background-color: #A3CDFF;
+	margin: 10% 0;
+}
+
+.buttons {
+	height: 60px;
+	padding: 10px 10px;
 }
