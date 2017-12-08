@@ -12,9 +12,9 @@ var userSelection;
 
 var quizArr = [
 {
-	question: "This is question 1",
-	choices: ["A", "B", "C", "D"],
-	correctAnswerIndex: 0
+	question: "How many people choke to death on ballpoint pens every year?",
+	choices: ["341", "27", "100", "42"],
+	correctAnswerIndex: 2
 },
 {
 	question: "This is question 2",
