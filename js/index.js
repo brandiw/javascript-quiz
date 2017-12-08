@@ -3,32 +3,32 @@ $(function() {
   const QUESTIONS = [{
       question: 'Question 1',
       answers: {
-        a: 'a',
-        b: 'b',
-        c: 'c',
-        d: 'd'
+        1: 'This is the right answer',
+        2: 'This is a wrong answer',
+        3: 'This is a wrong answer',
+        4: 'This is a wrong answer'
       },
-      correctAnswer: 'a'
+      correctAnswer: '1'
     },
     {
       question: 'Question 2',
       answers: {
-        a: 'a',
-        b: 'b',
-        c: 'c',
-        d: 'd'
+        1: 'This is the right answer',
+        2: 'This is a wrong answer',
+        3: 'This is a wrong answer',
+        4: 'This is a wrong answer'
       },
-      correctAnswer: 'b'
+      correctAnswer: '2'
     },
     {
       question: 'Question 3',
       answers: {
-        a: 'a',
-        b: 'b',
-        c: 'c',
-        d: 'd'
+        1: 'This is the right answer',
+        2: 'This is a wrong answer',
+        3: 'This is a wrong answer',
+        4: 'This is a wrong answer'
       },
-      correctAnswer: 'b'
+      correctAnswer: '3'
     }
   ]
 
@@ -50,33 +50,31 @@ $(function() {
       questionHtml =
 
         `
-        <div class="row">
- 			<div class="col-sm-3 col-xs-12"></div>
-				<div class="col-sm-6 col-xs-12">
-					<h2 id="question">${QUESTIONS[i].question}</h1>
-				</div>
-				<div class="col-sm-3 col-xs-12"></div>
-			</div>
-			<div class="row ansArea">
-				<div class="col-sm-3 col-xs-12"></div>
-				<div class="col-sm-6 col-xs-12">
-    				<ul>
-    					<div class="radio"><label><input type="radio" name="ansRadios" id="radioAns1">${QUESTIONS[i].answers.a}</label></div>
-						<div class="radio"><label><input type="radio" name="ansRadios" id="radioAns2">${QUESTIONS[i].answers.b}</label></div>
-						<div class="radio"><label><input type="radio" name="ansRadios" id="radioAns3">${QUESTIONS[i].answers.c}</label></div>
-						<div class="radio"><label><input type="radio" name="ansRadios" id="radioAns4">${QUESTIONS[i].answers.d}</label></div>
-    				</ul>
-    			</div>
-    			<div class="col-sm-3 col-xs-12"></div>
-    		</div>
-    		<div class="row buttons">
-				<div class="col-xs-5"></div>
-				<div class="col-xs-1"></div>
-				<div class="col-xs-1">
-					<button id="next" class="btn btn-primary">Next Question</button>
-				</div>
-				<div class="col-xs-5"></div>
-			</div>
+      <div class="row">
+        <div class="col-sm-3 col-xs-12"></div>
+        <div class="col-sm-6 col-xs-12">
+          <h1>${QUESTIONS[i].question}</h1>
+        </div>
+        <div class="col-sm-3 col-xs-12"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3 col-xs-12"></div>
+        <div class="col-sm-6 col-xs-12">
+            <ul>
+            <div class="radio"><label><input type="radio" name="ansRadios" value="1" id="radioAns1">${QUESTIONS[i].answers.a}</label></div>
+            <div class="radio"><label><input type="radio" name="ansRadios" value="2" id="radioAns2">${QUESTIONS[i].answers.b}</label></div>
+            <div class="radio"><label><input type="radio" name="ansRadios" value="3" id="radioAns3">${QUESTIONS[i].answers.c}</label></div>
+            <div class="radio"><label><input type="radio" name="ansRadios" value="4" id="radioAns4">${QUESTIONS[i].answers.d}</label></div>
+            </ul>
+          </div>
+          <div class="col-sm-3 col-xs-12"></div>
+        </div>
+        <div class="row buttons">
+        <div class="col-xs-6"></div>
+        <div class="col-xs-6">
+          <button id="next" class="btn btn-primary">Next Question</button>
+        </div>
+      </div>
       `;
       questionsHtml.push(questionHtml);
       //     console.log(questionHtml);
@@ -120,6 +118,14 @@ $(function() {
   function readInput() {
 
 
+ // $("input[type='radio']").click(function(event) {
+
+      var radioValue = $("input[name='ansRadios']:checked").val();
+      if (radioValue) {
+        console.log(radioValue);
+      }
+    // });
+
     //reads the value of the clicked radio button
     //returns said value 
     // checks value against correct answer
@@ -139,21 +145,17 @@ $(function() {
 
       currentQuestion += 1;
 
+      readInput()
       changeQuestion(currentQuestion);
     })
 
     generateBoard();
 
-  }
-    $("input[type='radio']").click(function(event) {
-      var radioValue = $("input[name='ansRadios']:checked").val();
-      if (radioValue) {
-        console.log(event.target.attributes[2].value);
-      }
-    });
+
+   
 
 
-
+  } //ends init()
 
 
 
