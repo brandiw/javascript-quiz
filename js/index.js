@@ -17,19 +17,49 @@ var quizArr = [
 	correctAnswerIndex: 2
 },
 {
-	question: "This is question 2",
-	choices: ["E", "B", "B", "D"],
+	question: "How long can cockroaches live without their heads? P.S. they die of starvation.",
+	choices: ["21 days", "9 days", "5 days", "30 days"],
 	correctAnswerIndex: 1
 },
 {
-	question: "This is question 3",
-	choices: ["F", "B", "C", "D"],
+	question: "How did Aeschylus, the Greek poet and dramatist, die?",
+	choices: ["He was stabbed by a contemporary", "He was poisoned after a poorly received poem", "A horse trampled him", "An eagle dropped a turtle on his head"],
+	correctAnswerIndex: 3
+},
+{
+	question: "How many people die in silos every year from grain entrapment?",
+	choices: ["26", "5", "8", "32"],
+	correctAnswerIndex: 0
+},
+{
+	question: "How did Jimi Heselden, the owner of the Segway company, die?",
+	choices: ["He was stampeded by Segways", "He drove his Segway off of a cliff", "He hit a pothole in the road and had a major spill", "He was driving his Segway while intoxicated"],
+	correctAnswerIndex: 1
+},
+{
+	question: "How many cells die in your body every day?",
+	choices: ["70 billion", "30 billion", "50 billion", "20 billion"],
 	correctAnswerIndex: 2
 },
 {
-	question: "This is question 4",
-	choices: ["G", "B", "C", "D"],
+	question: "What kinds of animals don't die of old age?",
+	choices: ["Jellyfish", "Giant squid", "Sponges", "Bigfoot"],
+	correctAnswerIndex: 0
+},
+{
+	question: "How did Bobby Leach die?",
+	choices: ["From going over Niagara Falls in a barrel", "From slipping on an orange peel", "From a failed stunt in the Barnum and Bailey Circus", "From swimming in the whirlpool rapids at Niagara Falls"],
+	correctAnswerIndex: 1
+},
+{
+	question: "About how many dead bodies are on Mount Everest?",
+	choices: ["150", "75", "25", "200"],
 	correctAnswerIndex: 3
+},
+{
+	question: "What was Italian serial killer Leonarda Cianciulli famous for?",
+	choices: ["Cooking them in pasta sauce for her restaurant", "Turning them into tea cakes and serving them to guests", "Storing the bodies in her cheese fridge", "Leaving her victims in front of the Vatican"],
+	correctAnswerIndex: 1
 }];
 
 // Separated out the first part of "nextQuestion" function so that it doesnt change the index
