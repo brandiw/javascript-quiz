@@ -33,3 +33,16 @@ label {
 	font-size: 36px;
 	text-align: center;
 }
+
+#nextQ {
+	margin-left: 20px;
+}
+
+.pure-button, .pure-button-primary {
+	font-size: 18px;
+}
+
+#star {
+	height: 100px;
+	width: 100px;
+}

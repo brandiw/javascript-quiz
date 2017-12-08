@@ -112,8 +112,12 @@ function endQuiz() {
 	document.getElementById("nextQ").style.visibility = 'hidden';
 	document.getElementById("resetQ").style.display = 'block';
 	document.getElementById("questionText").innerHTML = "You're done!"
-	document.getElementById("results").innerHTML = "You scored: " +scoreCounter();
-
+	document.getElementById("results").style.visibility = 'visible'
+	if (scoreCounter() === questions.length) {
+		document.getElementById("results").innerHTML = "You scored: " +scoreCounter()+" out of "+ questions.length+ '<br><img src=\'img/star.png\' id="star"> <br> You\'re a star!';
+	} else {
+		document.getElementById("results").innerHTML = "You scored: " +scoreCounter()+" out of "+ questions.length +'<br> <br> Try again!';
+	}
 
 }
 
