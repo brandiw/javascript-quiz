@@ -1,3 +1,5 @@
+/* Quiz Questions */
+
 var questions =
 [
 	{question: "Who was the final act at Woodstock?",

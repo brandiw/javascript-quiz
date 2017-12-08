@@ -8,8 +8,6 @@
 var questionNum;
 var answers = [];
 
-// Functions
-
 // Initialize Page
 function startQuiz() {
 	questionNum = 0;
@@ -159,7 +157,7 @@ function endQuiz() {
 	if (scoreCounter() === questions.length) {
 		document.getElementById("results").innerHTML = "You scored: " +scoreCounter()+" out of "+ questions.length+ '<br><img src=\'img/star.png\' id="star"> <br> You\'re a star!';
 	} else {
-		document.getElementById("results").innerHTML = "You scored: " +scoreCounter()+" out of "+ questions.length +'<br> <br> Try again!';
+		document.getElementById("results").innerHTML = "You scored: " +scoreCounter()+" out of "+ questions.length +'<br> <img src=\'img/try_again.png\' id="star"><br> Try again!';
 	}
 
 }
@@ -169,6 +167,7 @@ function resetQuiz(){
 	document.getElementById("results").style.visibility = 'hidden';
 }
 
+// Set Event listeners
 var next = document.getElementById('nextQ').addEventListener("click",getAnswer);
 var prev = document.getElementById('previousQ').addEventListener("click",previousQuestion);
 var restart = document.getElementById('resetQ').addEventListener("click",resetQuiz);
