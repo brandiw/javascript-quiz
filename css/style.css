@@ -1,0 +1,16 @@
+body {
+	text-align: center;
+}
+
+#results-container {
+	display: none;
+}
+
+/* For changing the class aftet the user completes the quiz*/
+#results-container.complete {
+	display: block;
+}
+
+#container.complete {
+	display: none;
+}
