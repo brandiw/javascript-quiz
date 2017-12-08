@@ -3,30 +3,30 @@ $(function() {
   const QUESTIONS = [{
       question: 'Question 1',
       answers: {
-        1: 'This is the right answer',
-        2: 'This is a wrong answer',
-        3: 'This is a wrong answer',
-        4: 'This is a wrong answer'
+        a: 'This is the right answer',
+        b: 'This is a wrong answer',
+        c: 'This is a wrong answer',
+        d: 'This is a wrong answer'
       },
       correctAnswer: '1'
     },
     {
       question: 'Question 2',
       answers: {
-        1: 'This is the right answer',
-        2: 'This is a wrong answer',
-        3: 'This is a wrong answer',
-        4: 'This is a wrong answer'
+        a: 'This is the right answer',
+        b: 'This is a wrong answer',
+        c: 'This is a wrong answer',
+        d: 'This is a wrong answer'
       },
       correctAnswer: '2'
     },
     {
       question: 'Question 3',
       answers: {
-        1: 'This is the right answer',
-        2: 'This is a wrong answer',
-        3: 'This is a wrong answer',
-        4: 'This is a wrong answer'
+        a: 'This is the right answer',
+        b: 'This is a wrong answer',
+        c: 'This is a wrong answer',
+        d: 'This is a wrong answer'
       },
       correctAnswer: '3'
     }
@@ -41,46 +41,14 @@ $(function() {
   // takes an object containg questions and generate an array containing the 
   //HTML for each question
 
-  function generateBoard() {
+  function generateBoard(questionNumber) {
 
-
-    var questionHtml = null;
-    for (let i = 0; i < QUESTIONS.length; i += 1) {
-
-      questionHtml =
-
-        `
-      <div class="row">
-        <div class="col-sm-3 col-xs-12"></div>
-        <div class="col-sm-6 col-xs-12">
-          <h1>${QUESTIONS[i].question}</h1>
-        </div>
-        <div class="col-sm-3 col-xs-12"></div>
-      </div>
-      <div class="row">
-        <div class="col-sm-3 col-xs-12"></div>
-        <div class="col-sm-6 col-xs-12">
-            <ul>
-            <div class="radio"><label><input type="radio" name="ansRadios" value="1" id="radioAns1">${QUESTIONS[i].answers.a}</label></div>
-            <div class="radio"><label><input type="radio" name="ansRadios" value="2" id="radioAns2">${QUESTIONS[i].answers.b}</label></div>
-            <div class="radio"><label><input type="radio" name="ansRadios" value="3" id="radioAns3">${QUESTIONS[i].answers.c}</label></div>
-            <div class="radio"><label><input type="radio" name="ansRadios" value="4" id="radioAns4">${QUESTIONS[i].answers.d}</label></div>
-            </ul>
-          </div>
-          <div class="col-sm-3 col-xs-12"></div>
-        </div>
-        <div class="row buttons">
-        <div class="col-xs-6"></div>
-        <div class="col-xs-6">
-          <button id="next" class="btn btn-primary">Next Question</button>
-        </div>
-      </div>
-      `;
-      questionsHtml.push(questionHtml);
-      //     console.log(questionHtml);
-    }
-
-    // $('#quizBox').append(questionsHtml);
+    $('#question-title').text(QUESTIONS[questionNumber].question);
+    $('#radioAns1').text(QUESTIONS[questionNumber].answers.a);
+    $('#radioAns2').text(QUESTIONS[questionNumber].answers.b);
+    $('#radioAns3').text(QUESTIONS[questionNumber].answers.c);
+    $('#radioAns4').text(QUESTIONS[questionNumber].answers.d);
+    
 
   }
 
@@ -92,9 +60,9 @@ $(function() {
 
     console.log('current question: ', currentQuestion);
 
-    $('#quizBox').empty();
+    // $('#quizBox').empty();
 
-    $('#quizBox').append(questionsHtml[currentQuestion]);
+    // $('#quizBox').append(questionsHtml[currentQuestion]);
 
     init();
   }
@@ -118,12 +86,12 @@ $(function() {
   function readInput() {
 
 
- // $("input[type='radio']").click(function(event) {
+    // $("input[type='radio']").click(function(event) {
 
-      var radioValue = $("input[name='ansRadios']:checked").val();
-      if (radioValue) {
-        console.log(radioValue);
-      }
+    var radioValue = $("input[name='ansRadios']:checked").val();
+    if (radioValue) {
+      console.log(radioValue);
+    }
     // });
 
     //reads the value of the clicked radio button
@@ -134,8 +102,10 @@ $(function() {
 
   // runs when page loaded
   function init() {
-    console.log('before done', currentQuestion);
-    console.log(doneWithTest(currentQuestion));
+    // console.log('before done', currentQuestion);
+    // console.log(doneWithTest(currentQuestion));
+
+    //generate questions array
 
     // generates the board from start screen
     $('#button').on('click', generateBoard);
@@ -145,33 +115,19 @@ $(function() {
 
       currentQuestion += 1;
 
-      readInput()
+      readInput();
       changeQuestion(currentQuestion);
     })
 
-    generateBoard();
 
-
-   
 
 
   } //ends init()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  generateBoard(currentQuestion);
   init();
+
 
 
 
