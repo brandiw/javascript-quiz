@@ -1,5 +1,26 @@
 body {
 	text-align: center;
+	font-family: Helvetica;
+	background: linear-gradient(to bottom, pink, purple);
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+div {
+	margin: 80px auto;
+	padding: 40px 10px;
+	background: rgba(265, 265, 265, .9);
+	width: 50%;
+	box-shadow: 5px 5px lightgrey;
+}
+
+input {
+	background: black;
+	color: white;
+	border: 0;
+	padding: 3%;
+	margin: 10px;
+	font-size: 1em;
 }
 
 #results-container {
