@@ -17,6 +17,7 @@ h1 {
 #quizBox {
 	background-color: #BADDFF;
 	margin: 10% 0;
+	min-height: 360px;
 }
 
 .radio {
