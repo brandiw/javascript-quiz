@@ -1,10 +1,60 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-  <title>JavaScript Quiz</title>
-  <script src="/js/index.js" type="text/javascript"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>The Life of Winston</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
+
 <body>
-  <h1>Hello world!</h1>
+
+	<div id="page-wrap">
+
+		<h1>The Life of Winston</h1>
+
+		<form method="post" id="quiz">
+            <h3>Winston's favorite cereal is...</h3>
+            <br>
+            <div>
+                <input type="radio" name="question-1-answers" id="answers-A" value="A" />
+                <label id="questionA"> </label>
+            </div>
+            <br>
+            <div>
+                <input type="radio" name="question-1-answers" id="answers-B" value="B" />
+                <label id="questionB"> </label>
+            </div>
+            <br>
+            <div>
+                <input type="radio" name="question-1-answers" id="answers-C" value="C" />
+                <label id="questionC"> </label>
+            </div>
+            <br>
+            <div>
+                <input type="radio" name="question-1-answers" id="answers-D" value="D" />
+                <label id="questionD"> </label>
+            </div>
+            <br>
+            <input id="submit" type="submit" value="Next Question" />
+
+		</form>
+
+	</div>
+        <div id="dialog" title="Must take a guess!">
+          <p></p>
+        </div>
+        <div id="dialog" title="">
+          <p></p>
+        </div>
+        <div id="dialog" title="">
+          <p></p>
+    </div>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 </body>
+
 </html>
