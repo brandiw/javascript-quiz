@@ -1,34 +1,54 @@
 $(function() {
 
   const QUESTIONS = [{
-      question: 'Question 1',
+      question: 'The llama is a domesticated camelid that is native to which continent?',
       answers: {
-        a: 'This is the right answer',
-        b: 'This is a wrong answer',
-        c: 'This is a wrong answer',
-        d: 'This is a wrong answer'
+        a: 'South America',
+        b: 'North America',
+        c: 'Europe',
+        d: 'Antarctica'
       },
-      correctAnswer: '1'
+      correctAnswer: 'a'
     },
     {
-      question: 'Question 2',
+      question: "Which snake, who's untreated bite is almost 100 percent fatal, is the world's fastest snake on land?",
       answers: {
-        a: 'This is the right answer',
-        b: 'This is a wrong answer',
-        c: 'This is a wrong answer',
-        d: 'This is a wrong answer'
+        a: 'Black Adder',
+        b: 'Black Mamba',
+        c: 'Black Panther',
+        d: 'Black Yeezies'
       },
-      correctAnswer: '2'
+      correctAnswer: 'b'
     },
     {
-      question: 'Question 3',
+      question: 'What is the common term for bovine spongiform encephalopathy, a disease that causes degeneration of the brain and spinal cord in cattle?',
       answers: {
-        a: 'This is the right answer',
-        b: 'This is a wrong answer',
-        c: 'This is a wrong answer',
-        d: 'This is a wrong answer'
+        a: 'Moo Moo Brain',
+        b: 'Mad Cow Disease',
+        c: 'Mad Dog 22',
+        d: 'Gingivitis'
       },
-      correctAnswer: '3'
+      correctAnswer: 'b'
+    },
+    {
+      question: "A panda's daily diet consists almost entirely of what plant?",
+      answers: {
+        a: 'Jade Blossom',
+        b: 'Buddhist Pine',
+        c: 'Bamboo',
+        d: 'Emerald Potatoes'
+      },
+      correctAnswer: 'c'
+    },
+    {
+      question: 'What was the name of the gorilla that was shot and killed at the Cincinnati zoo in 2016 after a three-year old boy fell into the enclosure?',
+      answers: {
+        a: 'Harambe',
+        b: 'Shenaynay',
+        c: 'Mojimbo',
+        d: 'Action Jackson'
+      },
+      correctAnswer: 'a'
     }
   ]
 
