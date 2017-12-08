@@ -7,7 +7,7 @@ var currentQ;
 var displayQ = document.getElementById("current-question");
 var choiceSpans = document.getElementsByClassName("choice");
 var currentChoices =[];
-var currentScore;
+var currentScore = 0;
 var userSelection;
 
 var quizArr = [
@@ -18,7 +18,7 @@ var quizArr = [
 },
 {
 	question: "This is question 2",
-	choices: ["E", "B", "C", "D"],
+	choices: ["E", "B", "B", "D"],
 	correctAnswerIndex: 1
 },
 {
@@ -32,33 +32,48 @@ var quizArr = [
 	correctAnswerIndex: 3
 }];
 
-
-
-function nextQuestion(){
-	//validate();
-	console.log("current index is:",currentIndex);
-	currentQ = quizArr[currentIndex].question;
+// Separated out the first part of "nextQuestion" function so that it doesnt change the index
+// yet or check the score upon initial load, but we can reuse this function later
+// and call it when we click the button
+function loadQuestion() {
+	currentQ = quizArr[currentIndex].question; 
 	currentChoices = quizArr[currentIndex].choices;
 	displayQ.textContent = currentQ;
 
 	for(var i=0; i<currentChoices.length; i++) {
 		choiceSpans[i].textContent=currentChoices[i];
 	}
-	if (currentIndex<quizArr.length) {
+}
+
+function nextQuestion(){
+
+	// Because for a 4 question quiz, index 2 of the array (the third question)
+	// is the last one where we want to actually move onto the next question, so need to length -2
+	if (currentIndex <= quizArr.length - 2) { 
+		updateScore();
 		currentIndex++;
+		loadQuestion();
+
+	// Index 3 of the array is the final question, but quizArr.length = 4, so need to -1 for this to work
+	} else if (currentIndex === quizArr.length - 1) {
+	 	updateScore();
+		document.getElementById("container").className = "complete";
+		document.getElementById("results-container").className = "complete";
+		document.getElementById("results-container").textContent = "You got " + currentScore + " out of 10 correct.";
 	}
-	// else {
-		//displayResults();
-	// }
 }
 
 function updateScore(){
 	userSelection = document.querySelector('input[name="option"]:checked').value;
-	console.log(userSelection);
+	console.log("User selected " + userSelection);
+	console.log("Correct answer was " + quizArr[currentIndex].correctAnswerIndex);
+	if (userSelection === "option" + quizArr[currentIndex].correctAnswerIndex) {
+		currentScore++;
+	}
+	console.log("Current score is " + currentScore);
 }
 
-
 document.addEventListener("DOMContentLoaded", function(){
-	nextQuestion();
+	loadQuestion();
 	nextButton.addEventListener("click", nextQuestion);
 })
