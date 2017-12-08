@@ -4,7 +4,8 @@
   "description": "<h2>Build a quiz using JavaScript and/or JQuery:</h2> <p><a href=\"http://javascriptissexy.com/how-to-learn-javascript-properly/\">Inspired by this assignment on 'JavaScript Is Sexy' website.</a></p>",
   "main": "index.js",
   "dependencies": {
-    "browser-sync": "^2.16.0"
+    "browser-sync": "^2.16.0",
+    "npm": "^5.6.0"
   },
   "devDependencies": {},
   "scripts": {
