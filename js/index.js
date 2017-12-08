@@ -4,11 +4,11 @@
 * Antonia Villa
 */
 
-// Global Variables 
+// Global Variables
 var questionNum;
 var answers = [];
 
-// Functions 
+// Functions
 
 // Initialize Page
 function startQuiz() {
@@ -17,7 +17,7 @@ function startQuiz() {
 	document.getElementById("previousQ").style.visibility = 'visible';
 	document.getElementById("nextQ").style.visibility = 'visible';
 	document.getElementById("resetQ").style.display = 'none';
-	
+
 	answers = new Array(questions.length);
 	updateAnswer();
 	showQuestion(questionNum);
@@ -27,11 +27,40 @@ function startQuiz() {
 function nextQuestion() {
 	if(answers[questionNum]!= undefined){
 		if(questionNum === questions.length-1){
-			endQuiz();
+			$("#questionText").animate({
+
+				left: "-=100px",
+				opacity: 0.0
+			}, 200, function() {
+				$("#questionText").css({left: "+=200px"});
+
+				endQuiz();
+
+				$("#questionText").animate({
+
+					left: "-=100px",
+					opacity: 1.0
+				}, 200);
+			});
 		} else {
-			questionNum++;
-			showQuestion(questionNum);
-			updateAnswer();
+			$("#questionText").animate({
+
+				left: "-=100px",
+				opacity: 0.0
+			}, 200, function() {
+				$("#questionText").css({left: "+=200px"});
+
+				questionNum++;
+				showQuestion(questionNum);
+				updateAnswer();
+
+				$("#questionText").animate({
+
+					left: "-=100px",
+					opacity: 1.0
+				}, 200);
+			});
+
 		}
 	}
 }
@@ -42,9 +71,23 @@ function previousQuestion() {
 	if(questionNum === 0){
 		return;
 	} else {
-		questionNum--;
-		showQuestion(questionNum);
-		updateAnswer();
+		$("#questionText").animate({
+
+			left: "+=100px",
+			opacity: 0.0
+		}, 200, function() {
+			$("#questionText").css({left: "-=200px"});
+
+			questionNum--;
+			showQuestion(questionNum);
+			updateAnswer();
+
+			$("#questionText").animate({
+
+				left: "+=100px",
+				opacity: 1.0
+			}, 200);
+		});
 	}
 }
 
