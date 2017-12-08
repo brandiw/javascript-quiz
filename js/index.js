@@ -1,8 +1,8 @@
 /*
-* Your names
+* Tony Phan
+* Adam Piette
+* Antonia Villa
 */
-
-console.log("JS file is linked up!");
 
 // Global Variables 
 var questionNum;
@@ -16,7 +16,7 @@ function startQuiz() {
 	document.getElementById("answers").style.visibility = 'visible';
 	document.getElementById("previousQ").style.visibility = 'visible';
 	document.getElementById("nextQ").style.visibility = 'visible';
-	document.getElementById("resetQ").style.visibility = 'hidden';
+	document.getElementById("resetQ").style.display = 'none';
 	
 	answers = new Array(questions.length);
 	updateAnswer();
@@ -25,7 +25,7 @@ function startQuiz() {
 
 // To go to the next question
 function nextQuestion() {
-	if(answers[questionNum]){
+	if(answers[questionNum]!= undefined){
 		if(questionNum === questions.length-1){
 			endQuiz();
 		} else {
@@ -78,11 +78,9 @@ function showQuestion(x){
 	document.getElementById("questionText").innerHTML = questions[x].question;
 
 	var choices = questions[x].choices;
-	console.log(choices);
 
 	for(var i =0; i < choices.length; i ++) {
 		var label = "answer" + i;
-		// console.log(label);
 		document.getElementById(label).innerHTML = choices[i];
 	}
 
@@ -99,7 +97,6 @@ function getAnswer() {
 	var choices = questions[questionNum].choices;
 	var test = document.getElementById("answerForm").querySelectorAll("input");
 	for(var i = 0; i < test.length; i++){
-		console.log(test[i]);
 		if(test[i].checked === true){
 			answers[questionNum] = i;
 		}
@@ -113,7 +110,7 @@ function endQuiz() {
 	document.getElementById("answers").style.visibility = 'hidden';
 	document.getElementById("previousQ").style.visibility = 'hidden';
 	document.getElementById("nextQ").style.visibility = 'hidden';
-	document.getElementById("resetQ").style.visibility = 'visible';
+	document.getElementById("resetQ").style.display = 'block';
 	document.getElementById("questionText").innerHTML = "You're done!"
 	document.getElementById("results").innerHTML = "You scored: " +scoreCounter();
 
