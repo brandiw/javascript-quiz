@@ -50,31 +50,33 @@ $(function() {
       questionHtml =
 
         `
-      <div class="row">
-        <div class="col-sm-3 col-xs-12"></div>
-        <div class="col-sm-6 col-xs-12">
-          <h1>${QUESTIONS[i].question}</h1>
-        </div>
-        <div class="col-sm-3 col-xs-12"></div>
-      </div>
-      <div class="row">
-        <div class="col-sm-3 col-xs-12"></div>
-        <div class="col-sm-6 col-xs-12">
-            <ul>
-            <div class="radio"><label><input type="radio" name="ansRadios" id="radioAns1">${QUESTIONS[i].answers.a}</label></div>
-            <div class="radio"><label><input type="radio" name="ansRadios" id="radioAns2">${QUESTIONS[i].answers.b}</label></div>
-            <div class="radio"><label><input type="radio" name="ansRadios" id="radioAns3">${QUESTIONS[i].answers.c}</label></div>
-            <div class="radio"><label><input type="radio" name="ansRadios" id="radioAns4">${QUESTIONS[i].answers.d}</label></div>
-            </ul>
-          </div>
-          <div class="col-sm-3 col-xs-12"></div>
-        </div>
-        <div class="row buttons">
-        <div class="col-xs-6"></div>
-        <div class="col-xs-6">
-          <button id="next" class="btn btn-primary">Next Question</button>
-        </div>
-      </div>
+        <div class="row">
+ 			<div class="col-sm-3 col-xs-12"></div>
+				<div class="col-sm-6 col-xs-12">
+					<h1 id="question">${QUESTIONS[i].question}</h1>
+				</div>
+				<div class="col-sm-3 col-xs-12"></div>
+			</div>
+			<div class="row ansArea">
+				<div class="col-sm-3 col-xs-12"></div>
+				<div class="col-sm-6 col-xs-12">
+    				<ul>
+    					<div class="radio"><label><input type="radio" name="ansRadios" id="radioAns1">${QUESTIONS[i].answers.a}</label></div>
+						<div class="radio"><label><input type="radio" name="ansRadios" id="radioAns2">${QUESTIONS[i].answers.b}</label></div>
+						<div class="radio"><label><input type="radio" name="ansRadios" id="radioAns3">${QUESTIONS[i].answers.c}</label></div>
+						<div class="radio"><label><input type="radio" name="ansRadios" id="radioAns4">${QUESTIONS[i].answers.d}</label></div>
+    				</ul>
+    			</div>
+    			<div class="col-sm-3 col-xs-12"></div>
+    		</div>
+    		<div class="row buttons">
+				<div class="col-xs-5"></div>
+				<div class="col-xs-1"></div>
+				<div class="col-xs-1">
+					<button id="next" class="btn btn-primary">Next Question</button>
+				</div>
+				<div class="col-xs-5"></div>
+			</div>
       `;
       questionsHtml.push(questionHtml);
       //     console.log(questionHtml);
