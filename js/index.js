@@ -32,9 +32,9 @@ $(function() {
     }
   ]
 
-
+  var score = 0;
   var currentQuestion = 0;
-  var questionsHtml = [];
+  var answersArr = [];
 
 
 
@@ -42,30 +42,27 @@ $(function() {
   //HTML for each question
 
   function generateBoard(questionNumber) {
+    if (doneWithTest()) { alert(); }
 
     $('#question-title').text(QUESTIONS[questionNumber].question);
     $('#radioAns1').text(QUESTIONS[questionNumber].answers.a);
     $('#radioAns2').text(QUESTIONS[questionNumber].answers.b);
     $('#radioAns3').text(QUESTIONS[questionNumber].answers.c);
     $('#radioAns4').text(QUESTIONS[questionNumber].answers.d);
-    
+
 
   }
 
-  // displays title screen and a start button
-  //takes in the current question number; 
-  //empties the div containg the previous question
-  //appends the newly generated question from a questionsHtml array 
-  function changeQuestion(currentQuestion) {
+  // function changeQuestion(currentQuestion) {
 
-    console.log('current question: ', currentQuestion);
+  //   console.log('current question: ', currentQuestion);
 
-    // $('#quizBox').empty();
+  //   // $('#quizBox').empty();
 
-    // $('#quizBox').append(questionsHtml[currentQuestion]);
+  //   // $('#quizBox').append(questionsHtml[currentQuestion]);
 
-    init();
-  }
+  //   init();
+  // }
 
   function checkResult(input, questionNumber) {
     if (input === QUESTIONS[questionNumber].correctAnswer) {
@@ -75,7 +72,7 @@ $(function() {
 
   function doneWithTest(input) {
     if (currentQuestion === QUESTIONS.length) {
-      alert('Done');
+      $('#quizBox').empty();
     }
   }
   //cycle through to next question in questions
@@ -85,38 +82,24 @@ $(function() {
 
   function readInput() {
 
-
-    // $("input[type='radio']").click(function(event) {
-
     var radioValue = $("input[name='ansRadios']:checked").val();
     if (radioValue) {
-      console.log(radioValue);
+      return (radioValue);
     }
-    // });
-
-    //reads the value of the clicked radio button
-    //returns said value 
-    // checks value against correct answer
-    //add value to new array?
+ 
   }
 
-  // runs when page loaded
+
   function init() {
-    // console.log('before done', currentQuestion);
-    // console.log(doneWithTest(currentQuestion));
 
-    //generate questions array
-
-    // generates the board from start screen
-    $('#button').on('click', generateBoard);
-
-    //increments the questions by 1 and changes call change questions
     $('#next').on('click', () => {
 
+      if (checkResult(readInput(), currentQuestion)) {
+        score +=1;
+        console.log(score)
+      }
       currentQuestion += 1;
-
-      readInput();
-      changeQuestion(currentQuestion);
+      generateBoard(currentQuestion);
     })
 
 
