@@ -16,20 +16,23 @@ function startQuiz() {
 	document.getElementById("answers").style.visibility = 'visible';
 	document.getElementById("previousQ").style.visibility = 'visible';
 	document.getElementById("nextQ").style.visibility = 'visible';
+	document.getElementById("resetQ").style.visibility = 'hidden';
 	
-	var answers = new Array(questions.length);
-
+	answers = new Array(questions.length);
+	updateAnswer();
 	showQuestion(questionNum);
 }
 
 // To go to the next question
 function nextQuestion() {
-	if(questionNum === questions.length-1){
-		endQuiz();
-	} else {
-		questionNum++;
-		showQuestion(questionNum);
-		updateAnswer();
+	if(answers[questionNum]){
+		if(questionNum === questions.length-1){
+			endQuiz();
+		} else {
+			questionNum++;
+			showQuestion(questionNum);
+			updateAnswer();
+		}
 	}
 }
 
@@ -110,12 +113,19 @@ function endQuiz() {
 	document.getElementById("answers").style.visibility = 'hidden';
 	document.getElementById("previousQ").style.visibility = 'hidden';
 	document.getElementById("nextQ").style.visibility = 'hidden';
+	document.getElementById("resetQ").style.visibility = 'visible';
 	document.getElementById("questionText").innerHTML = "You're done!"
 	document.getElementById("results").innerHTML = "You scored: " +scoreCounter();
 
 
 }
 
+function resetQuiz(){
+	startQuiz();
+	document.getElementById("results").style.visibility = 'hidden';
+}
+
 var next = document.getElementById('nextQ').addEventListener("click",getAnswer);
 var prev = document.getElementById('previousQ').addEventListener("click",previousQuestion);
+var restart = document.getElementById('resetQ').addEventListener("click",resetQuiz);
 startQuiz();
