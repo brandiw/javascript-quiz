@@ -2,36 +2,46 @@
 <html>
 <head>
   <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
   <title>JavaScript Quiz</title>
 </head>
+<header>
+	<div class="container" onclick="myFunction(this)">
+	  <div class="bar1"></div>
+	  <div class="bar2"></div>
+	  <div class="bar3"></div>
+	</div>
+</header>
 <body>
   <h1>Movie Quiz</h1>
-  <div>
+  <div class="question-box">
   	<ul class="question">
   		<div id="query">Question 1</div>
-  		
-  		
-  		
-  		<li id="ans1">
-  			<input type="radio" name="buttonrad" class="selection">
-  			<div class="answer">Answer 1</div>
-  		</li>
-  		<li id="ans2">
-  			<input type="radio" name="buttonrad" class="selection">
-  			<div class="answer">Answer 2</div>
-  		</li>
-  		<li id="ans3">
-  			<input type="radio" name="buttonrad" class="selection">
-  			<div class="answer">Answer 3</div>
-  		</li>
-  		<li id="ans4">
-  			<input type="radio" name="buttonrad" class="selection">
-  			<div class="answer">Answer 4</div>
-  		</li>
+  		<div id="solutions">
+	  		<li id="ans1">
+	  			<input type="radio" name="buttonrad" class="selection">
+	  			<div class="answer">Answer 1</div>
+	  		</li>
+	  		<li id="ans2">
+	  			<input type="radio" name="buttonrad" class="selection">
+	  			<div class="answer">Answer 2</div>
+	  		</li>
+	  		<li id="ans3">
+	  			<input type="radio" name="buttonrad" class="selection">
+	  			<div class="answer">Answer 3</div>
+	  		</li>
+	  		<li id="ans4">
+	  			<input type="radio" name="buttonrad" class="selection">
+	  			<div class="answer">Answer 4</div>
+	  		</li>
+  		</div>
   	</ul>
+  	<button type="button" class="submit">Submit</button>
   </div>
-  <button type="button" class="submit">Submit</button>
+  <div class="scoreFrame">
+  	<div class="percent"></div>
+  	<div class="myScore">You answered </div>
+  </div>
   <script src="./js/index.js"></script>
-  <div class="myScore">Score: </div>
 </body>
 </html>
