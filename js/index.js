@@ -1,5 +1,5 @@
 /*
-* Joe, Winston, Sweeny
+* Joe, Winston, Sweeny TEAM AWESOME!
 */
 
 var correct = 0;
@@ -23,26 +23,29 @@ $( document ).ready(function() {
 
 var nextQ = function (){
   turn ++;
+  $('input').prop('checked', false);
   change();
 }
 
-// var win = function (){
-//   if (((allQuestions[0].question === "Winston's favorite cereal is...") && ($('#questionC').prop('checked', true))) ||
-//       ((allQuestions[1].question === "Winston's favorite movie is...") && ($('#questionB').prop('checked', true)) ||
-//       ((allQuestions[2].question === "Winston's favorite date night location...") && ($('#questionD').prop('checked', true))) {
-//     correct ++;
-//   } else {
-//     console.log("answer incorrect");
-//   }
-// }
+var win = function(){
+  if ((turn == 0) && ($("#answers-C").is(":checked"))){
+    correct++;
+    nextQ();
+  }else if ((turn == 1) && ($("#answers-B").is(":checked") )){
+    correct++;
+    nextQ();
+  }else if ((turn == 2) && ($("#answers-D").is(":checked") )){
+    correct++;
+    alert("You got " + correct + " right!")
+  }else{
+    alert("Guess Again!")
+  }
+};
 
-// $('#submit').on('click', nextQ);
 $('#submit').click(function(event) {
     event.preventDefault();
     console.log("slicked");
     win();
-    $('input').prop('checked', false);
-    nextQ();
 });
 
 // Replace Questions
@@ -55,10 +58,6 @@ var change = function (){
 }
 
 change();
-
-
-
-
 
 
 //Ends DOM
