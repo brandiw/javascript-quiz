@@ -93,6 +93,7 @@ $(function() {
   function doneWithTest(input) {
     if (currentQuestion === QUESTIONS.length) {
       $('#quizBox').empty();
+      console.log('quiz finished')
     }
   }
   //cycle through to next question in questions
