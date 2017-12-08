@@ -47,7 +47,6 @@ label {
 	font-size: 36px;
 	text-align: center;
 }
-<<<<<<< Updated upstream
 
 #nextQ {
 	margin-left: 20px;
@@ -60,6 +59,10 @@ label {
 #star {
 	height: 100px;
 	width: 100px;
+}
+
+#resetQ {
+	text-align: center;
 }
 =======
 >>>>>>> Stashed changes
