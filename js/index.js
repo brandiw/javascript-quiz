@@ -1,5 +1,5 @@
 /*
-* Joe, Winston, Sweeny
+* Joe, Winston, Sweeny TEAM AWESOME!
 */
 
 var correct = 0;
@@ -30,27 +30,18 @@ var nextQ = function (){
 var win = function(){
   if ((turn == 0) && ($("#answers-C").is(":checked"))){
     correct++;
+    nextQ();
   }else if ((turn == 1) && ($("#answers-B").is(":checked") )){
     correct++;
+    nextQ();
   }else if ((turn == 2) && ($("#answers-D").is(":checked") )){
     correct++;
-  }else if (turn == 3){
-    //display score 
+    alert("You got " + correct + " right!")
+  }else{
+    alert("Guess Again!")
   }
-  nextQ();
 };
 
-// var win = function (){
-//   if (((allQuestions[0].question === "Winston's favorite cereal is...") && ($('#questionC').prop('checked', true))) ||
-//       ((allQuestions[1].question === "Winston's favorite movie is...") && ($('#questionB').prop('checked', true)) ||
-//       ((allQuestions[2].question === "Winston's favorite date night location...") && ($('#questionD').prop('checked', true))) {
-//     correct ++;
-//   } else {
-//     console.log("answer incorrect");
-//   }
-// }
-
-// $('#submit').on('click', nextQ);
 $('#submit').click(function(event) {
     event.preventDefault();
     console.log("slicked");
@@ -67,10 +58,6 @@ var change = function (){
 }
 
 change();
-
-
-
-
 
 
 //Ends DOM
