@@ -56,11 +56,6 @@ $(function() {
   var currentQuestion = 0;
   var answersArr = [];
 
-
-
-  // takes an object containg questions and generate an array containing the 
-  //HTML for each question
-
   function generateBoard(questionNumber) {
     if (doneWithTest()) { alert(); }
 
@@ -73,17 +68,6 @@ $(function() {
 
   }
 
-  // function changeQuestion(currentQuestion) {
-
-  //   console.log('current question: ', currentQuestion);
-
-  //   // $('#quizBox').empty();
-
-  //   // $('#quizBox').append(questionsHtml[currentQuestion]);
-
-  //   init();
-  // }
-
   function checkResult(input, questionNumber) {
     if (input === QUESTIONS[questionNumber].correctAnswer) {
       return true;
@@ -91,19 +75,21 @@ $(function() {
   }
 
   function doneWithTest(input) {
-    if (currentQuestion === QUESTIONS.length) {
+    if (currentQuestion === QUESTIONS.length-1) {
 
-      $('#quizBox').empty();
-      console.log('quiz finished')
+      $('#quizBox').empty().append(`
+        <div class="row">
+      <div class="col-sm-3 col-xs-12"></div>
+      <div class="col-sm-6 col-xs-12">
+         <h2 id="">Your score is ${score}</h2>
+      </div>
+        `);
+      
 
-      alert('Your score', score);
+   
 
     }
   }
-  //cycle through to next question in questions
-  //changes the values of the question title to current quetion
-  //changes the values of the radio box inputs
-
 
   function readInput() {
 
@@ -119,9 +105,8 @@ $(function() {
 
       var userInput = readInput();
       console.log('user input read', userInput);
-      if (userInput) {
+      if (!userInput) {
 
-        alert('user ')
         currentQuestion += 1;
 
         generateBoard(currentQuestion);
@@ -130,7 +115,7 @@ $(function() {
           score += 1;
           console.log(score)
         } 
-      } else { alert('enter text') }
+      } else {  }
 
 
     })
