@@ -1,6 +1,6 @@
 body{
 	font-family: 'Catamaran', sans-serif;;
-	background-color: black;
+	background-color: #222;
 	color:white;
 }
 
@@ -9,12 +9,26 @@ h1 {
 	font-size: 20px;
 }
 
-
 h2 {
 	background-color: #eee;
 	color: #222;
 	text-align: center;
-	font-size: 38px;
+	font-size: 30px;
+	padding: 10px;
+	position: relative;
+	line-height: 32px;
+}
+
+@media(min-width: 600px) {
+	h2 {
+		background-color: #eee;
+		color: #222;
+		text-align: center;
+		font-size: 38px;
+		padding: 30px;
+		position: relative;
+		line-height: 40px;
+	}
 }
 
 label {
@@ -33,6 +47,7 @@ label {
 	font-size: 36px;
 	text-align: center;
 }
+<<<<<<< Updated upstream
 
 #nextQ {
 	margin-left: 20px;
@@ -46,3 +61,5 @@ label {
 	height: 100px;
 	width: 100px;
 }
+=======
+>>>>>>> Stashed changes
