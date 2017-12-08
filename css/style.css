@@ -5,32 +5,57 @@
 */
 
 *					{ margin: 0; padding: 0; }
-body				{ font: 14px Georgia, serif; }
+body { 
+	font: 14px Quicksand, sans-serif;
+	font-weight: 600;
+	background-image: url("https://static.pexels.com/photos/696680/pexels-photo-696680.jpeg");
+	background-size: cover;
+}				
 
-#page-wrap		    { width: 500px; margin: 0 auto; }
+#page-wrap {
+	width: 500px; 
+	margin: 30px auto; 
+	padding: 40px;
+	background-color: #EFEFF1;
+	border: solid black;
+	border-width: thin;
+}
 
-h1                  { margin: 25px 0; font: 14px Georgia, Serif; text-transform: uppercase; letter-spacing: 3px; }
+h1 { 
+	margin: 25px 0; 
+	font: 18px; 
+	text-transform: uppercase; 
+	letter-spacing: 3px; 
+}
 
 #quiz input {
     vertical-align: middle;
 }
 
 #quiz ol {
-   margin: 0 0 10px 20px;
+    margin: 0 0 10px 20px;
 }
 
 #quiz ol li {
-   margin: 0 0 20px 0;
+    margin: 0 0 20px 0;
 }
 
 #quiz ol li div {
-   padding: 4px 0;
+    padding: 4px 0;
 }
 
 #quiz h3 {
-   font-size: 17px; margin: 0 0 1px 0; color: #666;
+    font-size: 17px; 
+    margin: 0 0 1px 0; 
+    color: #666;
 }
 
 #results {
     font: 44px Georgia, Serif;
+}
+#submit {
+	padding: 5px;
+	border: 1px solid #666;
+	font-size: 12px;
+	background-color: #fff;
 }

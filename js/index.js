@@ -1,5 +1,5 @@
 /*
-* Joe, Winston, Sweeny TEAM AWESOME!
+* Joe, Winston, Sweeney TEAM AWESOME!
 */
 
 var correct = 0;
@@ -18,15 +18,16 @@ var allQuestions = [
   correctAnswerIndex:3}
 ];
 
-console.log("JS file is linked up!");
-$( document ).ready(function() {
-    console.log( "ready!" );
+$(document).ready(function() {
+    console.log("ready!");
 
 var nextQ = function (){
-  turn ++;
-  $('input').prop('checked', false);
-  change();
+    turn ++;
+    $('input').prop('checked', false);
+    change();
 }
+
+
 
 var win = function(){
   if ((turn == 0) && ($("#answers-C").is(":checked"))){
@@ -37,7 +38,7 @@ var win = function(){
     nextQ();
   }else if ((turn == 2) && ($("#answers-D").is(":checked") )){
     correct++;
-    alert("You got " + correct + " right!")
+    alert("You got " + correct + " right! And " + wrong + " wrong!")
   }else if (turn == 2) {
     wrong++;
     alert("You got " + correct + " right! And " + wrong + " wrong!")
@@ -50,8 +51,15 @@ var win = function(){
 
 $('#submit').click(function(event) {
     event.preventDefault();
-    console.log("slicked");
-    win();
+    if ( ! $("input").is(":checked")) {
+       $(function() {
+       $("#dialog").dialog();
+  } );
+    console.log("Must take a guess!");
+    } else { console.log("slicked");
+      win();
+  }
+    
 });
 
 // Replace Questions
@@ -64,6 +72,7 @@ var change = function (){
 }
 
 change();
+
 
 
 //Ends DOM
