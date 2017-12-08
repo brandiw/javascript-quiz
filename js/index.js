@@ -1,5 +1,2 @@
-/*
-* Your names
-*/
-
-console.log("JS file is linked up!");
+$(function() { 
+  const questions = [{ question: 'Question 1', answers: [{ a: 'a', b: 'b', c: 'c', d: 'd' }] correctAnswer: 'a' }, { question: 'Question 2', answers: [{ a: 'a', b: 'b', c: 'c', d: 'd' }] correctAnswer: 'b' }] })
