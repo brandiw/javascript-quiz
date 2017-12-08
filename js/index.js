@@ -8,27 +8,28 @@ var displayQ = document.getElementById("current-question");
 var choiceSpans = document.getElementsByClassName("choice");
 var currentChoices =[];
 var currentScore;
+var userSelection;
 
 var quizArr = [
 {
 	question: "This is question 1",
 	choices: ["A", "B", "C", "D"],
-	correctAnswerIndex:0
+	correctAnswerIndex: 0
 },
 {
 	question: "This is question 2",
 	choices: ["E", "B", "C", "D"],
-	correctAnswerIndex:1
+	correctAnswerIndex: 1
 },
 {
 	question: "This is question 3",
 	choices: ["F", "B", "C", "D"],
-	correctAnswerIndex:2
+	correctAnswerIndex: 2
 },
 {
 	question: "This is question 4",
 	choices: ["G", "B", "C", "D"],
-	correctAnswerIndex:3
+	correctAnswerIndex: 3
 }];
 
 
@@ -39,6 +40,7 @@ function nextQuestion(){
 	currentQ = quizArr[currentIndex].question;
 	currentChoices = quizArr[currentIndex].choices;
 	displayQ.textContent = currentQ;
+
 	for(var i=0; i<currentChoices.length; i++) {
 		choiceSpans[i].textContent=currentChoices[i];
 	}
@@ -51,7 +53,8 @@ function nextQuestion(){
 }
 
 function updateScore(){
-
+	userSelection = document.querySelector('input[name="option"]:checked').value;
+	console.log(userSelection);
 }
 
 
