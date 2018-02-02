@@ -40,15 +40,12 @@ var buttonsPushed=0;
 
 function score() {
 	$('.card').hide();
-
 	var ttf	= $('.input').each(function(i ,input){
 		var answer = $(input).val();
-
 		if ($(input).is(':checked') && (correctA.indexOf(answer)+1)) {
 			buttonsPushed += 1;
 		}
 	});
-
 		$('#score').text(buttonsPushed);
 }
 
