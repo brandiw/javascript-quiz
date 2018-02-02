@@ -14,13 +14,13 @@ var populateCards = function() {
 var populateAnswers = function () {
 	for(var i = 0; i<correctA.length;i++){
 		possibleA.push(incorrectA[i]);
-		possibleA[i].push(correctA[i]);	
+		possibleA[i].push(correctA[i]);
 	}
 	console.log(possibleA[1]);
 	//shuffle
 	for(var i= 0;i<possibleA.length;i++){
 		var change;
-		for(var j = possibleA.length-1;j>0;j--) {
+		for(var j = possibleA[i].length-1;j>=0;j--) {
 			var randomNUm = Math.floor(Math.random() * (j + 1));
 			change = possibleA[i][j];
 			possibleA[i][j] = possibleA[i][randomNUm];
@@ -28,6 +28,7 @@ var populateAnswers = function () {
 		}
 	}
 	console.log(possibleA[1]);
+	$("input[name=question1]").next().text("hello");
 }
 
 $(document).ready(function() {
@@ -37,7 +38,7 @@ $(document).ready(function() {
 			questions.push(obj.question);
 			correctA.push(obj.correct_answer);
 			incorrectA.push(obj.incorrect_answers);
-			
+
 		});
 		populateCards();
 		populateAnswers();
