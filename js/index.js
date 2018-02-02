@@ -7,7 +7,7 @@ var questionsh = $('.card-title');
 var populateCards = function() {
 	for (var i = 0; i <questions.length; i++) {
 		var question = questions[i]
-		$(questionsh[i]).text(question);
+		$(questionsh[i]).html(question);
 	}
 }
 
@@ -27,11 +27,24 @@ var populateAnswers = function () {
 			possibleA[i][randomNUm] = change;
 		}
 	}
-	console.log(possibleA[1]);
-	$("input[name=question1]").next().text("hello");
+	for(var i=0;i<possibleA.length;i++){
+		for(var j=0;j<possibleA[i].length;j++){
+			$("#"+[i]+[j]).next().html(possibleA[i][j]);
+			$("#"+[i]+[j]).val(possibleA[i][j]);
+		}
+	}
+}
+
+var buttonsPushed = [];
+
+function score() {
+	$('#input').val()
 }
 
 $(document).ready(function() {
+
+	$("button").on("click", score);
+
 	$.get('https://opentdb.com/api.php?amount=9&category=9&difficulty=easy&type=multiple').done(function(data){
 		// console.log(data.results[0].question);
 		data.results.forEach(function(obj){
