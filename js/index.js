@@ -9,6 +9,7 @@ var populateCards = function() {
 		var question = questions[i]
 		$(questionsh[i]).html(question);
 	}
+	console.log(correctA);
 }
 
 var populateAnswers = function () {
@@ -16,7 +17,7 @@ var populateAnswers = function () {
 		possibleA.push(incorrectA[i]);
 		possibleA[i].push(correctA[i]);
 	}
-	console.log(possibleA[1]);
+	// console.log(possibleA[1]);
 	//shuffle
 	for(var i= 0;i<possibleA.length;i++){
 		var change;
@@ -35,10 +36,19 @@ var populateAnswers = function () {
 	}
 }
 
-var buttonsPushed = [];
+var buttonsPushed=0;
 
 function score() {
-	$('#input').val()
+	// console.log($('#10').is(':checked'));
+
+	var ttf	= $('.input').each(function(i ,input){
+		var answer = $(input).val();
+
+		if ($(input).is(':checked') && (correctA.indexOf(answer)+1)) {
+			buttonsPushed += 1;
+		}
+	});
+		$('#score').text(buttonsPushed);
 }
 
 $(document).ready(function() {
