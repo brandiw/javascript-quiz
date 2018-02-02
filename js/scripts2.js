@@ -3,29 +3,13 @@ var correctA = [];
 var incorrectA = [];
 var possibleA = []; //may need to change to null
 var score = 0;
-var count = 0
+var count = 0;
 
-var populateCards = function() {
-  if (count===questions.length) {
-    $('.container').hide();
-    $('#score').text(score);
-    count = 0;
-  }
-  console.log(count);
-	for (var i = count; i <questions.length; i+=questions.length) {
-    $('.card-title').html("");
-		$('.card-title').html(questions[i]);
-	}
-  count++
-  console.log(questions);
-}
 var populateAnswers = function () {
 	for(var i = 0; i<correctA.length;i++){
 		possibleA.push(incorrectA[i]);
 		possibleA[i].push(correctA[i]);
 	}
-	// console.log(possibleA[1]);
-	//shuffle
 	for(var i= 0;i<possibleA.length;i++){
 		var change;
 		for(var j = possibleA[i].length-1;j>=0;j--) {
@@ -35,19 +19,46 @@ var populateAnswers = function () {
 			possibleA[i][randomNUm] = change;
 		}
 	}
-	for(var i=0;i<possibleA.length;i++){
-		for(var j=0;j<possibleA[i].length;j++){
-			$("#"+[i]+[j]).next().html(possibleA[i][j]);
-			$("#"+[i]+[j]).val(possibleA[i][j]);
+  console.log(correctA);
+}
+
+var populateCards = function() {
+  $('.input').each(function(i ,input){
+		var answer = $(input).val();
+		if ($(input).is(':checked') && (correctA.indexOf(answer)+1)) {
+			score += 1;
 		}
+	});
+  if (count===questions.length) {
+    $('.2').hide();
+    $('#score').text(score);
+    count = 0;
+  }
+	for (var i = count; i <questions.length; i+=questions.length) {
+    $('.card-title').html("");
+		$('.card-title').html(questions[i]);
 	}
+  for(var k=count;k<possibleA.length;k+=possibleA.length){
+    for(var j=0;j<possibleA[k].length;j++){
+      var radioBtn = $('<input type="radio" id="0'+[j]+'" name="question0" class="input"><label class="label'+[j]+'" for="question0">Toggle this custom radio</label>');
+      $('#'+[j]).html('');
+      $('#'+[j]).append(radioBtn);
+      $('#0'+[j]).val(possibleA[k][j]);
+      $('.label'+[j]).html(possibleA[k][j]);
+    }
+  }
+  count++
 }
 
 $(document).ready(function() {
-
-	$("button").on("click", populateCards);
-  $('#questionbutton').on('click', populateCards);
-
+	$("#start").on("click", function(){
+    $('#start').hide();
+    populateCards();
+  });
+  $("#next").on("click", populateCards);
+  $('#reset').on('click', function(){
+    location.reload();
+  })
 	$.get('https://opentdb.com/api.php?amount=9&category=9&difficulty=easy&type=multiple').done(function(data){
 		// console.log(data.results[0].question);
 		data.results.forEach(function(obj){
@@ -56,7 +67,7 @@ $(document).ready(function() {
 			incorrectA.push(obj.incorrect_answers);
 
 		});
-
+    populateAnswers();
 
 	});
 });

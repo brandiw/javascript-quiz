@@ -13,45 +13,35 @@
 		  <p class="lead"> Quiz created by Evil Developers</p>
 		  <hr class="my-4">
 		</div>
-		<button type="button">Next</button>
-		<div id="score"></div>
-    </div>
-		<div id="score"></div>
 		<div class="container">
-      <div class="row">
-
-				<div class="col">
-
+			<div class="row 1">
+				<div class="col d-flex justify-content-center">
+					<div id="around" style="width: 18rem;">
+						<button id="start" type="button">Start</button>
+						<button id="next" type="button">Next</button>
+						<button id="reset" type="button">Reset</button>
+						<div id="score"></div>
+			    </div>
+				</div>
+			</div>
+      <div class="row 2">
+				<div class="col d-flex justify-content-center">
 					<div class="card" style="width: 18rem;">
 					  <div class="card-body">
-					    <h5 class="card-title" id="question-one">Question?</h5>
-
-							<div class="radio card-text">
-						  	<input type="radio" id="00" name="question0" class="input">
-							  <label class="label" for="question0">Toggle this custom radio</label>
+					    <h5 class="card-title" id="question-one"></h5>
+							<div id="0" class="radio">
 							</div>
-
-							<div class="radio">
-							  <input type="radio" id="01" name="question0" class="input">
-							  <label class="label" for="question0">Or toggle this other custom radio</label>
+							<div id="1" class="radio">
 							</div>
-
-							<div class="radio card-text">
-						  	<input type="radio" id="02" name="question0" class="input">
-							  <label class="label" for="question0">Toggle this custom radio</label>
+							<div id="2" class="radio">
 							</div>
-
-							<div class="radio">
-							  <input type="radio" id="03" name="question0" class="input">
-							  <label class="label" for="question0">Or toggle this other custom radio</label>
+							<div id="3" class="radio">
 							</div>
-
 					  </div>
 					</div>
 				</div>
       </div>
 		</div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="js/scripts2.js"></script>
