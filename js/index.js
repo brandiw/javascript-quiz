@@ -39,7 +39,7 @@ var populateAnswers = function () {
 var buttonsPushed=0;
 
 function score() {
-	// console.log($('#10').is(':checked'));
+	$('.card').hide();
 
 	var ttf	= $('.input').each(function(i ,input){
 		var answer = $(input).val();
@@ -48,6 +48,7 @@ function score() {
 			buttonsPushed += 1;
 		}
 	});
+
 		$('#score').text(buttonsPushed);
 }
 
