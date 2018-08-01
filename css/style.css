@@ -1,0 +1,88 @@
+body {
+  text-align: center;
+  background: #f5f5f5
+}
+
+h1 {
+  font-size: 60px;
+
+}
+
+h1, h2 {
+  font-weight: bold;
+  margin: 25px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+button {
+  padding: 15px 40px;
+  font-size: 36px;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+button:hover,
+.formButton:hover {
+  background-color: Chartreuse;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  float: right;
+}
+
+form {
+  margin: 0 auto;
+  width: 250px;
+}
+
+#mainForm {
+  display: none;
+}
+
+#color {
+  height: 200px;
+  margin: 25px auto;
+  width: 200px;
+  border-radius: 5px;
+}
+
+#score {
+  display: none;
+}
+
+.input label, .input input {
+  display: inline-block;
+  float: none;
+  vertical-align: middle;
+  margin: 0 10px;
+  position: relative;
+  left: 40px;
+}
+
+.input {
+  display: flex;
+  justify-content: flex-start;
+  align-content: space-around;
+  font-size: 20px;
+
+}
+
+.formButton {
+  margin-top: 25px;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-size: 20px;
+}
+
+.formButton:last-of-type {
+  float: right;
+}
+
+.formButton:first-of-type {
+  float: left;
+}
