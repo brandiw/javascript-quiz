@@ -1,5 +1,6 @@
 /*
-* Your names
+* Jonathan Linch
+* Yuanjie Li
 */
 
 console.log("JS file is linked up!");
