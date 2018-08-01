@@ -9,7 +9,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node_modules/browser-sync/bin/browser-sync.js start --server . --files ."
+    "start": "browser-sync start --server . --files ."
   },
   "repository": {
     "type": "git",
