@@ -1,5 +1,6 @@
 /*
 * Andres Fresnedo, Niko Tsafos
+data validation bonus
 */
 var correctAns;
 var score = 0;
