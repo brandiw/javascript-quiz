@@ -1,0 +1,15 @@
+body {
+	text-align: center;
+}
+
+
+
+p {
+	width: 50%;
+	margin-left: 25%;
+	display: none;
+}
+
+form {
+	display: none;
+}
