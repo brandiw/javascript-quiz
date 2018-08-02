@@ -18,3 +18,7 @@ p {
 h1 {
 	text-align: center;
 }
+
+#quizquestion {
+	font-weight: bold;
+}

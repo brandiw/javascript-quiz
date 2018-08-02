@@ -37,10 +37,18 @@ $("#quiz-form").on("submit", function(e){
 		$('#quiz-form')[0].reset();
 });
 
+//pulls question content into message area but unformatted! Need to format
 $("#startrestart").on("click", function(){
 	$('#quizquestion').text(allQuestions[index].question);
-	$('#quizquestion').text(allQuestions[index].choices);
+	$('#a1').append(allQuestions[index].choices[0]);
+	$('#a2').text(allQuestions[index].choices[1]);
+	$('#a3').text(allQuestions[index].choices[2]);
+	$('#a4').text(allQuestions[index].choices[3]);
 })
+
+//function confirming that answer submitted matches answer in array 
+
+// CODE GOES HERE
 
 // function getQuestion() {
 // 	$.each(allQuestions, function(index, val) {
