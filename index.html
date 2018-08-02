@@ -12,16 +12,17 @@
   <div id="quizquestion">Question populates here</div>
   <fieldset>
   	<form id="quiz-form">
-  		<p>1</p><input type="radio" id="a1" name="radioanswer">
-  		<p>2</p><input type="radio" id="a2" name="radioanswer">
-  		<p>3</p><input type="radio" id="a3" name="radioanswer">
-  		<p>4</p><input type="radio" id="a4" name="radioanswer">
-  		<input type="button" value="Reset Quiz" class="button">
+  		<p>1</p><input type="radio" class="response" name="radioanswer" value="a1">
+  		<p>2</p><input type="radio" class="response" name="radioanswer" value="a2">
+  		<p>3</p><input type="radio" class="response" name="radioanswer" value="a3">
+  		<p>4</p><input type="radio" class="response" name="radioanswer" value="a4">
+  		<input type="button" value="Start / Restart" class="button" id="startrestart">
   		<input type="submit" value="Submit Answer" class="button">
   	</form>
   </fieldset>
+	
 
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="/js/script.js" type="text/javascript"></script>
 </body>
 </html>
