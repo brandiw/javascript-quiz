@@ -27,9 +27,10 @@ function startQuiz(){
 		$(this).hide();
 		//changeQuestion(questionNum);
 		$("p").text(allQuestions[0].question);
-		$("input[type=radio").text(allQuestions[0].choices);
+		allQuestions[0].choices.forEach(function(choice, index){
+				$('#label'+index).text(choice);
+			});
 		$("p").show();
-		$("input[type=radio").show();
 		$("form").show();
 	})
 
@@ -60,7 +61,9 @@ function changeQuestion(int){
 		}
 		if(int < 3){
 			$('p').text(allQuestions[int].question);
-			$('input[type=radio]').text(allQuestions[int].choices);
+			allQuestions[int].choices.forEach(function(choice, index){
+				$('#label'+index).text(choice);
+			});
 		} else { 
 			$('p').text(scores);
 			$('form').hide();
