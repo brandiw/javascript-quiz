@@ -27,6 +27,9 @@ function startQuiz(){
 		$(this).hide();
 		//changeQuestion(questionNum);
 		$("p").text(allQuestions[0].question);
+		allQuestions[0].choices.forEach(function(choice, index){
+				$('#label'+index).text(choice);
+			});
 		$("p").show();
 		$("form").show();
 	})
@@ -59,8 +62,6 @@ function changeQuestion(int){
 		if(int < 3){
 			$('p').text(allQuestions[int].question);
 			allQuestions[int].choices.forEach(function(choice, index){
-				console.log($('label')[index]);
-				console.log($('#label'+index));
 				$('#label'+index).text(choice);
 			});
 		} else { 
