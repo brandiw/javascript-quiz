@@ -9,7 +9,7 @@ body {
   font-family: 'Raleway', sans-serif;
   width: 70vw;
   height: 100vh;
-  padding: 50px;
+  padding: 40px;
   background-color: white;
 }
 
@@ -110,4 +110,18 @@ form {
 .endScreen {
   background-image: repeating-linear-gradient(30deg, #ff6347, #ff6347 40px, #ffefd5 40px, 
     #ffefd5 80px, #daa520  80px, #daa520 120px, #6495ED  120px, #6495ED 160px, #32CD32 160px, #32CD32 200px);
+}
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+   
+    text-align: center;
+}
+
+.clearfix :: after { content: "";
+    clear: both;
+    display: table;
 }
