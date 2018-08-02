@@ -2,9 +2,56 @@
 <html>
 <head>
   <title>JavaScript Quiz</title>
-  <script src="/js/index.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
 <body>
-  <h1>Hello world!</h1>
+  
+
+  <header>
+  	<div id="title">
+  		<p>2018's POP culture</p>
+  	</div>
+  	<div id='toggle'>
+  		<input type="button" id="start" name="start" value="START">
+  	</div>
+  </header>
+  <main>
+  	<div id=container>
+  		<div id=content>
+  			<div id="question"></div>
+  			<div id="options">
+  				<form id= "form">
+  					<input class="choice a" type="radio" name="answer" value='a'>
+					<label id='a'></label>
+  					<input class="choice b" type="radio" name="answer" value='b'>
+  					<label id='b'></label>
+  					<input class="choice c" type="radio" name="answer" value='c'>
+  					<label id='c'></label>
+  					<input class="choice d" type="radio" name="answer" value='d'>
+  					<label id='d'></label>
+  				</form>
+  				
+  			</div>
+  		</div>
+  	</div>
+
+  </main>
+  <footer>
+  	<div id='footer-div'>
+  		<div id='time-move'>
+  			  	<input type="button" id="timer" name="timer" value="30">
+  				<input id="next" type="submit" name="next" value="Next">
+  			</div>
+  		<div>
+  			<input id="submit" type="submit" name="submit">
+  		</div>
+
+  	</div>
+
+
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
 </body>
 </html>
