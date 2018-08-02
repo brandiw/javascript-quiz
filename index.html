@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JavaScript Quiz</title>
-  <script src="/js/index.js" type="text/javascript"></script>
+  <title>Color Name Quiz</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Raleway" rel="stylesheet">
 </head>
 <body>
-  <h1>Hello world!</h1>
+  <div id="quiz-container" class ="clearfix">
+    <h1>What's the color name?</h1>
+    <p id="instructions">X11 color names are recognized by browsers and can be used directly in code. Can you guess which name is the correct identifier for the color shown?</p>
+
+    <button id="startQuiz">Start Quiz</button>
+
+    <form id="mainForm" action="">
+      <h2 id="questionNumber">Question</h2>
+      <h2><span id="currentQuestionNumber"></span> of <span class="totalNumberQuestions"></span></h2>
+      <div id="color"></div>
+      <div class="input">
+        <input id="choice0" type="radio" name="choice" value="0" />
+        <label id="label0" for="choice0"></label>
+      </div>
+      <div class="input">
+        <input id="choice1" type="radio" name="choice" value="1" />
+        <label id="label1" for="choice1"></label>
+      </div>
+      <div class="input">
+        <input id="choice2" type="radio" name="choice" value="2" />
+        <label id="label2" for="choice2"></label>
+      </div>
+      <div class="input">
+        <input id="choice3" type="radio" name="choice" value="3" />
+        <label id="label3" for="choice3"></label>
+      </div>
+
+      <!-- Back === decrement question array -->
+      <input id="back" class="formButton" type="button" value="Back" />
+      <!-- Next === increment question array -->
+      <input id="next" class="formButton" type="button" value="Next" />
+    </form>
+
+    <div id="score">
+      <img src = "rainbow.gif">
+      <h2>You got <span id="rightAnswer"></span> out of <span class="totalNumberQuestions"></span> correct!</h2>
+    </div>
+    <p id="footer">Created by An, Zach, and Kelsey</p>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="./js/index.js" type="text/javascript"></script>
 </body>
 </html>
