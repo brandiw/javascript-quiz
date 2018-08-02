@@ -3,15 +3,19 @@ var questions = [
   {color: '#32cd32', choices: ['Spring Green', 'Pale Green', 'Lime Green', 'Chartreuse'], answer: 2},
   {color: '#ff6347', choices: ['Tomato', 'Light Salmon', 'Coral', 'Dark Salmon'], answer: 0},
   {color: '#ffefd5', choices: ['Antique White', 'Peach Puff', 'Wheat', 'Papaya Whip'], answer: 3},
-  {color: '#6495ed', choices: ['Aqua', 'Cornflower Blue', 'Steel Blue', 'Royal Blue'], answer: 1}
+  {color: '#6495ed', choices: ['Aqua', 'Cornflower Blue', 'Steel Blue', 'Royal Blue'], answer: 1},
+  {color: '#d2691e', choices: ['Indian Red', 'Pumpkin', 'Sienna', 'Chocolate'], answer: 3},
+  {color: '#6a5acd', choices: ['Blue Violet', 'Medium Blue', 'Slate Blue', 'Thistle'], answer: 2},
+  {color: '#daa520', choices: ['Goldenrod', 'Peru', 'Maize', 'Gold'], answer: 0}
 ];
 var questionIndex = 0;
 
 $(document).ready(function() {
   $('#startQuiz').on('click', function() {
     $(this).hide();
+    $('#instructions').hide();
     $('#mainForm').show();
-    $('#back').hide();
+    $('#back').hide();2
     updateQuestion();
     $('.totalNumberQuestions').text(questions.length);
     updateQuestionNumber();
@@ -55,10 +59,13 @@ $(document).ready(function() {
 function updateQuestion(){
   console.log(questions[questionIndex].answer);
   $('#color').css('background-color', questions[questionIndex].color);
+  $('body').css('background-color', questions[questionIndex].color);
   $('#label0').text(questions[questionIndex].choices[0]);
   $('#label1').text(questions[questionIndex].choices[1]);
   $('#label2').text(questions[questionIndex].choices[2]);
   $('#label3').text(questions[questionIndex].choices[3]);
+
+
   console.log('update question');
 }
 
@@ -76,6 +83,7 @@ function getScore() {
       score++;
     }
   }
+  $("body").toggleClass("endScreen");
   $('#score').show();
   $('#rightAnswer').text(score);
   $('.totalNumberQuestions')
