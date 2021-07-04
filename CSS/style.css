@@ -1,0 +1,24 @@
+fieldset {
+	margin: 20px auto;
+	width: 30%;
+}
+
+p {
+	display: inline;
+}
+
+.button {
+	float: right;
+}
+
+#quizquestion {
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
+}
+
+#quizquestion {
+	font-weight: bold;
+}
